@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X3JKXYRJ6D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-X3JKXYRJ6D');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KetoDiyetim — Damağına Özel Keto Programı</title>
@@ -1290,7 +1298,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
     </div>
     <div class="fc"><h4>Program</h4><ul><li><a href="#program">Planımı Oluştur</a></li><li><a href="#pricing">Paketler</a></li><li><a href="#aliskanlik">Mikro Alışkanlık</a></li><li><a href="#blog">Blog</a></li></ul></div>
     <div class="fc"><h4>Destek</h4><ul><li><a href="#">S.S.S.</a></li><li><a href="#" onclick="openModal('Bilgi Almak İstiyorum','—')">WhatsApp</a></li></ul></div>
-    <div class="fc"><h4>İletişim</h4><ul><li><a href="#">+90 542 354 86 68</a></li><li><a href="#">info@ketodiyetim.com</a></li><li><a href="#">Instagram</a></li></ul></div>
+    <div class="fc"><h4>İletişim</h4><ul><li><a href="#">+90 542 354 86 68</a></li><li><a href="#">info@ketodiyetim.com</a></li><li><a href="https://www.instagram.com/ketodiyetim.tr" target="_blank" rel="noopener">@ketodiyetim.tr</a></li></ul></div>
   </div>
   <div class="footer-bottom">
     <span>© 2024 <strong>KetoDiyetim</strong>. Tüm hakları saklıdır.</span>
@@ -1328,6 +1336,24 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
   </div>
 </div>
 
+
+<!-- Instagram floating button -->
+<a href="https://www.instagram.com/ketodiyetim.tr" target="_blank" rel="noopener"
+  style="position:fixed;bottom:90px;right:24px;z-index:490;
+    width:48px;height:48px;border-radius:50%;
+    background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 4px 16px rgba(0,0,0,0.4);
+    transition:transform .2s,box-shadow .2s;text-decoration:none;"
+  onmouseover="this.style.transform='scale(1.1)';this.style.boxShadow='0 6px 22px rgba(0,0,0,0.5)'"
+  onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 16px rgba(0,0,0,0.4)'"
+  title="@ketodiyetim.tr">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="5"/>
+    <circle cx="12" cy="12" r="5"/>
+    <circle cx="17.5" cy="6.5" r="1.5" fill="white" stroke="none"/>
+  </svg>
+</a>
 <!-- PAYMENT MODAL -->
 <div class="modal-overlay" id="modal" onclick="closeModalOut(event)">
   <div class="modal">
@@ -1750,11 +1776,17 @@ function resetPlan() {
    MODAL
 ============================================================ */
 function openModal(pkg, price) {
-  currentPkg = pkg; currentPrice = price;
-  document.getElementById('mpkg-name').textContent = pkg;
-  document.getElementById('mpkg-price').textContent = price;
-  document.getElementById('modal').classList.add('open');
-  document.body.style.overflow = 'hidden';
+  const num = '905423548668';
+  const msg = encodeURIComponent(
+    'Merhaba! 👋\n\n"' + pkg + '" (' + price + ') satın almak istiyorum.\n\nKeto planı oluşturdum, devam günleri için ödeme yapmak istiyorum.'
+  );
+  const a = document.createElement('a');
+  a.href = 'https://wa.me/' + num + '?text=' + msg;
+  a.target = '_blank';
+  a.rel = 'noopener noreferrer';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
 }
 function closeModal() {
   document.getElementById('modal').classList.remove('open');
