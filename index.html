@@ -13,8 +13,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KetoDiyetim — Damağına Özel Keto Programı</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<!-- SheetJS for Excel export -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 :root{
@@ -851,7 +849,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
       </div>
       <div class="plan-actions">
         <button class="btn-excel" onclick="exportToExcel()">
-          <span>📊</span> Excel'e Aktar
+          <span>📊</span> Planı İndir (CSV)
         </button>
         <button class="btn-new" onclick="resetPlan()">
           ↺ Yeniden Oluştur
@@ -1627,117 +1625,43 @@ function exportToExcel() {
   const ifTimes = getIfTimes(userProfile.ifPref);
   const actMap = {sedentary:'Hareketsiz',light:'Az Hareketli',moderate:'Orta Aktif',active:'Çok Aktif'};
 
-  const wb = XLSX.utils.book_new();
+  let csv = '\uFEFF'; // BOM for Turkish chars
+  csv += 'KETODİYETİM — KİŞİSEL PLAN\n\n';
+  csv += 'AD,' + (userProfile.name||'') + '\n';
+  csv += 'YAŞ,' + (userProfile.age||'') + '\n';
+  csv += 'KİLO,' + (userProfile.weight||'') + ' kg\n';
+  csv += 'BOY,' + (userProfile.height||'') + ' cm\n';
+  csv += 'HEDEF,' + (userProfile.goalWeight||'') + ' kg\n';
+  csv += 'IF PROTOKOLü,' + (userProfile.ifPref==='none'?'Yok':userProfile.ifPref||'') + '\n';
+  csv += 'AKTİVİTE,' + (actMap[userProfile.activity]||'') + '\n\n';
 
-  /* ---- Sheet 1: Profil ---- */
-  const profileData = [
-    ['KETODİYETİM — KİŞİSEL PLAN'],
-    [],
-    ['Ad', userProfile.name],
-    ['Yaş', userProfile.age],
-    ['Kilo (kg)', userProfile.weight],
-    ['Boy (cm)', userProfile.height],
-    ['Hedef Kilo (kg)', userProfile.goal],
-    ['Cinsiyet', userProfile.gender === 'male' ? 'Erkek' : 'Kadın'],
-    ['Hareket Düzeni', actMap[userProfile.activity]],
-    ['IF Protokolü', userProfile.ifPref === 'none' ? 'Yok' : userProfile.ifPref],
-    ['Yeme Penceresi', ifTimes.fast === '—' ? 'IF yok' : `${ifTimes.start} – ${ifTimes.end}`],
-    ['Oruç Saatleri', ifTimes.fast],
-    ['Sevmediği Yiyecekler', userProfile.dislikes.join(', ') || 'Yok'],
-    [],
-    ['Oluşturulma', new Date().toLocaleDateString('tr-TR')],
-    ['ketodiyetim.com'],
-  ];
-  const ws1 = XLSX.utils.aoa_to_sheet(profileData);
-  ws1['!cols'] = [{wch:28},{wch:36}];
-  XLSX.utils.book_append_sheet(wb, ws1, 'Profil');
-
-  /* ---- Sheet 2: 3 Günlük Plan ---- */
-  const planRows = [
-    ['GÜN','GÜN ADI','ÖĞÜN','SAAT','MENÜ ADI','İÇERİK','KALORİ (kal)','YAĞ (g)','PROTEİN (g)','KARBONHİDRAT (g)']
-  ];
+  csv += 'GÜN,ÖĞÜN,SAAT,YİYECEK,KALORİ\n';
   generatedPlan.forEach(day => {
-    // Sabah
-    planRows.push([
-      day.day, day.dayName, '1. Öğün', ifTimes.start,
-      day.breakfast.name,
-      day.breakfast.items.join(' | '),
-      day.breakfast.kcal, day.breakfast.fat, day.breakfast.prot, day.breakfast.carb
-    ]);
-    // Akşam
-    planRows.push([
-      day.day, day.dayName, 'Son Öğün', ifTimes.end,
-      day.dinner.name,
-      day.dinner.items.join(' | '),
-      day.dinner.kcal, day.dinner.fat, day.dinner.prot, day.dinner.carb
-    ]);
-    // Günlük toplam
-    planRows.push([
-      '', '', 'GÜNLÜK TOPLAM', '',
-      '','',
-      `=SUMIF(A:A,${day.day},G:G)`,
-      day.totalFat, day.totalProt, day.totalCarb
-    ]);
-    planRows.push([]);
-  });
-  const ws2 = XLSX.utils.aoa_to_sheet(planRows);
-  ws2['!cols'] = [{wch:6},{wch:14},{wch:12},{wch:8},{wch:36},{wch:60},{wch:14},{wch:10},{wch:12},{wch:16}];
-  XLSX.utils.book_append_sheet(wb, ws2, '3 Günlük Plan');
-
-  /* ---- Sheet 3: Alışveriş Listesi ---- */
-  const shopping = new Map();
-  generatedPlan.forEach(day => {
-    [...day.breakfast.items, ...day.dinner.items].forEach(item => {
-      const clean = item.replace(/[\d]+g\s*/,'').split('(')[0].trim();
-      shopping.set(clean, (shopping.get(clean)||0) + 1);
+    day.meals.forEach(meal => {
+      csv += '"' + day.label + '","' + meal.label + '","' + (meal.time||'') + '","' + meal.name + '",' + (meal.cal||'') + '\n';
     });
   });
-  const shopRows = [
-    ['ALIŞVERİŞ LİSTESİ — 3 GÜNLÜK'],
-    ['KetoDiyetim.com — Kişisel Plan'],
-    [],
-    ['MALZEME','KULLANIМ SAYISI','SATINALINACAK MI?']
-  ];
-  shopping.forEach((count, item) => {
-    shopRows.push([item, count, '☐']);
+
+  csv += '\nALIŞVERİŞ LİSTESİ\n';
+  const items = {};
+  generatedPlan.forEach(day => {
+    day.meals.forEach(meal => {
+      const k = meal.name;
+      items[k] = (items[k]||0) + 1;
+    });
   });
-  shopRows.push([]);
-  shopRows.push(['NOT: Ürünleri alırken şekersiz ve katkısız versiyonlarını tercih edin.']);
-  const ws3 = XLSX.utils.aoa_to_sheet(shopRows);
-  ws3['!cols'] = [{wch:44},{wch:18},{wch:16}];
-  XLSX.utils.book_append_sheet(wb, ws3, 'Alışveriş Listesi');
+  Object.entries(items).forEach(([k,v]) => { csv += '"' + k + '",' + v + ' porsiyon\n'; });
 
-  /* ---- Sheet 4: IF Takvimi ---- */
-  const ifRows = [
-    ['IF TAKVİMİ — 3 GÜNLÜK'],
-    [],
-    ['GÜN','TARİH','ORUÇ BAŞLANGICI','YEME AÇILIŞI','SON ÖĞÜN','ORUÇ KAPANIŞI','SÜRE (saat)','TAMAMLANDI MI?']
-  ];
-  generatedPlan.forEach((day,i) => {
-    const d = new Date();
-    d.setDate(d.getDate()+i);
-    ifRows.push([
-      `${day.day}. Gün — ${day.dayName}`,
-      d.toLocaleDateString('tr-TR'),
-      i===0 ? '—' : '20:00 (önceki gün)',
-      ifTimes.start,
-      ifTimes.end,
-      '20:00',
-      userProfile.ifPref === 'none' ? '—' : '16.5',
-      '☐'
-    ]);
-  });
-  ifRows.push([]);
-  ifRows.push(['Oruç saatlerinde: Su ✓ · Siyah kahve ✓ · Şekersiz çay ✓ · Başka bir şey ✗']);
-  const ws4 = XLSX.utils.aoa_to_sheet(ifRows);
-  ws4['!cols'] = [{wch:24},{wch:14},{wch:22},{wch:16},{wch:14},{wch:18},{wch:14},{wch:16}];
-  XLSX.utils.book_append_sheet(wb, ws4, 'IF Takvimi');
-
-  // Save
-  const filename = `KetoDiyetim_${userProfile.name}_${new Date().toLocaleDateString('tr-TR').replace(/\./g,'-')}.xlsx`;
-  XLSX.writeFile(wb, filename);
-
-  showToast('📊 Excel dosyası indirildi!');
+  const blob = new Blob([csv], {type:'text/csv;charset=utf-8;'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'KetoDiyetim_' + (userProfile.name||'Plan') + '.csv';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  showToast('✓ Plan indirildi! Excel ile açabilirsin.');
 }
 
 /* ============================================================
