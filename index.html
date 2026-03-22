@@ -918,6 +918,18 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
 
 <div class="toast" id="toast">✓ Excel dosyası indiriliyor...</div>
 
+
+
+
+
+<button id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})"
+  style="position:fixed;bottom:24px;right:24px;z-index:490;width:48px;height:48px;
+  border-radius:50%;border:none;cursor:pointer;background:#C8793A;color:#fff;
+  display:none;align-items:center;justify-content:center;
+  box-shadow:0 4px 16px rgba(0,0,0,0.4);" title="Yukari cik">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
 <script>
 /* ============================================================
    STATE
@@ -1511,10 +1523,13 @@ function openBlog(idx) {
   document.getElementById('blogModalInner').scrollTop = 0;
 }
 function closeBlog() {
-  document.getElementById('
-</script>
+  document.getElementById('blogModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function closeBlogOut(e) {
+  if(e.target === document.getElementById('blogModal')) closeBlog();
+}
 
-<script>
 document.addEventListener('DOMContentLoaded', function() {
   // Yiyecek kutucuklari
   document.querySelectorAll('.cb-item').forEach(function(el) {
@@ -1533,16 +1548,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var em = document.getElementById('footerEmail');
   if(em) em.textContent = 'info' + '@' + 'ketodiyetim.com';
 });
-</script>
 
-<button id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})"
-  style="position:fixed;bottom:24px;right:24px;z-index:490;width:48px;height:48px;
-  border-radius:50%;border:none;cursor:pointer;background:#C8793A;color:#fff;
-  display:none;align-items:center;justify-content:center;
-  box-shadow:0 4px 16px rgba(0,0,0,0.4);" title="Yukari cik">
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
-</button>
-<script>
 window.addEventListener('scroll',function(){
   var b=document.getElementById('scrollTopBtn');
   if(b) b.style.display=window.scrollY>400?'flex':'none';
