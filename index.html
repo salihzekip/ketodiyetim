@@ -1,20 +1,11 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KetoDiyetim — Damağına Özel Keto Programı</title>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-X3JKXYRJ6D"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-X3JKXYRJ6D');
-</script>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-
+<!-- SheetJS for Excel export -->
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 :root{
@@ -456,218 +447,6 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
   .blog-modal-overlay { padding: 20px 12px; }
 }
 
-
-/* ===================== MİKRO ALIŞKANLIK ===================== */
-.aliskanlik{padding:100px 52px;}
-.habit-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:48px;align-items:start;}
-.habit-app{background:var(--card);border:1px solid var(--border);border-radius:18px;overflow:hidden;}
-.habit-app-header{background:linear-gradient(135deg,rgba(200,121,58,0.15),rgba(78,140,95,0.1));padding:24px 28px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;}
-.ha-icon{width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--gold));display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;}
-.ha-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--cream);}
-.ha-sub{font-size:12px;color:var(--muted);margin-top:2px;}
-.ha-badge{margin-left:auto;background:rgba(78,140,95,0.15);border:1px solid rgba(78,140,95,0.3);color:var(--green);font-size:10px;font-weight:700;padding:4px 10px;border-radius:3px;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;}
-.habit-app-body{padding:24px 28px;}
-
-/* Habit tracker rows */
-.habit-day-row{display:flex;align-items:center;gap:0;margin-bottom:10px;}
-.hdr-label{width:120px;font-size:12px;color:var(--muted);font-weight:500;flex-shrink:0;}
-.hdr-dots{display:flex;gap:6px;}
-.hdot{width:28px;height:28px;border-radius:6px;border:1px solid var(--border);cursor:pointer;transition:.15s;display:flex;align-items:center;justify-content:center;font-size:10px;color:transparent;user-select:none;}
-.hdot:hover{border-color:var(--accent);}
-.hdot.done{background:var(--green);border-color:var(--green);color:white;}
-.hdot.partial{background:rgba(217,168,60,0.2);border-color:var(--gold);color:var(--gold);}
-
-/* Streak bar */
-.streak-bar{display:flex;align-items:center;justify-content:space-between;background:rgba(200,121,58,0.07);border:1px solid rgba(200,121,58,0.15);border-radius:8px;padding:12px 16px;margin-top:14px;}
-.streak-fire{font-size:1.4rem;}
-.streak-info{font-size:13px;font-weight:700;color:var(--cream);}
-.streak-sub{font-size:11px;color:var(--muted);}
-.streak-num{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;color:var(--accent);}
-
-/* Habit info side */
-.habit-info{display:flex;flex-direction:column;gap:16px;}
-.hi-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(78,140,95,0.1);border:1px solid rgba(78,140,95,0.25);color:var(--green);font-size:10px;font-weight:700;padding:4px 12px;border-radius:2px;letter-spacing:1.5px;text-transform:uppercase;width:fit-content;margin-bottom:4px;}
-.habit-features{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px;}
-.hf-item{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;}
-.hf-icon{font-size:1.3rem;margin-bottom:6px;}
-.hf-title{font-size:12.5px;font-weight:700;color:var(--cream);margin-bottom:3px;}
-.hf-desc{font-size:11.5px;color:var(--muted);line-height:1.6;}
-.micro-habits-list{display:flex;flex-direction:column;gap:8px;margin-top:8px;}
-.mh-item{display:flex;align-items:center;gap:10px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:11px 14px;}
-.mh-emoji{font-size:1.1rem;flex-shrink:0;}
-.mh-text{font-size:12.5px;color:var(--muted);line-height:1.5;flex:1;}
-.mh-text strong{color:var(--cream);display:block;font-size:13px;}
-.mh-diff{font-size:10px;padding:2px 7px;border-radius:2px;border:1px solid;flex-shrink:0;}
-.mh-diff.easy{color:var(--green);border-color:rgba(78,140,95,0.3);background:rgba(78,140,95,0.08);}
-.mh-diff.med{color:var(--gold);border-color:rgba(217,168,60,0.3);background:rgba(217,168,60,0.06);}
-
-/* ===================== WELLNESS KUTUSU ===================== */
-
-.box-billing{display:flex;align-items:center;gap:12px;margin:28px 0 36px;flex-wrap:wrap;}
-.box-opt{font-size:14px;font-weight:600;color:var(--muted);transition:color .2s;cursor:pointer;}
-.box-opt.active{color:var(--cream);}
-.box-tog{position:relative;width:52px;height:26px;background:var(--accent);border-radius:13px;cursor:pointer;transition:background .2s;flex-shrink:0;}
-.box-tog.sub{background:var(--green);}
-.box-tog-thumb{position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:var(--cream);transition:transform .25s;}
-.box-tog.sub .box-tog-thumb{transform:translateX(26px);}
-.box-save{background:rgba(78,140,95,0.15);border:1px solid rgba(78,140,95,0.3);color:var(--green);font-size:10.5px;font-weight:700;padding:3px 9px;border-radius:2px;letter-spacing:.5px;}
-
-.box-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:48px;}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.box-price span{font-size:.9rem;color:var(--muted);font-family:'DM Sans',sans-serif;font-weight:400;}
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Box info strip */
-.box-info-strip{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:0;
-  border:1px solid var(--border);border-radius:12px;overflow:hidden;
-  margin-bottom:48px;
-}
-.bis-item{padding:20px 22px;border-right:1px solid var(--border);text-align:center;}
-.bis-item:last-child{border-right:none;}
-.bis-icon{font-size:1.6rem;margin-bottom:6px;}
-.bis-title{font-size:13px;font-weight:700;color:var(--cream);margin-bottom:3px;}
-.bis-desc{font-size:12px;color:var(--muted);line-height:1.6;}
-
-/* Gift tag on pricing cards */
-.gift-tag{
-  display:inline-flex;align-items:center;gap:6px;
-  background:rgba(78,140,95,0.12);border:1px solid rgba(78,140,95,0.28);
-  color:var(--green);font-size:11px;font-weight:700;
-  padding:5px 12px;border-radius:4px;margin-top:8px;
-  width:100%;justify-content:center;
-}
-
-@media(max-width:900px){
-  .aliskanlik,
-  .habit-grid,.box-grid{grid-template-columns:1fr;}
-  .habit-features{grid-template-columns:1fr;}
-  .box-info-strip{grid-template-columns:1fr 1fr;}
-}
-@media(max-width:560px){
-  .box-info-strip{grid-template-columns:1fr;}
-}
-
-
-/* Clickable habit feature cards */
-
-
-.hf-peek{font-size:10px;color:var(--accent);font-weight:700;letter-spacing:.5px;opacity:0;transition:opacity .2s;margin-left:4px;}
-
-
-/* Habit preview modal */
-.hmodal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.82);z-index:2000;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .25s;}
-.hmodal-overlay.open{opacity:1;pointer-events:all;}
-.hmodal{background:var(--card);border:1px solid var(--border);border-radius:18px;width:100%;max-width:680px;max-height:90vh;overflow:hidden;display:flex;flex-direction:column;transform:translateY(24px) scale(.97);transition:transform .25s;}
-.hmodal-overlay.open .hmodal{transform:translateY(0) scale(1);}
-.hmodal-head{padding:22px 28px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
-.hmodal-head h3{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--cream);display:flex;align-items:center;gap:10px;}
-.hmodal-close{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:none;color:var(--muted);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.15s;}
-.hmodal-close:hover{background:var(--border);color:var(--cream);}
-.hmodal-body{padding:24px 28px;overflow-y:auto;flex:1;}
-.hmodal-desc{font-size:13.5px;color:var(--muted);line-height:1.8;margin-bottom:20px;}
-.hmodal-visual{background:var(--bg2);border:1px solid var(--border);border-radius:12px;overflow:hidden;}
-.hmv-label{font-size:9.5px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(--dim);padding:10px 14px 6px;border-bottom:1px solid var(--border);}
-
-/* Template grid styles inside modal */
-.tpl-grid{width:100%;border-collapse:collapse;}
-.tpl-grid th{font-size:9.5px;font-weight:700;color:var(--muted);padding:7px 8px;text-align:center;border-bottom:1px solid var(--border);letter-spacing:.5px;text-transform:uppercase;}
-.tpl-grid th:first-child{text-align:left;width:130px;}
-.tpl-grid td{padding:5px 6px;text-align:center;font-size:11px;border-bottom:1px solid rgba(44,36,24,.5);}
-.tpl-grid td:first-child{text-align:left;font-size:12px;color:var(--muted);padding-left:8px;}
-.tpl-grid td.done{background:rgba(78,140,95,0.25);color:var(--green);font-weight:700;border-radius:4px;}
-.tpl-grid td.miss{color:var(--dim);}
-.tpl-grid td.part{background:rgba(217,168,60,0.12);color:var(--gold);}
-.tpl-grid tr:hover td{background:rgba(255,255,255,0.02);}
-.tpl-grid tr:hover td.done{background:rgba(78,140,95,0.35);}
-.streak-cell{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--accent);}
-.pct-bar-wrap{display:flex;align-items:center;gap:8px;}
-.pct-bar{height:8px;border-radius:4px;background:var(--border);flex:1;overflow:hidden;}
-.pct-bar-fill{height:100%;border-radius:4px;transition:width .6s;}
-.pct-num{font-size:11px;font-weight:700;min-width:32px;text-align:right;}
-
-/* Tips list in modal */
-.hmodal-tips{display:flex;flex-direction:column;gap:8px;margin-top:16px;}
-.hmodal-tip{display:flex;gap:10px;background:rgba(200,121,58,0.05);border:1px solid rgba(200,121,58,0.12);border-radius:8px;padding:10px 13px;}
-.hmodal-tip-ico{flex-shrink:0;font-size:1rem;}
-.hmodal-tip-txt{font-size:12.5px;color:var(--muted);line-height:1.6;}
-.hmodal-tip-txt strong{color:var(--cream);}
-
-
-/* ── Box visual overhaul ── */
-
-
-
-
-
-/* ── Box detail modal ── */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Product cards in modal */
-
-
-
-
-
-
-
-
-
-
-
-
-@media(max-width:640px){
-  
-  
-  
-}
-
 </style>
 </head>
 <body>
@@ -679,7 +458,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
     <li><a href="#program">Planımı Oluştur</a></li>
     <li><a href="#pricing">Paketler</a></li>
     <li><a href="#nasil">Nasıl Çalışır</a></li>
-    <li><a href="#aliskanlik">Mikro Alışkanlık</a></li><li><a href="#blog">Blog</a></li>
+    <li><a href="#blog">Blog</a></li>
     <li><a href="#pricing" class="nav-cta">Satın Al</a></li>
   </ul>
 </nav>
@@ -698,7 +477,6 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
     <div class="hs"><div class="v">Excel</div><div class="l">Export</div></div>
     <div class="hs"><div class="v">IF 16:8</div><div class="l">Protokol</div></div>
     <div class="hs"><div class="v">%100</div><div class="l">Kişisel</div></div>
-    <div class="hs"><div class="v">Ücretsiz</div><div class="l">Takip Uyg.</div></div>
   </div>
 </section>
 
@@ -757,8 +535,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
     <div class="ff">
       <label>Cinsiyet</label>
       <div class="rating-row">
-        <button class="rating-btn sel" id="g_m" onclick="setGender('male')">Erkek</button>
-        <button class="rating-btn" id="g_f" onclick="setGender('female')">Kadın</button>
+        <button class="rating-btn sel" id="g_m">Erkek</button>
+        <button class="rating-btn" id="g_f">Kadın</button>
       </div>
     </div>
 
@@ -775,18 +553,18 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
     <div class="ff">
       <label>Sevmediğin / Yemediğin Yiyecekler <span style="color:var(--dim);font-weight:400;text-transform:none;letter-spacing:0;">(tıklayarak seç)</span></label>
       <div class="checkbox-grid" id="dislikeGrid">
-        <div class="cb-item" data-val="peynir" onclick="toggleCbDiv(this)"><div class="cb-dot">✓</div><span class="cb-text">Peynir</span></div>
-        <div class="cb-item" data-val="yoğurt" onclick="toggleCbDiv(this)"><div class="cb-dot">✓</div><span class="cb-text">Yoğurt</span></div>
-        <div class="cb-item" data-val="zeytin" onclick="toggleCbDiv(this)"><div class="cb-dot">✓</div><span class="cb-text">Zeytin</span></div>
-        <div class="cb-item" data-val="balık" onclick="toggleCbDiv(this)"><div class="cb-dot">✓</div><span class="cb-text">Balık</span></div>
-        <div class="cb-item" data-val="deniz ürünleri" onclick="toggleCbDiv(this)"><div class="cb-dot">✓</div><span class="cb-text">Deniz Ürünleri</span></div>
-        <div class="cb-item" data-val="kuzu eti" onclick="toggleCbDiv(this)"><div class="cb-dot">✓</div><span class="cb-text">Kuzu Eti</span></div>
-        <div class="cb-item" data-val="karaciğer" onclick="toggleCbDiv(this)"><div class="cb-dot">✓</div><span class="cb-text">Karaciğer</span></div>
-        <div class="cb-item" data-val="mantar" onclick="toggleCbDiv(this)"><div class="cb-dot">✓</div><span class="cb-text">Mantar</span></div>
-        <div class="cb-item" data-val="brokoli" onclick="toggleCbDiv(this)"><div class="cb-dot">✓</div><span class="cb-text">Brokoli</span></div>
-        <div class="cb-item" data-val="ıspanak" onclick="toggleCbDiv(this)"><div class="cb-dot">✓</div><span class="cb-text">Ispanak</span></div>
-        <div class="cb-item" data-val="avokado" onclick="toggleCbDiv(this)"><div class="cb-dot">✓</div><span class="cb-text">Avokado</span></div>
-        <div class="cb-item" data-val="yumurta" onclick="toggleCbDiv(this)"><div class="cb-dot">✓</div><span class="cb-text">Yumurta</span></div>
+        <div class="cb-item" data-val="peynir"><div class="cb-dot">✓</div><span class="cb-text">Peynir</span></div>
+        <div class="cb-item" data-val="yoğurt"><div class="cb-dot">✓</div><span class="cb-text">Yoğurt</span></div>
+        <div class="cb-item" data-val="zeytin"><div class="cb-dot">✓</div><span class="cb-text">Zeytin</span></div>
+        <div class="cb-item" data-val="balık"><div class="cb-dot">✓</div><span class="cb-text">Balık</span></div>
+        <div class="cb-item" data-val="deniz ürünleri"><div class="cb-dot">✓</div><span class="cb-text">Deniz Ürünleri</span></div>
+        <div class="cb-item" data-val="kuzu eti"><div class="cb-dot">✓</div><span class="cb-text">Kuzu Eti</span></div>
+        <div class="cb-item" data-val="karaciğer"><div class="cb-dot">✓</div><span class="cb-text">Karaciğer</span></div>
+        <div class="cb-item" data-val="mantar"><div class="cb-dot">✓</div><span class="cb-text">Mantar</span></div>
+        <div class="cb-item" data-val="brokoli"><div class="cb-dot">✓</div><span class="cb-text">Brokoli</span></div>
+        <div class="cb-item" data-val="ıspanak"><div class="cb-dot">✓</div><span class="cb-text">Ispanak</span></div>
+        <div class="cb-item" data-val="avokado"><div class="cb-dot">✓</div><span class="cb-text">Avokado</span></div>
+        <div class="cb-item" data-val="yumurta"><div class="cb-dot">✓</div><span class="cb-text">Yumurta</span></div>
       </div>
       <div style="margin-top:10px;display:flex;align-items:center;gap:8px;">
         <span style="font-size:12px;color:var(--muted);white-space:nowrap;">Diğer:</span>
@@ -797,14 +575,14 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
     <div class="ff">
       <label>Yemek Tercihlerin <span style="color:var(--dim);font-weight:400;text-transform:none;letter-spacing:0;">(sevdiklerini seç)</span></label>
       <div class="checkbox-grid" id="likeGrid">
-        <div class="cb-item" data-val="dana" onclick="toggleCbDiv(this)"><div class="cb-dot">✓</div><span class="cb-text">Dana Eti</span></div>
-        <div class="cb-item" data-val="tavuk" onclick="toggleCbDiv(this)"><div class="cb-dot">✓</div><span class="cb-text">Tavuk</span></div>
-        <div class="cb-item" data-val="kırmızı et" onclick="toggleCbDiv(this)"><div class="cb-dot">✓</div><span class="cb-text">Kırmızı Et</span></div>
-        <div class="cb-item" data-val="köfte" onclick="toggleCbDiv(this)"><div class="cb-dot">✓</div><span class="cb-text">Köfte</span></div>
-        <div class="cb-item" data-val="bakliyat" onclick="toggleCbDiv(this)"><div class="cb-dot">✓</div><span class="cb-text">Bakliyat</span></div>
-        <div class="cb-item" data-val="çorba" onclick="toggleCbDiv(this)"><div class="cb-dot">✓</div><span class="cb-text">Çorba</span></div>
-        <div class="cb-item" data-val="izgara" onclick="toggleCbDiv(this)"><div class="cb-dot">✓</div><span class="cb-text">Izgara</span></div>
-        <div class="cb-item" data-val="fırın" onclick="toggleCbDiv(this)"><div class="cb-dot">✓</div><span class="cb-text">Fırın Yemek</span></div>
+        <div class="cb-item" data-val="dana"><div class="cb-dot">✓</div><span class="cb-text">Dana Eti</span></div>
+        <div class="cb-item" data-val="tavuk"><div class="cb-dot">✓</div><span class="cb-text">Tavuk</span></div>
+        <div class="cb-item" data-val="kırmızı et"><div class="cb-dot">✓</div><span class="cb-text">Kırmızı Et</span></div>
+        <div class="cb-item" data-val="köfte"><div class="cb-dot">✓</div><span class="cb-text">Köfte</span></div>
+        <div class="cb-item" data-val="bakliyat"><div class="cb-dot">✓</div><span class="cb-text">Bakliyat</span></div>
+        <div class="cb-item" data-val="çorba"><div class="cb-dot">✓</div><span class="cb-text">Çorba</span></div>
+        <div class="cb-item" data-val="izgara"><div class="cb-dot">✓</div><span class="cb-text">Izgara</span></div>
+        <div class="cb-item" data-val="fırın"><div class="cb-dot">✓</div><span class="cb-text">Fırın Yemek</span></div>
       </div>
       <div style="margin-top:10px;display:flex;align-items:center;gap:8px;">
         <span style="font-size:12px;color:var(--muted);white-space:nowrap;">Diğer:</span>
@@ -815,9 +593,9 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
     <div class="ff">
       <label>IF Protokolü Tercih</label>
       <div class="rating-row" id="ifPref">
-        <button class="rating-btn sel" onclick="setIf('16:8', this)">16:8 (12:30–20:00)</button>
-        <button class="rating-btn" onclick="setIf('18:6', this)">18:6 (14:00–20:00)</button>
-        <button class="rating-btn" onclick="setIf('none', this)">IF yok</button>
+        <button class="rating-btn if-btn sel" data-val="16:8">16:8 (12:30–20:00)</button>
+        <button class="rating-btn if-btn" data-val="18:6">18:6 (14:00–20:00)</button>
+        <button class="rating-btn if-btn" data-val="none">IF yok</button>
       </div>
     </div>
 
@@ -851,7 +629,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
       </div>
       <div class="plan-actions">
         <button class="btn-excel" onclick="exportToExcel()">
-          <span>📊</span> Planı İndir (CSV)
+          <span>📊</span> Excel'e Aktar
         </button>
         <button class="btn-new" onclick="resetPlan()">
           ↺ Yeniden Oluştur
@@ -914,8 +692,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
         <li><div class="pf-ico">✓</div>Aylık alışveriş listesi</li>
         <li><div class="pf-ico">✓</div>WhatsApp destek (7 gün)</li>
       </ul>
-      <a href="https://wa.me/905423548668?text=Merhaba%21%20%F0%9F%91%8B%0A%0A%22Ba%C5%9Flang%C4%B1%C3%A7%20Paketi%22%20%28249%20%E2%82%BA%29%20sat%C4%B1n%20almak%20istiyorum.%0A%0AKeto%20plan%C4%B1%20olu%C5%9Fturdum%2C%20devam%20g%C3%BCnleri%20i%C3%A7in%20%C3%B6deme%20yapmak%20istiyorum." target="_blank" rel="noopener" class="btn-buy pa" style="text-decoration:none;display:flex;align-items:center;justify-content:center;gap:8px;">WhatsApp ile Satın Al →</a>
-      <div class="gift-tag">🎁 PDF + Excel Alışkanlık Takip Şablonu HEDİYE</div>
+      <button class="btn-buy pa" id="p1btn" onclick="openModal('Başlangıç Paketi','249 ₺/ay')">WhatsApp ile Satın Al →</button>
       <p class="psub">24 saat içinde PDF + Excel teslim</p>
     </div>
     <!-- POPULAR -->
@@ -933,8 +710,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
         <li><div class="pf-ico g">✓</div>Aylık menü güncellemesi</li>
         <li><div class="pf-ico g">✓</div>WhatsApp destek (30 gün)</li>
       </ul>
-      <a href="https://wa.me/905423548668?text=Merhaba%21%20%F0%9F%91%8B%0A%0A%22Tam%20Program%22%20%28799%20%E2%82%BA%29%20sat%C4%B1n%20almak%20istiyorum.%0A%0AKeto%20plan%C4%B1%20olu%C5%9Fturdum%2C%20devam%20g%C3%BCnleri%20i%C3%A7in%20%C3%B6deme%20yapmak%20istiyorum." target="_blank" rel="noopener" class="btn-buy pf" style="text-decoration:none;display:flex;align-items:center;justify-content:center;gap:8px;">WhatsApp ile Satın Al →</a>
-      <div class="gift-tag">🎁 PDF + Excel Alışkanlık Takip Şablonu HEDİYE</div>
+      <button class="btn-buy pf" id="p2btn" onclick="openModal('Tam Program','799 ₺/ay')">WhatsApp ile Satın Al →</button>
       <p class="psub">WhatsApp ile kişisel teslim</p>
     </div>
     <!-- PREMIUM -->
@@ -951,8 +727,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
         <li><div class="pf-ico">✓</div>Egzersiz entegrasyonu</li>
         <li><div class="pf-ico">✓</div>Kan tahlili rehberliği</li>
       </ul>
-      <a href="https://wa.me/905423548668?text=Merhaba%21%20%F0%9F%91%8B%0A%0A%22D%C3%B6n%C3%BC%C5%9F%C3%BCm%20Paketi%22%20%281.999%20%E2%82%BA%29%20sat%C4%B1n%20almak%20istiyorum.%0A%0AKeto%20plan%C4%B1%20olu%C5%9Fturdum%2C%20devam%20g%C3%BCnleri%20i%C3%A7in%20%C3%B6deme%20yapmak%20istiyorum." target="_blank" rel="noopener" class="btn-buy pa" style="text-decoration:none;display:flex;align-items:center;justify-content:center;gap:8px;">WhatsApp ile Satın Al →</a>
-      <div class="gift-tag">🎁 PDF + Excel Alışkanlık Takip Şablonu HEDİYE</div>
+      <button class="btn-buy pa" id="p3btn" onclick="openModal('Dönüşüm Paketi','1.999 ₺/ay')">WhatsApp ile Satın Al →</button>
       <p class="psub">En kapsamlı paket · Hedefe ulaş</p>
     </div>
   </div>
@@ -999,201 +774,6 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
   </div>
 </section>
 
-
-
-<!-- MİKRO ALIŞKANLIK TAKIP -->
-<section class="aliskanlik" id="aliskanlik">
-  <div class="sl">Ücretsiz Hediye</div>
-  <h2 class="st">Mikro <em>Alışkanlık</em> Takip Şablonu</h2>
-  <p style="font-size:14px;color:var(--muted);line-height:1.8;max-width:620px;margin-top:8px;">
-    "Ben yapamam, zorlanırım" diyorsanız — tam size göre. Her diyet planı satın alanına <strong style="color:var(--cream);">tamamen ücretsiz</strong> hediye edilen PDF + Excel takip şablonu. Yazdır, doldur, büyü.
-  </p>
-
-  <div class="habit-grid">
-    <!-- TEMPLATE PREVIEW -->
-    <div class="habit-app">
-      <div class="habit-app-header">
-        <div class="ha-icon">📋</div>
-        <div>
-          <div class="ha-title">30 Günlük Takip Şablonu</div>
-          <div class="ha-sub">PDF (yazdırılabilir) + Excel (düzenlenebilir)</div>
-        </div>
-        <div class="ha-badge">🎁 HEDİYE</div>
-      </div>
-      <div class="habit-app-body">
-
-        <!-- Template visual mockup -->
-        <div style="background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:14px;">
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
-            <span style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--cream);">KetoDiyetim · Ocak 2025</span>
-            <span style="font-size:11px;color:var(--muted);">Hafta 1</span>
-          </div>
-          <!-- Mini table -->
-          <div style="display:grid;grid-template-columns:110px repeat(7,1fr);gap:3px;font-size:9.5px;">
-            <div style="color:var(--dim);padding:4px 0;"></div>
-            <div style="color:var(--muted);text-align:center;font-weight:700;">Pzt</div>
-            <div style="color:var(--muted);text-align:center;font-weight:700;">Sal</div>
-            <div style="color:var(--muted);text-align:center;font-weight:700;">Çar</div>
-            <div style="color:var(--muted);text-align:center;font-weight:700;">Per</div>
-            <div style="color:var(--muted);text-align:center;font-weight:700;">Cum</div>
-            <div style="color:var(--muted);text-align:center;font-weight:700;">Cmt</div>
-            <div style="color:var(--muted);text-align:center;font-weight:700;">Paz</div>
-
-            <div style="color:var(--muted);padding:5px 0;">💧 Sabah su</div>
-            <div style="background:var(--green);border-radius:3px;height:20px;"></div>
-            <div style="background:var(--green);border-radius:3px;height:20px;"></div>
-            <div style="background:var(--green);border-radius:3px;height:20px;"></div>
-            <div style="background:var(--accent);border-radius:3px;height:20px;opacity:.5;"></div>
-            <div style="background:var(--green);border-radius:3px;height:20px;"></div>
-            <div style="background:var(--green);border-radius:3px;height:20px;"></div>
-            <div style="background:var(--border);border-radius:3px;height:20px;"></div>
-
-            <div style="color:var(--muted);padding:5px 0;">⏰ IF orucu</div>
-            <div style="background:var(--green);border-radius:3px;height:20px;"></div>
-            <div style="background:var(--green);border-radius:3px;height:20px;"></div>
-            <div style="background:var(--border);border-radius:3px;height:20px;opacity:.5;"></div>
-            <div style="background:var(--green);border-radius:3px;height:20px;"></div>
-            <div style="background:var(--green);border-radius:3px;height:20px;"></div>
-            <div style="background:var(--border);border-radius:3px;height:20px;"></div>
-            <div style="background:var(--border);border-radius:3px;height:20px;"></div>
-
-            <div style="color:var(--muted);padding:5px 0;">🥩 Keto öğün</div>
-            <div style="background:var(--gold);border-radius:3px;height:20px;opacity:.7;"></div>
-            <div style="background:var(--gold);border-radius:3px;height:20px;opacity:.7;"></div>
-            <div style="background:var(--gold);border-radius:3px;height:20px;opacity:.7;"></div>
-            <div style="background:var(--gold);border-radius:3px;height:20px;opacity:.7;"></div>
-            <div style="background:var(--border);border-radius:3px;height:20px;"></div>
-            <div style="background:var(--gold);border-radius:3px;height:20px;opacity:.7;"></div>
-            <div style="background:var(--border);border-radius:3px;height:20px;"></div>
-
-            <div style="color:var(--muted);padding:5px 0;">🚶 Yürüyüş</div>
-            <div style="background:var(--border);border-radius:3px;height:20px;"></div>
-            <div style="background:var(--green);border-radius:3px;height:20px;"></div>
-            <div style="background:var(--border);border-radius:3px;height:20px;"></div>
-            <div style="background:var(--green);border-radius:3px;height:20px;"></div>
-            <div style="background:var(--border);border-radius:3px;height:20px;"></div>
-            <div style="background:var(--green);border-radius:3px;height:20px;"></div>
-            <div style="background:var(--border);border-radius:3px;height:20px;"></div>
-
-            <div style="color:var(--muted);padding:5px 0;">🌙 Oruç başlat</div>
-            <div style="background:var(--accent);border-radius:3px;height:20px;opacity:.6;"></div>
-            <div style="background:var(--accent);border-radius:3px;height:20px;opacity:.6;"></div>
-            <div style="background:var(--accent);border-radius:3px;height:20px;opacity:.6;"></div>
-            <div style="background:var(--border);border-radius:3px;height:20px;"></div>
-            <div style="background:var(--accent);border-radius:3px;height:20px;opacity:.6;"></div>
-            <div style="background:var(--accent);border-radius:3px;height:20px;opacity:.6;"></div>
-            <div style="background:var(--border);border-radius:3px;height:20px;"></div>
-          </div>
-          <!-- Legend -->
-          <div style="display:flex;gap:12px;margin-top:10px;flex-wrap:wrap;">
-            <div style="display:flex;align-items:center;gap:4px;font-size:10px;color:var(--muted);">
-              <div style="width:10px;height:10px;background:var(--green);border-radius:2px;"></div> Tamamlandı
-            </div>
-            <div style="display:flex;align-items:center;gap:4px;font-size:10px;color:var(--muted);">
-              <div style="width:10px;height:10px;background:var(--gold);border-radius:2px;opacity:.7;"></div> Kısmi
-            </div>
-            <div style="display:flex;align-items:center;gap:4px;font-size:10px;color:var(--muted);">
-              <div style="width:10px;height:10px;background:var(--border);border-radius:2px;"></div> Yapılmadı
-            </div>
-          </div>
-        </div>
-
-        <!-- File format badges -->
-        <div style="display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap;">
-          <a href="#pricing" style="text-decoration:none;display:flex;align-items:center;gap:7px;background:rgba(78,140,95,0.1);border:1px solid rgba(78,140,95,0.25);border-radius:6px;padding:9px 14px;cursor:pointer;transition:background .2s,border-color .2s;" onmouseover="this.style.background='rgba(78,140,95,0.2)';this.style.borderColor='rgba(78,140,95,0.5)'" onmouseout="this.style.background='rgba(78,140,95,0.1)';this.style.borderColor='rgba(78,140,95,0.25)'">
-            <span style="font-size:1.2rem;">📊</span>
-            <div>
-              <div style="font-size:12px;font-weight:700;color:var(--cream);">Excel Şablonu</div>
-              <div style="font-size:10.5px;color:var(--muted);">Formüller dahil · Otomatik seri sayacı</div>
-            </div>
-          </a>
-          <a href="#pricing" style="text-decoration:none;display:flex;align-items:center;gap:7px;background:rgba(200,121,58,0.08);border:1px solid rgba(200,121,58,0.2);border-radius:6px;padding:9px 14px;cursor:pointer;transition:background .2s,border-color .2s;" onmouseover="this.style.background='rgba(200,121,58,0.18)';this.style.borderColor='rgba(200,121,58,0.5)'" onmouseout="this.style.background='rgba(200,121,58,0.08)';this.style.borderColor='rgba(200,121,58,0.2)'">
-            <span style="font-size:1.2rem;">📄</span>
-            <div>
-              <div style="font-size:12px;font-weight:700;color:var(--cream);">Yazdırılabilir PDF</div>
-              <div style="font-size:10.5px;color:var(--muted);">A4 · Doldurmaya hazır takip sayfası</div>
-            </div>
-          </a>
-        </div>
-
-        <div style="background:rgba(78,140,95,0.07);border:1px solid rgba(78,140,95,0.18);border-radius:8px;padding:13px 16px;font-size:12.5px;color:var(--muted);line-height:1.7;">
-          🎁 Plan satın aldıktan sonra <strong style="color:var(--cream);">WhatsApp üzerinden PDF + Excel dosyaları gönderilir.</strong> Yazdır veya telefonda doldur.
-        </div>
-      </div>
-    </div>
-
-    <!-- INFO SIDE -->
-    <div class="habit-info">
-      <div>
-        <div class="hi-badge">✓ Her plan alıcısına ücretsiz</div>
-        <h3 style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--cream);line-height:1.2;margin-bottom:10px;">
-          Büyük hedefler değil,<br><em style="color:var(--gold);">küçük adımlar</em> işe yarar
-        </h3>
-        <p style="font-size:13.5px;color:var(--muted);line-height:1.8;">
-          Araştırmalar gösteriyor ki çok büyük hedefler insanları çabuk yıldırıyor. Günde 2 dakika süren küçük alışkanlıklar birikince kalıcı dönüşüm oluyor. Bu şablon seni çizgide tutar.
-        </p>
-      </div>
-
-      <div class="micro-habits-list">
-        <div class="mh-item">
-          <div class="mh-emoji">💧</div>
-          <div class="mh-text"><strong>Sabah 1 büyük bardak su iç</strong>Metabolizmayı başlat — 30 saniye, sıfır çaba</div>
-          <span class="mh-diff easy">Kolay</span>
-        </div>
-        <div class="mh-item">
-          <div class="mh-emoji">⏰</div>
-          <div class="mh-text"><strong>12:30 alarmını kur</strong>IF penceresini açmak için — sadece 1 tık</div>
-          <span class="mh-diff easy">Kolay</span>
-        </div>
-        <div class="mh-item">
-          <div class="mh-emoji">🥩</div>
-          <div class="mh-text"><strong>Planına uygun öğün ye</strong>Kişisel menünden sap ma — her gün işaretle</div>
-          <span class="mh-diff easy">Kolay</span>
-        </div>
-        <div class="mh-item">
-          <div class="mh-emoji">🚶</div>
-          <div class="mh-text"><strong>10 dakika yürü</strong>Küçük adım — yağ oksidasyonu %30 artar</div>
-          <span class="mh-diff med">Orta</span>
-        </div>
-        <div class="mh-item">
-          <div class="mh-emoji">🌙</div>
-          <div class="mh-text"><strong>21:00'da mutfağı kapat</strong>IF orucunu başlat — sadece bir karar</div>
-          <span class="mh-diff med">Orta</span>
-        </div>
-      </div>
-
-      <div class="habit-features">
-        <div class="hf-item hf-clickable" onclick="openHabitModal('sablon')">
-          <div class="hf-icon">📅</div>
-          <div class="hf-title">30 Günlük Şablon <span class="hf-peek">Önizle →</span></div>
-          <div class="hf-desc">Her gün için alışkanlık satırları, işaret kutuları</div>
-        </div>
-        <div class="hf-item hf-clickable" onclick="openHabitModal('seri')">
-          <div class="hf-icon">🔥</div>
-          <div class="hf-title">Seri Sütunu <span class="hf-peek">Önizle →</span></div>
-          <div class="hf-desc">Kaç gün üst üste tamamladın — Excel otomatik sayar</div>
-        </div>
-        <div class="hf-item hf-clickable" onclick="openHabitModal('ozet')">
-          <div class="hf-icon">📊</div>
-          <div class="hf-title">Haftalık Özet <span class="hf-peek">Önizle →</span></div>
-          <div class="hf-desc">Her haftanın başarı yüzdesi otomatik hesaplanır</div>
-        </div>
-        <div class="hf-item hf-clickable" onclick="openHabitModal('ozellesir')">
-          <div class="hf-icon">✏️</div>
-          <div class="hf-title">Özelleştirilebilir <span class="hf-peek">Önizle →</span></div>
-          <div class="hf-desc">Alışkanlık isimlerini değiştir, kendi hedeflerini ekle</div>
-        </div>
-      </div>
-
-      <div style="background:rgba(78,140,95,0.08);border:1px solid rgba(78,140,95,0.2);border-radius:10px;padding:16px 20px;">
-        <p style="font-size:13px;color:var(--muted);line-height:1.7;">
-          🎁 <strong style="color:var(--cream);">7, 30 veya 90 günlük herhangi bir plan satın aldığında</strong> PDF + Excel şablon WhatsApp'tan gönderilir. Ücretsiz, hiçbir ek işlem gerekmez.
-        </p>
-        <a href="#pricing" class="btn-p" style="margin-top:12px;width:fit-content;font-size:13px;padding:10px 22px;display:inline-flex;">Plan Satın Al, Şablonu Al →</a>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- BLOG -->
 <section class="blog" id="blog">
@@ -1296,9 +876,9 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
       <div class="footer-logo">Keto<span>Diyetim</span></div>
       <p class="footer-tagline">Türkiye'nin kişiselleştirilmiş keto + IF platformu. Damağına uygun, hayatına entegre.</p>
     </div>
-    <div class="fc"><h4>Program</h4><ul><li><a href="#program">Planımı Oluştur</a></li><li><a href="#pricing">Paketler</a></li><li><a href="#aliskanlik">Mikro Alışkanlık</a></li><li><a href="#blog">Blog</a></li></ul></div>
+    <div class="fc"><h4>Program</h4><ul><li><a href="#program">Planımı Oluştur</a></li><li><a href="#pricing">Paketler</a></li><li><a href="#nasil">Nasıl Çalışır</a></li><li><a href="#blog">Blog</a></li></ul></div>
     <div class="fc"><h4>Destek</h4><ul><li><a href="#">S.S.S.</a></li><li><a href="#" onclick="openModal('Bilgi Almak İstiyorum','—')">WhatsApp</a></li></ul></div>
-    <div class="fc"><h4>İletişim</h4><ul><li><a href="#">+90 542 354 86 68</a></li><li><span id="footerEmail" style="color:var(--muted);cursor:default;"></span></li><li><a href="https://www.instagram.com/ketodiyetim.tr" target="_blank" rel="noopener">@ketodiyetim.tr</a></li></ul></div>
+    <div class="fc"><h4>İletişim</h4><ul><li><a href="#">+90 542 354 86 68</a></li><li><a href="#">info [at] ketodiyetim.com</a></li><li><a href="#">Instagram</a></li></ul></div>
   </div>
   <div class="footer-bottom">
     <span>© 2024 <strong>KetoDiyetim</strong>. Tüm hakları saklıdır.</span>
@@ -1306,53 +886,6 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
   </div>
 </footer>
 
-
-<!-- HABIT PREVIEW MODAL -->
-<div class="hmodal-overlay" id="habitModalOverlay" onclick="if(event.target===this)closeHabitModal()">
-  <div class="hmodal">
-    <div class="hmodal-head">
-      <h3 id="hmodalTitle">📅 30 Günlük Şablon</h3>
-      <button class="hmodal-close" onclick="closeHabitModal()">✕</button>
-    </div>
-    <div class="hmodal-body" id="hmodalBody"></div>
-  </div>
-</div>
-</div>
-
-
-<!-- Instagram floating button -->
-<a href="https://www.instagram.com/ketodiyetim.tr" target="_blank" rel="noopener"
-  style="position:fixed;bottom:90px;right:24px;z-index:490;
-    width:48px;height:48px;border-radius:50%;
-    background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
-    display:flex;align-items:center;justify-content:center;
-    box-shadow:0 4px 16px rgba(0,0,0,0.4);
-    transition:transform .2s,box-shadow .2s;text-decoration:none;"
-  onmouseover="this.style.transform='scale(1.1)';this.style.boxShadow='0 6px 22px rgba(0,0,0,0.5)'"
-  onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 16px rgba(0,0,0,0.4)'"
-  title="@ketodiyetim.tr">
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <rect x="2" y="2" width="20" height="20" rx="5"/>
-    <circle cx="12" cy="12" r="5"/>
-    <circle cx="17.5" cy="6.5" r="1.5" fill="white" stroke="none"/>
-  </svg>
-</a>
-
-<!-- Scroll to top button -->
-<button id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})"
-  style="position:fixed;bottom:24px;right:24px;z-index:490;
-    width:48px;height:48px;border-radius:50%;border:none;cursor:pointer;
-    background:var(--accent);color:#fff;
-    display:none;align-items:center;justify-content:center;
-    box-shadow:0 4px 16px rgba(0,0,0,0.4);
-    transition:transform .2s,opacity .3s;"
-  onmouseover="this.style.transform='scale(1.1)'"
-  onmouseout="this.style.transform='scale(1)'"
-  title="Yukarı çık">
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-    <polyline points="18 15 12 9 6 15"/>
-  </svg>
-</button>
 <!-- PAYMENT MODAL -->
 <div class="modal-overlay" id="modal" onclick="closeModalOut(event)">
   <div class="modal">
@@ -1374,7 +907,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
           <div class="wa-step"><div class="wa-step-num">4</div><span>24 saat içinde planın hazır</span></div>
         </div>
       </div>
-      <button class="btn-wa" onclick="openWhatsApp()" type="button">
+      <button class="btn-wa" onclick="openWhatsApp()">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.83L.057 23.09a.75.75 0 0 0 .925.925l5.26-1.466A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.726 9.726 0 0 1-4.952-1.35l-.356-.212-3.685 1.028 1.028-3.685-.212-.356A9.726 9.726 0 0 1 2.25 12C2.25 6.61 6.61 2.25 12 2.25S21.75 6.61 21.75 12 17.39 21.75 12 21.75z"/></svg>
         WhatsApp'tan Sipariş Ver
       </button>
@@ -1385,10 +918,635 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
 
 <div class="toast" id="toast">✓ Excel dosyası indiriliyor...</div>
 
+<script>
+/* ============================================================
+   STATE
+============================================================ */
+let userProfile = {};
+let generatedPlan = [];
+let selectedGender = 'male';
+let selectedIf = '16:8';
+let currentPkg = '';
+let currentPrice = '';
 
+/* ============================================================
+   FORM HELPERS
+============================================================ */
+function toggleCbDiv(el) {
+  el.classList.toggle('selected');
+}
+function setGender(g) {
+  selectedGender = g;
+  document.getElementById('g_m').classList.toggle('sel', g==='male');
+  document.getElementById('g_f').classList.toggle('sel', g==='female');
+}
+function setIf(val, btn) {
+  selectedIf = val;
+  document.querySelectorAll('#ifPref .rating-btn').forEach(b => b.classList.remove('sel'));
+  btn.classList.add('sel');
+}
+
+function getDisliked() {
+  const selected = [...document.querySelectorAll('#dislikeGrid .cb-item.selected')].map(el => el.dataset.val);
+  const other = (document.getElementById('dislike_other').value||'').split(',').map(s=>s.trim()).filter(Boolean);
+  return [...selected, ...other];
+}
+function getLiked() {
+  const selected = [...document.querySelectorAll('#likeGrid .cb-item.selected')].map(el => el.dataset.val);
+  const other = (document.getElementById('like_other').value||'').split(',').map(s=>s.trim()).filter(Boolean);
+  return [...selected, ...other];
+}
+
+/* ============================================================
+   PLAN ENGINE
+============================================================ */
+
+// Meal database — filtered by dislikes
+const mealDB = {
+  breakfast: [
+    { name:'Tereyağlı Kavurma Yumurta & Pastırma', emoji:'🍳', items:['3 yumurta tereyağında kavurma','3 dilim pastırma (şekersiz)','Salatalık, yeşil biber','Siyah kahve'], kcal:580, fat:42, prot:38, carb:4, avoids:[] },
+    { name:'Omlet & Sucuk Tabağı', emoji:'🥚', items:['3 yumurta omlet (tereyağında)','3 dilim sucuk (şekersiz)','Taze maydanoz, tuz','Salatalık dilimleri'], kcal:560, fat:40, prot:36, carb:3, avoids:[] },
+    { name:'Haşlanmış Yumurta & Kavurma', emoji:'🥚', items:['3 haşlanmış yumurta','70g dana kavurma','Salatalık, yeşil biber','Siyah kahve'], kcal:540, fat:38, prot:40, carb:3, avoids:[] },
+    { name:'Sahanda Yumurta & Sosis', emoji:'🍳', items:['3 yumurta sahanda','2 şekersiz sosis','Taze nane, salatalık','Şekersiz çay'], kcal:500, fat:36, prot:34, carb:4, avoids:[] },
+    { name:'Yumurta Menemen', emoji:'🍳', items:['3 yumurta menemen','Biber, az domates','Zeytinyağı','Şekersiz siyah çay'], kcal:400, fat:28, prot:26, carb:8, avoids:[] },
+    { name:'Ton Balığı & Yumurta Tabağı', emoji:'🐟', items:['1 kutu ton balığı (suda)','2 haşlanmış yumurta','Roka, salatalık','Limon, zeytinyağı'], kcal:480, fat:30, prot:48, carb:3, avoids:['balık'] },
+    { name:'Sade Omlet & Kavurma', emoji:'🥚', items:['3 yumurta sade omlet','60g dana kavurma','Taze yeşillik','Şekersiz bitki çayı'], kcal:490, fat:34, prot:38, carb:3, avoids:[] },
+  ],
+  dinner: [
+    { name:'Dana Kıymalı Ispanak Sote', emoji:'🥩', items:['180g dana kıyma sote','250g ıspanak zeytinyağında','Sarımsak, pul biber, kimyon','Limon + kemik suyu'], kcal:1030, fat:72, prot:74, carb:12, avoids:['ıspanak'] },
+    { name:'Izgara Dana Biftek & Mantar', emoji:'🥩', items:['230g dana biftek (antrikot)','Tereyağı + sarımsak sosu','250g mantar ızgara','Roka salatası, limon'], kcal:1090, fat:78, prot:80, carb:8, avoids:['mantar'] },
+    { name:'Somon Izgara & Brokoli', emoji:'🐟', items:['250g somon fileto ızgara','Limon, dereotu, tereyağı','300g zeytinyağlı brokoli','Roka salatası'], kcal:1070, fat:74, prot:82, carb:10, avoids:['balık','brokoli'] },
+    { name:'Izgara Dana Köfte & Salata', emoji:'🥩', items:['230g dana köfte (ekmeksiz)','Kimyon, pul biber, maydanoz','Izgara biber, domates','Geniş yeşil salata'], kcal:1060, fat:70, prot:76, carb:12, avoids:[] },
+    { name:'Fırın Tavuk But & Sebze', emoji:'🍗', items:['250g fırın tavuk but (derili)','Patlıcan, kabak fırında','Zeytinyağı, kekik, sarımsak','Yeşil salata tabağı'], kcal:980, fat:68, prot:78, carb:10, avoids:[] },
+    { name:'Tavuk Sote & Brokoli', emoji:'🍗', items:['220g tavuk göğsü küp','300g brokoli zeytinyağlı','Sarımsak, limon sosu','Yeşil yapraklı salata'], kcal:920, fat:60, prot:80, carb:10, avoids:['brokoli'] },
+    { name:'Kıymalı Karnabahar Güveç', emoji:'🥘', items:['150g dana kıyma','300g karnabahar','Soğan, sarımsak, az domates','Zeytinyağı, baharat'], kcal:900, fat:62, prot:64, carb:14, avoids:[] },
+    { name:'Kuzu Kaburga Fırın & Sebze', emoji:'🥩', items:['250g kuzu kaburga fırında','Kekik, biberiye, sarımsak','Zeytinyağlı fırın sebze','Limonlu roka salatası'], kcal:1050, fat:78, prot:72, carb:10, avoids:['kuzu eti'] },
+    { name:'Tavuklu Mantar Sote', emoji:'🍄', items:['200g tavuk göğsü','250g mantar sote','Zeytinyağı, sarımsak, kekik','Zeytinyağlı ıspanak salatası'], kcal:880, fat:58, prot:74, carb:10, avoids:['mantar','ıspanak'] },
+    { name:'Kemik Suylu Tavuk Çorbası', emoji:'🍜', items:['250g kemikli tavuk','Pırasa, kereviz, az havuç','Bol kemik suyu bazlı','Taze maydanoz, limon'], kcal:860, fat:54, prot:72, carb:12, avoids:[] },
+    { name:'Mercimek Çorbası + Tavuk', emoji:'🍵', items:['1 kase kırmızı mercimek çorbası','Zeytinyağı, limon, kimyon','200g ızgara tavuk yanında','Yeşil salata'], kcal:940, fat:52, prot:76, carb:38, avoids:[] },
+  ]
+};
+
+function filterMeals(meals, dislikes) {
+  return meals.filter(m => !m.avoids.some(a => dislikes.includes(a)));
+}
+
+function pickMeal(meals, used) {
+  const available = meals.filter(m => !used.has(m.name));
+  if (available.length === 0) return meals[Math.floor(Math.random()*meals.length)];
+  return available[Math.floor(Math.random()*available.length)];
+}
+
+function calcCalories(weight, height, age, gender, activity) {
+  // Mifflin-St Jeor
+  let bmr = gender === 'male'
+    ? 10*weight + 6.25*height - 5*age + 5
+    : 10*weight + 6.25*height - 5*age - 161;
+  const mult = {sedentary:1.2, light:1.375, moderate:1.55, active:1.725};
+  const tdee = bmr * (mult[activity] || 1.2);
+  return Math.round(tdee * 0.75); // keto deficit ~%25
+}
+
+const dayNames = ['Pazartesi','Salı','Çarşamba','Perşembe','Cuma','Cumartesi','Pazar'];
+
+function buildPlan(profile) {
+  const dislikes = profile.dislikes;
+  const breakfasts = filterMeals(mealDB.breakfast, dislikes);
+  const dinners = filterMeals(mealDB.dinner, dislikes);
+  const usedB = new Set(), usedD = new Set();
+  const targetCal = calcCalories(profile.weight, profile.height, profile.age, profile.gender, profile.activity);
+  const plan = [];
+
+  for (let i = 0; i < 3; i++) {
+    const b = pickMeal(breakfasts, usedB);
+    const d = pickMeal(dinners, usedD);
+    usedB.add(b.name); usedD.add(d.name);
+    const totalCal = b.kcal + d.kcal;
+    const totalFat = b.fat + d.fat;
+    const totalProt = b.prot + d.prot;
+    const totalCarb = b.carb + d.carb;
+    plan.push({
+      day: i+1,
+      dayName: dayNames[i],
+      breakfast: b,
+      dinner: d,
+      totalCal, totalFat, totalProt, totalCarb
+    });
+  }
+  return plan;
+}
+
+/* ============================================================
+   IF TIMES
+============================================================ */
+function getIfTimes(ifPref) {
+  const times = {
+    '16:8': { start:'12:30', end:'19:30', fast:'20:00–12:30' },
+    '18:6': { start:'14:00', end:'19:30', fast:'20:00–14:00' },
+    'none': { start:'08:00', end:'19:30', fast:'—' },
+  };
+  return times[ifPref] || times['16:8'];
+}
+
+/* ============================================================
+   GENERATE PLAN
+============================================================ */
+async function generatePlan() {
+  const name = document.getElementById('f_name').value.trim() || 'Kullanıcı';
+  const age  = parseInt(document.getElementById('f_age').value) || 40;
+  const weight = parseInt(document.getElementById('f_weight').value) || 80;
+  const height = parseInt(document.getElementById('f_height').value) || 170;
+  const goal  = parseInt(document.getElementById('f_goal').value) || 70;
+  const activity = document.getElementById('f_activity').value;
+  const dislikes = getDisliked();
+  const likes = getLiked();
+  const notes = document.getElementById('f_notes').value;
+
+  userProfile = { name, age, weight, height, goal, gender: selectedGender, activity, dislikes, likes, notes, ifPref: selectedIf };
+
+  // Show loading
+  showStep(2);
+
+  const loadMsgs = ['Profilin analiz ediliyor...','Makro değerlerin hesaplanıyor...','Menü seçenekleri filtreleniyor...','Kişisel planın oluşturuluyor...','Son dokunuşlar yapılıyor...'];
+  let mi = 0;
+  const lEl = document.getElementById('loadingMsg');
+  const interval = setInterval(() => {
+    if(mi < loadMsgs.length-1) { lEl.textContent = loadMsgs[++mi]; }
+  }, 450);
+
+  await new Promise(r => setTimeout(r, 2600));
+  clearInterval(interval);
+
+  generatedPlan = buildPlan(userProfile);
+  renderPlan();
+  showStep(3);
+}
+
+/* ============================================================
+   RENDER PLAN
+============================================================ */
+function renderPlan() {
+  const ifTimes = getIfTimes(userProfile.ifPref);
+  const actMap = {sedentary:'Hareketsiz',light:'Az Hareketli',moderate:'Orta Aktif',active:'Çok Aktif'};
+
+  document.getElementById('userBadge').textContent = `✓ ${userProfile.name} — Planın Hazır`;
+  document.getElementById('planTitle').textContent = `${userProfile.name} için 3 Günlük Keto Planı`;
+  document.getElementById('planDesc').textContent =
+    `IF ${userProfile.ifPref === 'none' ? 'yok' : userProfile.ifPref} · Günde 2 öğün · ${userProfile.weight} kg → ${userProfile.goal} kg hedef`;
+
+  // Profile summary
+  const ps = document.getElementById('profileSummary');
+  const disStr = userProfile.dislikes.length ? userProfile.dislikes.join(', ') : 'Yok';
+  ps.innerHTML = `
+    <div class="ps-item"><div class="ps-lbl">Yaş</div><div class="ps-val">${userProfile.age}</div></div>
+    <div class="ps-item"><div class="ps-lbl">Kilo</div><div class="ps-val">${userProfile.weight} kg</div></div>
+    <div class="ps-item"><div class="ps-lbl">Hedef</div><div class="ps-val">${userProfile.goal} kg</div></div>
+    <div class="ps-item"><div class="ps-lbl">Hareket</div><div class="ps-val">${actMap[userProfile.activity]}</div></div>
+    <div class="ps-item"><div class="ps-lbl">IF Protokol</div><div class="ps-val">${userProfile.ifPref === 'none' ? 'Yok' : userProfile.ifPref}</div></div>
+    <div class="ps-item"><div class="ps-lbl">Yemez</div><div class="ps-val" style="color:var(--red);font-size:12px;">${disStr}</div></div>
+  `;
+
+  // Days
+  const container = document.getElementById('generatedDays');
+  container.innerHTML = '';
+
+  generatedPlan.forEach((day, i) => {
+    const b1 = ifTimes.start;
+    const b2 = ifTimes.end;
+    const card = document.createElement('div');
+    card.className = 'day-card' + (i===0 ? ' open' : '');
+    card.innerHTML = `
+      <div class="day-head" onclick="this.parentElement.classList.toggle('open')">
+        <div class="day-n"><div class="gl">Gün</div><div class="num">${day.day}</div></div>
+        <div class="day-meta">
+          <h3>${day.dayName}</h3>
+          <div class="macros">
+            <span class="mt f">Yağ ${day.totalFat}g</span>
+            <span class="mt p">Protein ${day.totalProt}g</span>
+            <span class="mt c">Karb ${day.totalCarb}g</span>
+            <span class="mt k">~${day.totalCal} kal</span>
+          </div>
+        </div>
+        <div class="day-chev">▼</div>
+      </div>
+      <div class="day-meals">
+        <div class="meal-col">
+          <div class="mbadge ilk">🟢 1. Öğün</div>
+          <div class="mtime">${b1}</div>
+          <div class="mname">${day.breakfast.name}</div>
+          <div class="mthumb">${day.breakfast.emoji}</div>
+          <ul class="mlist">${day.breakfast.items.map(it=>`<li>${it}</li>`).join('')}</ul>
+          <span class="mkcal">≈ ${day.breakfast.kcal} kal</span>
+        </div>
+        <div class="meal-col">
+          <div class="mbadge son">🟣 Son Öğün</div>
+          <div class="mtime">${b2}</div>
+          <div class="mname">${day.dinner.name}</div>
+          <div class="mthumb">${day.dinner.emoji}</div>
+          <ul class="mlist">${day.dinner.items.map(it=>`<li>${it}</li>`).join('')}</ul>
+          <span class="mkcal">≈ ${day.dinner.kcal} kal</span>
+        </div>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+}
+
+/* ============================================================
+   EXCEL EXPORT
+============================================================ */
+function exportToExcel() {
+  if (!generatedPlan.length) return;
+  var csv = '\uFEFF';
+  csv += 'KETODIYETiM - KiSiSEL PLAN\n\n';
+  csv += 'Ad,' + (userProfile.name||'') + '\n';
+  csv += 'Yas,' + (userProfile.age||'') + '\n';
+  csv += 'Kilo,' + (userProfile.weight||'') + ' kg\n';
+  csv += 'Boy,' + (userProfile.height||'') + ' cm\n';
+  csv += 'Hedef,' + (userProfile.goalWeight||'') + ' kg\n\n';
+  csv += 'Gun,Ogun,Saat,Yiyecek,Kalori\n';
+  generatedPlan.forEach(function(day) {
+    day.meals.forEach(function(meal) {
+      csv += '"'+day.label+'","'+meal.label+'","'+(meal.time||'')+'","'+meal.name+'",'+(meal.cal||'')+'\n';
+    });
+  });
+  var blob = new Blob([csv], {type:'text/csv;charset=utf-8;'});
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url; a.download = 'KetoDiyetim_'+(userProfile.name||'Plan')+'.csv';
+  document.body.appendChild(a); a.click();
+  document.body.removeChild(a); URL.revokeObjectURL(url);
+  showToast('Plan indirildi! Excel ile acabilirsin.');
+}
+
+/* ============================================================
+   STEP NAVIGATION
+============================================================ */
+function showStep(n) {
+  document.getElementById('step1').classList.toggle('active', n===1);
+  document.getElementById('step1').style.display = n===1 ? 'block' : 'none';
+  document.getElementById('step2').classList.toggle('active', n===2);
+  document.getElementById('step3').classList.toggle('active', n===3);
+  document.getElementById('step3').style.display = n===3 ? 'block' : 'none';
+
+  [1,2,3].forEach(i => {
+    const sc = document.getElementById(`sc${i}`);
+    const sl = document.getElementById(`sl${i}`);
+    sc.className = 'step-circle' + (i<n?' done':i===n?' active':'');
+    sl.className = 'step-label' + (i===n?' active':'');
+    if(i<n) sc.textContent = '✓';
+    else sc.textContent = i;
+  });
+
+  if(n===3) {
+    setTimeout(() => document.getElementById('step3').scrollIntoView({behavior:'smooth',block:'start'}), 100);
+  }
+}
+
+function resetPlan() {
+  generatedPlan = [];
+  document.getElementById('step1').style.display = 'block';
+  showStep(1);
+  window.scrollTo({top: document.getElementById('program').offsetTop - 80, behavior:'smooth'});
+}
+
+/* ============================================================
+   MODAL
+============================================================ */
+function openModal(pkg, price) {
+  currentPkg = pkg; currentPrice = price;
+  document.getElementById('mpkg-name').textContent = pkg;
+  document.getElementById('mpkg-price').textContent = price;
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function closeModalOut(e) {
+  if(e.target===document.getElementById('modal')) closeModal();
+}
+function openWhatsApp() {
+  const num = '905423548668'; // ← BURAYA KENDİ NUMARANI YAZ
+  const userName = userProfile.name ? `\nMüşteri: ${userProfile.name}` : '';
+  const msg = encodeURIComponent(
+    `Merhaba! 👋\n\n"${currentPkg}" (${currentPrice}) satın almak istiyorum.${userName}\n\nPlan oluşturdum, devam günleri için ödeme yapmak istiyorum.`
+  );
+  window.open(`https://wa.me/${num}?text=${msg}`, '_blank');
+}
+
+/* ============================================================
+   FAQ
+============================================================ */
+function toggleFaq(el) { el.parentElement.classList.toggle('open'); }
+
+/* ============================================================
+   TOAST
+============================================================ */
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+/* ============================================================
+   NAV SCROLL
+============================================================ */
+window.addEventListener('scroll', () => {
+  document.querySelector('nav').style.background =
+    window.scrollY > 50 ? 'rgba(12,9,5,0.97)' : 'rgba(12,9,5,0.93)';
+});
+
+// Tek seferlik fiyatlandırma aktif
+
+// Init step1
+document.getElementById('step2').style.display = 'none';
+document.getElementById('step3').style.display = 'none';
+document.getElementById('step1').style.display = 'block';
+
+/* ============================================================
+   BLOG
+============================================================ */
+const blogPosts = [
+  {
+    tag: 'Temel Bilgi',
+    title: 'Ketojenik Diyet Nedir? Nasıl Çalışır?',
+    meta: '8 dakika okuma · Başlangıç Rehberi',
+    content: `
+      <p>Ketojenik (keto) diyet, günlük karbonhidrat alımını dramatik biçimde kısıtlayarak vücudu <strong>ketozis</strong> adı verilen metabolik bir duruma sokan beslenme protokolüdür. Normalde vücudumuz enerji için önce karbonhidratları — yani şekeri — kullanır. Karbonhidrat yokken karaciğer, yağ asitlerini <strong>keton cisimciklerine</strong> dönüştürmeye başlar ve beyin ile kaslar bu ketonlarla çalışır.</p>
+      <div class="highlight">"Keto, şeker yakıt deposunu boşaltıp yağ deposunu açan bir metabolik anahtardır."</div>
+      <h4>Makro Dağılımı Nasıl Olmalı?</h4>
+      <ul>
+        <li><strong>Yağ %65–75:</strong> Zeytinyağı, tereyağı, avokado, hindistancevizi yağı, fındık</li>
+        <li><strong>Protein %20–30:</strong> Et, tavuk, balık, yumurta — her öğünde mutlaka olmalı</li>
+        <li><strong>Net Karbonhidrat &lt;20g/gün:</strong> Sadece yapraklı sebzelerden gelmeli</li>
+      </ul>
+      <h4>Ketozise Girmek Ne Kadar Sürer?</h4>
+      <p>Karbonhidratı kestiğinizde karaciğerdeki glikojen depoları 24–48 saat içinde tükenir. Ardından vücut yağ yakmaya geçer. Tam adaptasyon ise <strong>2–4 hafta</strong> sürer. Bu süreçte enerji dalgalanmaları yaşanabilir — buna "keto grip" denir.</p>
+      <h4>Keto Diyetin Bilimsel Faydaları</h4>
+      <ul>
+        <li>İnsülin direncini azaltır, kan şekerini dengeler</li>
+        <li>Açlık hormonu grelini baskılar — sürekli tok hissedersiniz</li>
+        <li>Trigliserit düzeylerini düşürür, HDL kolesterolü yükseltir</li>
+        <li>Mental netlik ve odaklanma artar (beyin ketonları sever)</li>
+        <li>İnflamasyon belirteçleri azalır</li>
+      </ul>
+      <div class="bm-divider"></div>
+      <div class="bm-cta-box">
+        <p>Keto hakkında daha fazla bilgi almak ve sana özel plan oluşturmak ister misin?</p>
+        <button class="btn-p" onclick="closeBlog(); document.getElementById('program').scrollIntoView({behavior:'smooth'})">Ücretsiz Planımı Oluştur →</button>
+      </div>
+    `
+  },
+  {
+    tag: 'Protokol',
+    title: 'Aralıklı Oruç (IF) Nedir? 16:8 Rehberi',
+    meta: '6 dakika okuma · Protokol Rehberi',
+    content: `
+      <p>Intermittent Fasting (Aralıklı Oruç / IF), ne yediğinizi değil <strong>ne zaman yediğinizi</strong> düzenleyen bir beslenme yaklaşımıdır. Yeme penceresi ve oruç penceresi olarak ikiye bölünen gün, vücudun sindirim dışında kalan zamanı <strong>onarım, temizlik ve yağ yakımı</strong> için kullanmasını sağlar.</p>
+      <div class="highlight">"IF, vücudun kendi bakım moduna geçmesini sağlayan bir zaman anahtarıdır."</div>
+      <h4>En Popüler IF Protokolleri</h4>
+      <ul>
+        <li><strong>16:8 (Önerilen):</strong> 16 saat oruç, 8 saat yeme penceresi. Örnek: 12:30–20:00 arası yersin.</li>
+        <li><strong>18:6:</strong> 18 saat oruç, 6 saat yeme. Daha hızlı sonuç, uyum biraz daha zor.</li>
+        <li><strong>5:2:</strong> Haftanın 5 günü normal, 2 günü çok düşük kalori (500 kal). Alternatif yöntem.</li>
+      </ul>
+      <h4>IF + Keto Kombinasyonu Neden Güçlü?</h4>
+      <p>Keto zaten vücudu yağ yakmaya hazırlarken IF, oruç boyunca ketozisi derinleştirir. Sabah siyah kahve içip 12:30'a kadar beklediğinizde vücut gece boyunca biriktirilen ketonu da yakar. Sonuç: çift yağ yakımı.</p>
+      <h4>Oruç Saatlerinde Ne Yapabilirsiniz?</h4>
+      <ul>
+        <li>Su — sınırsız, elektrolit ekleyebilirsiniz</li>
+        <li>Siyah kahve — oruca devam ettirir, açlığı 3-4 saat bastırır</li>
+        <li>Şekersiz bitki çayı — tamam</li>
+        <li>Sütlü kahve, meyve suyu, sakız — orucı kırar ❌</li>
+      </ul>
+      <h4>IF'e Başlarken İlk Hafta</h4>
+      <p>İlk 2-3 gün baş ağrısı ve açlık hissi normal. 4-5. günden itibaren vücut adapte olur ve 16 saat çok kolay geçmeye başlar. <strong>Elektrolit takviyesi</strong> (sodyum, magnezyum, potasyum) bu dönemde çok önemlidir.</p>
+      <div class="bm-divider"></div>
+      <div class="bm-cta-box">
+        <p>IF protokolünü dahil eden kişisel planını saniyeler içinde oluştur.</p>
+        <button class="btn-p" onclick="closeBlog(); document.getElementById('program').scrollIntoView({behavior:'smooth'})">Planımı Oluştur →</button>
+      </div>
+    `
+  },
+  {
+    tag: 'Dikkat Et',
+    title: 'Keto Diyetinde Dikkat Edilmesi Gerekenler',
+    meta: '7 dakika okuma · Güvenli Keto',
+    content: `
+      <p>Keto diyet doğru uygulandığında son derece güvenli ve etkilidir. Ancak adaptasyon döneminde ve uzun vadede dikkat edilmesi gereken bazı kritik noktalar var. Bunları bilmeden başlamak, gereksiz zorluklar yaşatır.</p>
+      <h4>1. Keto Grip — İlk 2 Haftanın Sınavı</h4>
+      <p>Karbonhidratı kesince vücut su ve elektrolit kaybeder. Baş ağrısı, halsizlik, sinirlilik ve konsantrasyon güçlüğü yaşanabilir. Bu geçicidir ve <strong>elektrolit takviyesi</strong> ile hafifletilebilir:</p>
+      <ul>
+        <li>Sodyum: suya az tuz ekleyin, kemik suyu için</li>
+        <li>Magnezyum: magnezyum glisinат veya malat takviyesi</li>
+        <li>Potasyum: avokado ve yapraklı sebzelerden alın</li>
+      </ul>
+      <h4>2. Kolesterol Takibi</h4>
+      <p>Keto, LDL kolesterolü bazı kişilerde yükseltebilir. Ancak <strong>HDL yükselir, trigliserit düşer</strong> — bu genel kardiyovasküler risk açısından olumludur. Yine de her 3 ayda bir kan tahlili yaptırın.</p>
+      <h4>3. Böbrek ve Karaciğer</h4>
+      <p>Yüksek protein alımı böbrekleri zorlayabilir. Günlük protein miktarını <strong>vücut ağırlığınızın kg başına 1.2–1.6g</strong> ile sınırlandırın. Karaciğer hastalığı olanlara keto önerilmez.</p>
+      <h4>4. Keto'da Yapılan En Yaygın Hatalar</h4>
+      <ul>
+        <li>Yeterli yağ yememek — protein ağırlıklı beslenme ketozu engeller</li>
+        <li>Gizli karbonhidratları atlamak (sos, ketçap, hazır gıda etiketlerini okuyun)</li>
+        <li>Su içmeyi ihmal etmek — günde en az 2.5–3 litre</li>
+        <li>Ara öğün yapmak — IF ile birleşince 2 öğün yeterlidir</li>
+        <li>Stres ve uyku ihmalı — kortizol kan şekerini yükseltir</li>
+      </ul>
+      <div class="highlight">50 yaş üstü, ilaç kullanan veya kronik hastalığı olanlara başlamadan önce mutlaka doktor kontrolü önerilir.</div>
+      <div class="bm-divider"></div>
+      <div class="bm-cta-box">
+        <p>Uzman gözetiminde, sana özel güvenli keto planı için bize ulaş.</p>
+        <button class="btn-p" onclick="closeBlog(); document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">Planımı Satın Al →</button>
+      </div>
+    `
+  },
+  {
+    tag: 'Beslenme',
+    title: 'Keto Diyetinde Neler Yenir, Neler Yenmez?',
+    meta: '5 dakika okuma · Yiyecek Rehberi',
+    content: `
+      <p>Keto diyetinin en çok sorulan sorusu: <strong>"Ben ne yiyeceğim?"</strong> Cevap aslında oldukça geniş — sadece karbonhidrat kaynakları çıkarılıyor, geri kalan neredeyse her şey izin veriliyor.</p>
+      <h4>✅ Serbestçe Yenebilecekler</h4>
+      <ul>
+        <li><strong>Et:</strong> Dana, kuzu, tavuk (derili), hindi, pastırma, sucuk (şekersiz)</li>
+        <li><strong>Balık & Deniz Ürünleri:</strong> Somon, uskumru, ton balığı, levrek, karides</li>
+        <li><strong>Yumurta:</strong> Her türlü pişirme yöntemiyle serbesttir</li>
+        <li><strong>Yapraklı Sebzeler:</strong> Roka, ıspanak, marul, maydanoz, dereotu</li>
+        <li><strong>Keten ve Kabak:</strong> Kabak, brokoli, karnabahar, patlıcan, biber (az)</li>
+        <li><strong>Yağlar:</strong> Zeytinyağı, tereyağı, hindistancevizi yağı, avokado yağı</li>
+        <li><strong>Kuruyemiş:</strong> Badem, ceviz, fındık (az miktarda)</li>
+      </ul>
+      <h4>❌ Kesinlikle Yasak Olanlar</h4>
+      <ul>
+        <li>Ekmek, pirinç, makarna, bulgur, her türlü tahıl</li>
+        <li>Şeker, bal, pekmez, tüm tatlılar</li>
+        <li>Meyve suyu, gazlı içecek, alkol (bira özellikle)</li>
+        <li>Patates, mısır, bezelye, havuç (yüksek nişasta)</li>
+        <li>Hazır soslar, ketçap, paketli atıştırmalıklar</li>
+      </ul>
+      <h4>⚠️ Dikkatli Tüketilecekler</h4>
+      <ul>
+        <li>Bakliyat: Haftada 1 kez, az miktarda (mercimek, nohut)</li>
+        <li>Domates: Günde yarım tane sınırında</li>
+        <li>Soğan, sarımsak: Az miktarda karbonhidrat içerir, ölçülü kullanın</li>
+        <li>Süt ürünleri: Kaymak ve tereyağı serbest; peynir orta düzeyde</li>
+      </ul>
+      <div class="highlight">Markette alışveriş yaparken etiket okuma alışkanlığı edinin. "Şekersiz" yazan ürünler bile gizli karbonhidrat içerebilir.</div>
+      <div class="bm-divider"></div>
+      <div class="bm-cta-box">
+        <p>Sevdiğin yiyecekleri baz alan kişisel menünü oluştur.</p>
+        <button class="btn-p" onclick="closeBlog(); document.getElementById('program').scrollIntoView({behavior:'smooth'})">Ücretsiz Plan Oluştur →</button>
+      </div>
+    `
+  },
+  {
+    tag: 'Spor & Aktivite',
+    title: 'Keto Yaparken Egzersiz: Yapmalı mıyım?',
+    meta: '6 dakika okuma · Performans Rehberi',
+    content: `
+      <p>Keto adaptasyonu sırasında spor performansı geçici olarak düşebilir. Bu, vücudun şeker yerine yağ yakacak enzimleri ve mekanizmaları geliştirmesi için gereken süreçtir. İlk 2-3 hafta <strong>performans düşüşü normaldir</strong> — sabırlı olun.</p>
+      <h4>Adaptasyon Döneminde (İlk 3 Hafta)</h4>
+      <ul>
+        <li>Yüksek yoğunluklu antrenmanlardan kaçının</li>
+        <li>Yürüyüş, yüzme, yoga gibi düşük tempolu aktiviteler idealdir</li>
+        <li>Antrenman öncesi ekstra elektrolit alın</li>
+        <li>Kendinizi zorlamayın — vücudun adapte olmasına izin verin</li>
+      </ul>
+      <h4>Adaptasyon Sonrası Keto + Spor</h4>
+      <p>Tam adaptasyondan sonra yağ yakımı son derece verimli hale gelir. Özellikle <strong>aerobik ve dayanıklılık sporları</strong> keto ile mükemmel uyum sağlar:</p>
+      <ul>
+        <li>Koşu, bisiklet, yüzme — uzun süre enerji kaybetmeden</li>
+        <li>Güç antrenmanı — kas kaybetmeden yağ yakımı mümkün</li>
+        <li>HIIT antrenmanı — karbonhidrat takviyesi gerekebilir</li>
+      </ul>
+      <h4>Hareketsiz İş Hayatında Keto</h4>
+      <p>Masa başı çalışıyorsanız keto özellikle sizin için biçilmiş kaftan. Beyin ketonları sever — öğleden sonra enerji çöküşü yaşamazsınız. Günde 8.000–10.000 adım ile keto kombinasyonu haftada 1–1.5 kg yağ yakımı sağlayabilir.</p>
+      <div class="highlight">Keto adaptasyonundan sonra sabah egzersizi oruç halinde yapmak, yağ yakımını %30'a kadar hızlandırır.</div>
+      <div class="bm-divider"></div>
+      <div class="bm-cta-box">
+        <p>Hareket düzenine göre kişiselleştirilmiş plan için formu doldur.</p>
+        <button class="btn-p" onclick="closeBlog(); document.getElementById('program').scrollIntoView({behavior:'smooth'})">Planımı Oluştur →</button>
+      </div>
+    `
+  },
+  {
+    tag: 'Sağlık',
+    title: 'Keto Diyeti Kan Tahlil Sonuçlarını Nasıl Etkiler?',
+    meta: '9 dakika okuma · Sağlık Rehberi',
+    content: `
+      <p>Keto diyeti başladıktan sonra kan değerleriniz değişmeye başlar. Bazı değerler hızla iyileşirken bazıları geçici olarak yükselebilir. Bu süreyi doğru yönetmek için <strong>hangi değerlere bakacağınızı</strong> bilmek çok önemlidir.</p>
+      <h4>1. Kan Şekeri (Açlık Glukozu)</h4>
+      <p>Keto'nun en hızlı görülen etkisi bu alanda. İlk 2 haftada açlık glukozu belirgin şekilde düşer. Diyabetik veya prediyabetik bireyler ilaç dozunu ayarlamak için doktoruyla görüşmelidir.</p>
+      <h4>2. İnsülin Direnci (HOMA-IR)</h4>
+      <p>Keto, insülin direncini azaltmada en etkili diyetlerden biridir. 30 günlük uyumda HOMA-IR değerinde %20-40 düşüş gözlemlenir.</p>
+      <h4>3. Kolesterol Paneli</h4>
+      <ul>
+        <li><strong>LDL:</strong> Bazı kişilerde yükselir. Parçacık boyutuna bakın — büyük LDL risksizdir</li>
+        <li><strong>HDL:</strong> Genellikle belirgin şekilde yükselir — bu iyi</li>
+        <li><strong>Trigliserit:</strong> En hızlı düşen değer. 1. ayda %30-50 düşüş normaldir</li>
+      </ul>
+      <h4>4. Ürik Asit</h4>
+      <p>İlk 4-6 haftada geçici yükseliş olabilir (gut riski). Bol su içmek ve işlenmiş et tüketimini azaltmak bu riski minimize eder.</p>
+      <h4>Ne Zaman Tahlil Yaptırmalısınız?</h4>
+      <ul>
+        <li>Başlamadan önce: Baz değerleri kaydedin</li>
+        <li>1. ay sonunda: Erken değişimleri takip edin</li>
+        <li>3. ay sonunda: Tam adaptasyon değerlendirmesi</li>
+        <li>6 ay ve 1 yıl: Uzun vadeli sağlık takibi</li>
+      </ul>
+      <div class="highlight">50 yaş üstü bireylerde tiroid, böbrek fonksiyonları ve D vitamini de tahlil paneline eklenmelidir.</div>
+      <div class="bm-divider"></div>
+      <div class="bm-cta-box">
+        <p>3 aylık dönüşüm paketimizde kan tahlili rehberliği dahildir.</p>
+        <button class="btn-p" onclick="closeBlog(); openModal('Dönüşüm Paketi','1.999 ₺/ay')">Dönüşüm Paketini Gör →</button>
+      </div>
+    `
+  },
+  {
+    tag: 'Motivasyon',
+    title: 'Keto Diyetine Nasıl Devam Edilir? Plato Dönemini Aşma',
+    meta: '7 dakika okuma · Sürdürülebilirlik',
+    content: `
+      <p>Keto diyetin en sık karşılaşılan sorunu, ilk hızlı kilo kaybının ardından gelen <strong>plato dönemi</strong>dir. Kilo durduğunda birçok kişi diyeti bırakır — oysa bu durum geçicidir ve aşılabilir.</p>
+      <h4>Plato Neden Olur?</h4>
+      <ul>
+        <li>Vücut yeni kiloya adapte olur, bazal metabolizma düşer</li>
+        <li>Su kaybı durur, yağ kaybı daha az görünür hale gelir</li>
+        <li>Gizli karbonhidrat tüketimi ketozisi engelliyor olabilir</li>
+        <li>Stres hormonu kortizol yağ depolamayı tetikler</li>
+      </ul>
+      <h4>Platoyu Kırmak İçin 5 Strateji</h4>
+      <ul>
+        <li><strong>Kalori döngüsü:</strong> Haftada 1 gün biraz daha fazla kalori alın</li>
+        <li><strong>IF penceresini daralt:</strong> 16:8'den 18:6'ya geçin</li>
+        <li><strong>Karbonhidratı sıfıra indirin:</strong> 1 haftalık katı keto</li>
+        <li><strong>Egzersiz ekleyin:</strong> Kas kütlesi bazal metabolizmayı yükseltir</li>
+        <li><strong>Uyku ve stres:</strong> 7-8 saat uyku kilo kaybının anahtarıdır</li>
+      </ul>
+      <h4>Uzun Vadede Keto'yu Sürdürmenin Sırrı</h4>
+      <p>Keto'yu sürdüremenin en büyük nedeni <strong>monotonluk</strong> ve <strong>damak uyumsuzluğu</strong>dur. Sevmediğiniz yiyecekleri yemek zorunda kaldığınızda beyin alternatif arar.</p>
+      <p>Bu yüzden KetoDiyetim, planınızı sevdiğiniz yiyeceklere göre oluşturur ve haftalık günceller. Menü her hafta değişince sıkılmak imkansız hale gelir.</p>
+      <div class="highlight">"Diyete değil, yaşam biçimine geçiş yapanlarda keto 5+ yıl sürdürülebilir hale gelir."</div>
+      <div class="bm-divider"></div>
+      <div class="bm-cta-box">
+        <p>Haftalık güncellenen menüler ve sürekli takip için Dönüşüm Paketine göz at.</p>
+        <button class="btn-p" onclick="closeBlog(); document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">Paketlere Bak →</button>
+      </div>
+    `
+  }
+];
+
+function openBlog(idx) {
+  const post = blogPosts[idx];
+  document.getElementById('bm-tag').textContent = post.tag;
+  document.getElementById('bm-title').textContent = post.title;
+  document.getElementById('bm-meta').textContent = post.meta;
+  document.getElementById('bm-body').innerHTML = post.content;
+  document.getElementById('blogModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('blogModalInner').scrollTop = 0;
+}
+function closeBlog() {
+  document.getElementById('
+</script>
 
 <script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Yiyecek kutucuklari
+  document.querySelectorAll('.cb-item').forEach(function(el) {
+    el.addEventListener('click', function() { toggleCbDiv(this); });
+  });
+  // Cinsiyet butonlari
+  var gm = document.getElementById('g_m');
+  var gf = document.getElementById('g_f');
+  if(gm) gm.addEventListener('click', function() { setGender('male'); });
+  if(gf) gf.addEventListener('click', function() { setGender('female'); });
+  // IF butonlari
+  document.querySelectorAll('.if-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() { setIf(btn.dataset.val, btn); });
+  });
+  // Email
+  var em = document.getElementById('footerEmail');
+  if(em) em.textContent = 'info' + '@' + 'ketodiyetim.com';
+});
+</script>
 
-
-
-// Scroll to top button visibility
+<button id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})"
+  style="position:fixed;bottom:24px;right:24px;z-index:490;width:48px;height:48px;
+  border-radius:50%;border:none;cursor:pointer;background:#C8793A;color:#fff;
+  display:none;align-items:center;justify-content:center;
+  box-shadow:0 4px 16px rgba(0,0,0,0.4);" title="Yukari cik">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+<script>
+window.addEventListener('scroll',function(){
+  var b=document.getElementById('scrollTopBtn');
+  if(b) b.style.display=window.scrollY>400?'flex':'none';
+});
+</script>
+</body>
+</html>
