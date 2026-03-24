@@ -456,6 +456,47 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
   .blog-modal-overlay { padding: 20px 12px; }
 }
 
+
+/* Blog kategori filtreleri */
+.blog-filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+.bf-btn {
+  padding: 7px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  font-size: 12.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: .2s;
+  font-family: 'DM Sans', sans-serif;
+}
+.bf-btn:hover { border-color: var(--accent); color: var(--cream); }
+.bf-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 700; }
+
+/* Blog grid boşluksuz */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 0;
+}
+.blog-card {
+  border-radius: 0 !important;
+  border-right: none !important;
+  border-bottom: none !important;
+}
+.blog-card:first-child { border-radius: 12px 0 0 0 !important; }
+.blog-card:nth-child(3) { border-radius: 0 12px 0 0 !important; }
+.blog-grid .blog-card:last-child { border-radius: 0 0 12px 12px !important; }
+.blog-grid { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.blog-card { border: none !important; border-right: 1px solid var(--border) !important; border-bottom: 1px solid var(--border) !important; }
+.blog-card.hidden { display: none; }
+
 </style>
 </head>
 <body>
@@ -788,39 +829,47 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
 <section class="blog" id="blog">
   <div class="sl">Blog & Rehber</div>
   <h2 class="st">Keto hakkında <em>her şey</em></h2>
-  <div class="blog-grid">
 
-    <div class="blog-card" onclick="openBlog(0)">
+  <!-- Kategori filtreleri -->
+  <div class="blog-filters">
+    <button class="bf-btn active" onclick="filterBlog('hepsi', this)">Tümü</button>
+    <button class="bf-btn" onclick="filterBlog('Temel Bilgi', this)">🧬 Temel Bilgi</button>
+    <button class="bf-btn" onclick="filterBlog('Beslenme', this)">🍽️ Beslenme</button>
+    <button class="bf-btn" onclick="filterBlog('Aralıklı Oruç', this)">⏱️ Aralıklı Oruç</button>
+    <button class="bf-btn" onclick="filterBlog('Program', this)">📅 Program</button>
+    <button class="bf-btn" onclick="filterBlog('Sağlık', this)">🔬 Sağlık</button>
+    <button class="bf-btn" onclick="filterBlog('Pratik', this)">💡 Pratik</button>
+  </div>
+
+  <div class="blog-grid" id="blogGrid">
+    <div class="blog-card" data-cat="Temel Bilgi" onclick="openBlog(0)">
       <div class="blog-thumb bt1">🥑</div>
       <div class="blog-body">
         <span class="blog-tag">Temel Bilgi</span>
         <h3>Ketojenik Diyet Nedir? Nasıl Çalışır?</h3>
-        <p class="blog-excerpt">Vücudun şeker yerine yağı yakıt olarak kullanması için ne gerekir? Keto diyetin bilimsel temeli ve metabolik süreçler.</p>
+        <p class="blog-excerpt">Vücudun şeker yerine yağı yakıt olarak kullanması için ne gerekir? Keto diyetin bilimsel temeli.</p>
         <div class="blog-meta"><span>8 dk okuma</span><span class="blog-read">Oku →</span></div>
       </div>
     </div>
-
-    <div class="blog-card" onclick="openBlog(1)">
+    <div class="blog-card" data-cat="Aralıklı Oruç" onclick="openBlog(1)">
       <div class="blog-thumb bt2">⏱️</div>
       <div class="blog-body">
-        <span class="blog-tag">Protokol</span>
+        <span class="blog-tag">Aralıklı Oruç</span>
         <h3>Aralıklı Oruç (IF) Nedir? 16:8 Rehberi</h3>
         <p class="blog-excerpt">Intermittent Fasting'in keto ile birleşimi neden bu kadar güçlü? Oruç penceresini nasıl ayarlamalısın?</p>
         <div class="blog-meta"><span>6 dk okuma</span><span class="blog-read">Oku →</span></div>
       </div>
     </div>
-
-    <div class="blog-card" onclick="openBlog(2)">
+    <div class="blog-card" data-cat="Temel Bilgi" onclick="openBlog(2)">
       <div class="blog-thumb bt3">⚠️</div>
       <div class="blog-body">
-        <span class="blog-tag">Dikkat Et</span>
+        <span class="blog-tag">Temel Bilgi</span>
         <h3>Keto Diyetinde Dikkat Edilmesi Gerekenler</h3>
         <p class="blog-excerpt">Keto grip, elektrolit dengesi, kolesterol takibi ve ilk 2 haftada yapılan en yaygın hatalar.</p>
         <div class="blog-meta"><span>7 dk okuma</span><span class="blog-read">Oku →</span></div>
       </div>
     </div>
-
-    <div class="blog-card" onclick="openBlog(3)">
+    <div class="blog-card" data-cat="Beslenme" onclick="openBlog(3)">
       <div class="blog-thumb bt4">🍽️</div>
       <div class="blog-body">
         <span class="blog-tag">Beslenme</span>
@@ -829,82 +878,78 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
         <div class="blog-meta"><span>5 dk okuma</span><span class="blog-read">Oku →</span></div>
       </div>
     </div>
-
-    <div class="blog-card" onclick="openBlog(4)">
+    <div class="blog-card" data-cat="Pratik" onclick="openBlog(4)">
       <div class="blog-thumb bt5">💪</div>
       <div class="blog-body">
-        <span class="blog-tag">Spor & Aktivite</span>
+        <span class="blog-tag">Pratik</span>
         <h3>Keto Yaparken Egzersiz: Yapmalı mıyım?</h3>
-        <p class="blog-excerpt">Adaptasyon döneminde performans düşer mi? Hangi egzersizler keto ile daha uyumlu? Yağ yakımını hızlandır.</p>
+        <p class="blog-excerpt">Adaptasyon döneminde performans düşer mi? Hangi egzersizler keto ile daha uyumlu?</p>
         <div class="blog-meta"><span>6 dk okuma</span><span class="blog-read">Oku →</span></div>
       </div>
     </div>
-
-    <div class="blog-card" onclick="openBlog(5)">
+    <div class="blog-card" data-cat="Sağlık" onclick="openBlog(5)">
       <div class="blog-thumb bt6">🔬</div>
       <div class="blog-body">
         <span class="blog-tag">Sağlık</span>
         <h3>Keto Diyeti Kan Tahlil Sonuçlarını Nasıl Etkiler?</h3>
-        <p class="blog-excerpt">Kolesterol, trigliserit, kan şekeri ve insülin direnci — keto başladıktan sonra hangi değerlere bakmalısın?</p>
+        <p class="blog-excerpt">Kolesterol, trigliserit, kan şekeri — keto başladıktan sonra hangi değerlere bakmalısın?</p>
         <div class="blog-meta"><span>9 dk okuma</span><span class="blog-read">Oku →</span></div>
       </div>
     </div>
-
-    <div class="blog-card" onclick="openBlog(6)">
+    <div class="blog-card" data-cat="Pratik" onclick="openBlog(6)">
       <div class="blog-thumb bt7">🧠</div>
-    <div class="blog-card" onclick="openBlog(7)">
-      <div class="blog-thumb bt1">📅</div>
       <div class="blog-body">
-        <span class="blog-tag">Program</span>
-        <h3>Keto Diyeti 1 Aylık Program: Haftaya Göre Tam Rehber</h3>
-        <p class="blog-excerpt">Keto diyetinin ilk ayında her hafta vücudunuzda neler oluyor? Haftaya göre detaylı 1 aylık program rehberi.</p>
-        <div class="blog-meta"><span>10 dk okuma</span><span class="blog-read">Oku →</span></div>
-      </div>
-    </div>
-    <div class="blog-card" onclick="openBlog(8)">
-      <div class="blog-thumb bt2">🥤</div>
-      <div class="blog-body">
-        <span class="blog-tag">Beslenme</span>
-        <h3>Keto Diyetinde Neler İçilir? İzin Verilen İçecekler Tam Liste</h3>
-        <p class="blog-excerpt">Meyve suyu, süt, kahve, çay — hangisi keto ile uyumlu? IF yaparken ne içebilirsiniz? Tam içecek rehberi.</p>
-        <div class="blog-meta"><span>6 dk okuma</span><span class="blog-read">Oku →</span></div>
-      </div>
-    </div>
-    <div class="blog-card" onclick="openBlog(9)">
-      <div class="blog-thumb bt3">🍓</div>
-      <div class="blog-body">
-        <span class="blog-tag">Beslenme</span>
-        <h3>Keto Diyetinde Meyve Yenir mi? Hangi Meyveler İzin Verilir?</h3>
-        <p class="blog-excerpt">Avokado evet, muz hayır — ama neden? Keto diyetinde yenebilecek ve kaçınılması gereken meyvelerin tam listesi.</p>
-        <div class="blog-meta"><span>5 dk okuma</span><span class="blog-read">Oku →</span></div>
-      </div>
-    </div>
-    <div class="blog-card" onclick="openBlog(10)">
-      <div class="blog-thumb bt4">💰</div>
-      <div class="blog-body">
-        <span class="blog-tag">Pratik İpuçları</span>
-        <h3>Bütçe Dostu Keto: Pahalı Olmadan Keto Diyeti Yapmanın 10 Yolu</h3>
-        <p class="blog-excerpt">"Keto pahalı" demeden önce bunu okuyun. Türkiye'de bütçe dostu keto yapmanın pratik 10 yolu.</p>
-        <div class="blog-meta"><span>7 dk okuma</span><span class="blog-read">Oku →</span></div>
-      </div>
-    </div>
-    <div class="blog-card" onclick="openBlog(11)">
-      <div class="blog-thumb bt5">⏰</div>
-      <div class="blog-body">
-        <span class="blog-tag">Aralıklı Oruç</span>
-        <h3>Aralıklı Oruç Yaparken Kahvaltı Ne Zaman Yapılır? IF Saatleri</h3>
-        <p class="blog-excerpt">16:8 ve 18:6 protokollerinde ilk öğün saatleri, oruç pencerenizde ne içebilirsiniz ve IF'e nasıl alışırsınız.</p>
-        <div class="blog-meta"><span>6 dk okuma</span><span class="blog-read">Oku →</span></div>
-      </div>
-    </div>
-      <div class="blog-body">
-        <span class="blog-tag">Motivasyon</span>
+        <span class="blog-tag">Pratik</span>
         <h3>Keto Diyetine Nasıl Devam Edilir? Plato Dönemini Aşma</h3>
         <p class="blog-excerpt">2-3. haftada kilo durdu mu? Plato neden olur, nasıl kırılır? Uzun vadede keto'yu sürdürmenin sırrı.</p>
         <div class="blog-meta"><span>7 dk okuma</span><span class="blog-read">Oku →</span></div>
       </div>
     </div>
-
+    <div class="blog-card" data-cat="Program" onclick="openBlog(7)">
+      <div class="blog-thumb bt1">📅</div>
+      <div class="blog-body">
+        <span class="blog-tag">Program</span>
+        <h3>Keto Diyeti 1 Aylık Program: Haftaya Göre Tam Rehber</h3>
+        <p class="blog-excerpt">Keto diyetinin ilk ayında her hafta vücudunuzda neler oluyor? Haftaya göre detaylı 1 aylık rehber.</p>
+        <div class="blog-meta"><span>10 dk okuma</span><span class="blog-read">Oku →</span></div>
+      </div>
+    </div>
+    <div class="blog-card" data-cat="Beslenme" onclick="openBlog(8)">
+      <div class="blog-thumb bt2">🥤</div>
+      <div class="blog-body">
+        <span class="blog-tag">Beslenme</span>
+        <h3>Keto Diyetinde Neler İçilir? İzin Verilen İçecekler</h3>
+        <p class="blog-excerpt">Meyve suyu, süt, kahve, çay — hangisi keto ile uyumlu? IF yaparken ne içebilirsiniz?</p>
+        <div class="blog-meta"><span>6 dk okuma</span><span class="blog-read">Oku →</span></div>
+      </div>
+    </div>
+    <div class="blog-card" data-cat="Beslenme" onclick="openBlog(9)">
+      <div class="blog-thumb bt3">🍓</div>
+      <div class="blog-body">
+        <span class="blog-tag">Beslenme</span>
+        <h3>Keto Diyetinde Meyve Yenir mi? Hangi Meyveler İzin Verilir?</h3>
+        <p class="blog-excerpt">Avokado evet, muz hayır — ama neden? Yenebilecek ve kaçınılması gereken meyvelerin tam listesi.</p>
+        <div class="blog-meta"><span>5 dk okuma</span><span class="blog-read">Oku →</span></div>
+      </div>
+    </div>
+    <div class="blog-card" data-cat="Pratik" onclick="openBlog(10)">
+      <div class="blog-thumb bt4">💰</div>
+      <div class="blog-body">
+        <span class="blog-tag">Pratik</span>
+        <h3>Bütçe Dostu Keto: Pahalı Olmadan Yapmanın 10 Yolu</h3>
+        <p class="blog-excerpt">"Keto pahalı" demeden önce bunu okuyun. Türkiye'de bütçe dostu keto yapmanın 10 pratik yolu.</p>
+        <div class="blog-meta"><span>7 dk okuma</span><span class="blog-read">Oku →</span></div>
+      </div>
+    </div>
+    <div class="blog-card" data-cat="Aralıklı Oruç" onclick="openBlog(11)">
+      <div class="blog-thumb bt5">⏰</div>
+      <div class="blog-body">
+        <span class="blog-tag">Aralıklı Oruç</span>
+        <h3>Aralıklı Oruç Yaparken Kahvaltı Ne Zaman?</h3>
+        <p class="blog-excerpt">16:8 ve 18:6 protokollerinde ilk öğün saatleri, oruç penceresinde ne içebilirsiniz?</p>
+        <div class="blog-meta"><span>6 dk okuma</span><span class="blog-read">Oku →</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1569,7 +1614,7 @@ const blogPosts = [
     tag: 'Program',
     title: 'Keto Diyeti 1 Aylık Program: Haftaya Göre Tam Rehber',
     meta: '10 dakika okuma · Program Rehberi',
-    content: \`
+    content: `
       <p>Keto diyetine başlayacaksanız ilk ay en kritik dönemdir. Vücudunuz şeker yakmaktan yağ yakmaya geçiş yapıyor — bu süreçte ne beklediğinizi bilmek hem motivasyonunuzu korur hem de hata yapmanızı önler. İşte haftaya göre 1 aylık keto programı.</p>
       <div class="highlight">İlk ay keto diyetinin en zorlu ama en verimli dönemidir. Sabırlı olan kazanır.</div>
       <h4>1. Hafta: Adaptasyon (Keto Grip Dönemi)</h4>
@@ -1607,13 +1652,13 @@ const blogPosts = [
         <p>1 aylık keto programını uzman eşliğinde, sana özel almak ister misin?</p>
         <button class="btn-p" onclick="closeBlog(); document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">Tam Program'ı İncele →</button>
       </div>
-    \`
+    `
   },
   {
     tag: 'Beslenme',
     title: 'Keto Diyetinde Neler İçilir? İzin Verilen İçecekler Tam Liste',
     meta: '6 dakika okuma · İçecek Rehberi',
-    content: \`
+    content: `
       <p>Keto diyetinde en çok yapılan hatalardan biri içecekleri göz ardı etmektir. Bir bardak meyve suyu veya süt, günlük karbonhidrat limitinizi tek başına aşabilir. İşte keto diyetiyle uyumlu ve uyumsuz içeceklerin tam listesi.</p>
       <div class="highlight">Keto diyetinde ne içtiğiniz, ne yediğiniz kadar önemlidir.</div>
       <h4>✅ İzin Verilen İçecekler</h4>
@@ -1641,13 +1686,13 @@ const blogPosts = [
         <p>Size özel keto + IF programı oluşturalım mı?</p>
         <button class="btn-p" onclick="closeBlog(); document.getElementById('program').scrollIntoView({behavior:'smooth'})">Ücretsiz Plan Oluştur →</button>
       </div>
-    \`
+    `
   },
   {
     tag: 'Beslenme',
     title: 'Keto Diyetinde Meyve Yenir mi? Hangi Meyveler İzin Verilir?',
     meta: '5 dakika okuma · Beslenme Rehberi',
-    content: \`
+    content: `
       <p>Keto diyetine başlayanların en çok sorduğu sorulardan biri: "Meyve yiyebilir miyim?" Cevap kısmi olarak evet — ama hangi meyveyi, ne kadar yediğiniz kritik öneme sahip.</p>
       <div class="highlight">Meyve = doğal şeker = karbonhidrat. Keto diyetinde meyve seçimi çok önemlidir.</div>
       <h4>❌ Keto ile Uyumsuz Meyveler (Yüksek Şeker)</h4>
@@ -1676,13 +1721,13 @@ const blogPosts = [
         <p>Sevdiğiniz yiyeceklere göre kişisel keto planı oluşturalım mı?</p>
         <button class="btn-p" onclick="closeBlog(); document.getElementById('program').scrollIntoView({behavior:'smooth'})">Ücretsiz Plan Oluştur →</button>
       </div>
-    \`
+    `
   },
   {
     tag: 'Pratik İpuçları',
     title: 'Bütçe Dostu Keto: Pahalı Olmadan Keto Diyeti Yapmanın 10 Yolu',
     meta: '7 dakika okuma · Pratik Rehber',
-    content: \`
+    content: `
       <p>"Keto pahalı" diye duymuş olabilirsiniz. Doğru — avokado, organik et, özel keto ürünleri cüzdanı zorlayabilir. Ama keto diyetini bütçe dostu bir şekilde yapmak da mümkün. İşte Türkiye'de ucuza keto yapmanın 10 yolu.</p>
       <div class="highlight">Keto diyetinin temel prensibi pahalı ürünler değil, doğru besin seçimidir.</div>
       <h4>1. Yumurtayı Temel Besin Yap</h4>
@@ -1711,13 +1756,13 @@ const blogPosts = [
         <p>Bütçenize uygun kişisel keto planı oluşturalım mı?</p>
         <button class="btn-p" onclick="closeBlog(); document.getElementById('program').scrollIntoView({behavior:'smooth'})">Ücretsiz Plan Oluştur →</button>
       </div>
-    \`
+    `
   },
   {
     tag: 'Aralıklı Oruç',
     title: 'Aralıklı Oruç Yaparken Kahvaltı Ne Zaman Yapılır? IF Saatleri',
     meta: '6 dakika okuma · IF Rehberi',
-    content: \`
+    content: `
       <p>Aralıklı oruç (IF) yapanların en çok kafasının karıştığı konu: "Kahvaltı ne zaman?" sorusu. Aslında IF'de geleneksel kahvaltı kavramı biraz değişiyor. İşte net bir rehber.</p>
       <div class="highlight">IF'de "kahvaltı" saat 07:00 değil, oruç pencerenizin kapandığı saatte yenir.</div>
       <h4>16:8 Protokolünde Kahvaltı Saatleri</h4>
@@ -1752,10 +1797,22 @@ const blogPosts = [
         <p>Size en uygun IF + Keto programını oluşturalım mı?</p>
         <button class="btn-p" onclick="closeBlog(); document.getElementById('program').scrollIntoView({behavior:'smooth'})">Ücretsiz Plan Oluştur →</button>
       </div>
-    \`
+    `
   }
 ];
-];
+
+
+function filterBlog(cat, btn) {
+  document.querySelectorAll('.bf-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.blog-card').forEach(card => {
+    if (cat === 'hepsi' || card.dataset.cat === cat) {
+      card.classList.remove('hidden');
+    } else {
+      card.classList.add('hidden');
+    }
+  });
+}
 
 function openBlog(idx) {
   const post = blogPosts[idx];
@@ -1798,6 +1855,67 @@ window.addEventListener('scroll',function(){
   var b=document.getElementById('scrollTopBtn');
   if(b) b.style.display=window.scrollY>400?'flex':'none';
 });
+
+/* ============================================================
+   HABIT PREVIEW MODALS
+============================================================ */
+const habitData = {
+  sablon: {
+    title: '📅 30 Günlük Alışkanlık Şablonu',
+    desc: 'Her gün için 5 alışkanlık satırı ve işaret kutusu. Tamamladıkların yeşil, atladıkların boş kalır.',
+    tips: [
+      {ico:'💡', txt:'<strong>Her sabah 2 dakika</strong> — dünkü kutucukları işaretle'},
+      {ico:'🖨️', txt:'<strong>PDF versiyonu</strong> buzdolabına yapıştır'},
+      {ico:'📱', txt:'<strong>Excel versiyonu</strong> telefonda aç, her öğünden sonra güncelle'},
+    ],
+    visual: '<div style="padding:20px;text-align:center;font-size:2rem;">📅<br><span style="font-size:13px;color:var(--muted);">30 günlük takip tablosu</span></div>'
+  },
+  seri: {
+    title: '🔥 Seri Sütunu',
+    desc: 'Kaç gün üst üste tamamladın? Excel formülü otomatik hesaplar.',
+    tips: [
+      {ico:'🔥', txt:'<strong>3 günlük seri</strong> kurulunca alışkanlık kalıcılaşır'},
+      {ico:'📈', txt:'<strong>=COUNTIF formülü</strong> seriyi otomatik sayar'},
+    ],
+    visual: '<div style="padding:20px;text-align:center;font-size:2rem;">🔥<br><span style="font-size:13px;color:var(--muted);">Streak takip sistemi</span></div>'
+  },
+  ozet: {
+    title: '📊 Haftalık Özet',
+    desc: 'Her haftanın başarı yüzdesi otomatik hesaplanır.',
+    tips: [
+      {ico:'📊', txt:'<strong>%70 üzeri</strong> tutarlı hafta sayılır'},
+      {ico:'🏆', txt:'<strong>Ay sonu skoru</strong> ilerlemeyi somut gösterir'},
+    ],
+    visual: '<div style="padding:20px;text-align:center;font-size:2rem;">📊<br><span style="font-size:13px;color:var(--muted);">Haftalık başarı özeti</span></div>'
+  },
+  ozellesir: {
+    title: '✏️ Özelleştirilebilir',
+    desc: 'Alışkanlık isimlerini değiştir, kendi hedeflerini ekle.',
+    tips: [
+      {ico:'✏️', txt:'<strong>A sütununu tıkla</strong>, adını yaz — formüller güncellenir'},
+      {ico:'➕', txt:'<strong>Yeni satır ekle</strong> — istediğin kadar alışkanlık'},
+    ],
+    visual: '<div style="padding:20px;text-align:center;font-size:2rem;">✏️<br><span style="font-size:13px;color:var(--muted);">Tamamen özelleştirilebilir</span></div>'
+  }
+};
+
+function openHabitModal(key) {
+  var d = habitData[key];
+  if (!d) return;
+  document.getElementById('hmodalTitle').textContent = d.title;
+  var tips = d.tips.map(function(t) {
+    return '<div class="hmodal-tip"><div class="hmodal-tip-ico">' + t.ico + '</div><div class="hmodal-tip-txt">' + t.txt + '</div></div>';
+  }).join('');
+  document.getElementById('hmodalBody').innerHTML =
+    '<p class="hmodal-desc">' + d.desc + '</p><div class="hmodal-visual">' + d.visual + '</div><div class="hmodal-tips">' + tips + '</div>';
+  document.getElementById('habitModalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeHabitModal() {
+  document.getElementById('habitModalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
 </script>
 </body>
 </html>
