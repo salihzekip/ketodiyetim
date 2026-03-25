@@ -977,7 +977,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
     </div>
     <div class="fc"><h4>Program</h4><ul><li><a href="#program">Planımı Oluştur</a></li><li><a href="#pricing">Paketler</a></li><li><a href="#nasil">Nasıl Çalışır</a></li><li><a href="#blog">Blog</a></li></ul></div>
     <div class="fc"><h4>Destek</h4><ul><li><a href="#">S.S.S.</a></li><li><a href="#" onclick="openModal('Bilgi Almak İstiyorum','—')">WhatsApp</a></li></ul></div>
-    <div class="fc"><h4>İletişim</h4><ul><li><a href="#">+90 542 354 86 68</a></li><li><a href="#">info [at] ketodiyetim.com</a></li><li><a href="#">Instagram</a></li></ul></div>
+    <div class="fc"><h4>İletişim</h4><ul><li><a href="#">+90 542 354 86 68</a></li><li><span id="footerEmail" style="color:var(--muted);font-size:13px;"></span></li><li><a href="https://www.instagram.com/ketodiyetim.tr" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:6px;color:var(--muted);text-decoration:none;transition:color .2s;" onmouseover="this.style.color='#E1306C'" onmouseout="this.style.color=''"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg> @ketodiyetim.tr</a></li></ul></div>
   </div>
   <div class="footer-bottom">
     <span>© 2024 <strong>KetoDiyetim</strong>. Tüm hakları saklıdır.</span>
@@ -1020,6 +1020,25 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
 
 
 
+
+<!-- Instagram floating button -->
+<a href="https://www.instagram.com/ketodiyetim.tr" target="_blank" rel="noopener"
+  id="instaFloatBtn"
+  style="position:fixed;bottom:82px;right:24px;z-index:491;
+    width:48px;height:48px;border-radius:50%;
+    background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 4px 16px rgba(0,0,0,0.4);
+    transition:transform .2s,box-shadow .2s;text-decoration:none;"
+  onmouseover="this.style.transform='scale(1.1)';this.style.boxShadow='0 6px 22px rgba(0,0,0,0.5)'"
+  onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 16px rgba(0,0,0,0.4)'"
+  title="@ketodiyetim.tr">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="5"/>
+    <circle cx="12" cy="12" r="5"/>
+    <circle cx="17.5" cy="6.5" r="1.5" fill="white" stroke="none"/>
+  </svg>
+</a>
 
 <button id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})"
   style="position:fixed;bottom:24px;right:24px;z-index:490;width:48px;height:48px;
@@ -1848,7 +1867,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   // Email
   var em = document.getElementById('footerEmail');
-  if(em) em.textContent = 'info' + '@' + 'ketodiyetim.com';
+  if(em) em.textContent = 'info' + '@' + 'ketojenikdiyetim.com';
 });
 
 window.addEventListener('scroll',function(){
