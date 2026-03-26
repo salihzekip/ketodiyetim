@@ -1344,11 +1344,49 @@ function resetPlan() {
    MODAL
 ============================================================ */
 function openModal(pkg, price) {
-  currentPkg = pkg; currentPrice = price;
-  document.getElementById('mpkg-name').textContent = pkg;
-  document.getElementById('mpkg-price').textContent = price;
-  document.getElementById('modal').classList.add('open');
-  document.body.style.overflow = 'hidden';
+  var num = '905423548668';
+  var p = userProfile;
+  var actMap = {sedentary:'Hareketsiz',light:'Az Hareketli',moderate:'Orta Aktif',active:'Cok Aktif'};
+
+  var msg = 'Merhaba! 👋\n';
+  msg += '━━━━━━━━━━━━━━━━━━\n';
+  msg += '📦 PAKET: ' + pkg + ' (' + price + ')\n';
+  msg += '━━━━━━━━━━━━━━━━━━\n';
+
+  if(p && p.name) {
+    msg += '\n👤 MÜŞTERİ PROFİLİ\n';
+    msg += 'Ad: ' + (p.name || '-') + '\n';
+    msg += 'Yaş: ' + (p.age || '-') + '\n';
+    msg += 'Kilo: ' + (p.weight || '-') + ' kg\n';
+    msg += 'Boy: ' + (p.height || '-') + ' cm\n';
+    msg += 'Hedef Kilo: ' + (p.goalWeight || '-') + ' kg\n';
+    msg += 'Cinsiyet: ' + (p.gender === 'male' ? 'Erkek' : 'Kadın') + '\n';
+    msg += 'Aktivite: ' + (actMap[p.activity] || '-') + '\n';
+    msg += 'IF Protokolü: ' + (p.ifPref === 'none' ? 'IF yok' : (p.ifPref || '-')) + '\n';
+
+    if(p.disliked && p.disliked.length > 0) {
+      msg += '\n🚫 YEMEDİKLERİ:\n' + p.disliked.join(', ') + '\n';
+    }
+    if(p.liked && p.liked.length > 0) {
+      msg += '\n✅ SEVDİKLERİ:\n' + p.liked.join(', ') + '\n';
+    }
+    if(p.notes) {
+      msg += '\n📝 NOT: ' + p.notes + '\n';
+    }
+  } else {
+    msg += '\n(Müşteri plan oluşturmadan sipariş verdi)\n';
+  }
+
+  msg += '\n━━━━━━━━━━━━━━━━━━\n';
+  msg += '⏳ 24 saat içinde hazırlayıp göndereceğim.';
+
+  var a = document.createElement('a');
+  a.href = 'https://wa.me/' + num + '?text=' + encodeURIComponent(msg);
+  a.target = '_blank';
+  a.rel = 'noopener noreferrer';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
 }
 function closeModal() {
   document.getElementById('modal').classList.remove('open');
@@ -1358,12 +1396,7 @@ function closeModalOut(e) {
   if(e.target===document.getElementById('modal')) closeModal();
 }
 function openWhatsApp() {
-  const num = '905423548668'; // ← BURAYA KENDİ NUMARANI YAZ
-  const userName = userProfile.name ? `\nMüşteri: ${userProfile.name}` : '';
-  const msg = encodeURIComponent(
-    `Merhaba! 👋\n\n"${currentPkg}" (${currentPrice}) satın almak istiyorum.${userName}\n\nPlan oluşturdum, devam günleri için ödeme yapmak istiyorum.`
-  );
-  window.open(`https://wa.me/${num}?text=${msg}`, '_blank');
+  openModal(currentPkg, currentPrice);
 }
 
 /* ============================================================
