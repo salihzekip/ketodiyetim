@@ -1969,5 +1969,352 @@ function closeHabitModal() {
 }
 
 </script>
+
+<!-- ============================================================
+     KETODIYETIM CHATBOT WIDGET
+============================================================ -->
+<style>
+#kd-chat-btn {
+  position: fixed; bottom: 140px; right: 24px; z-index: 9999;
+  width: 52px; height: 52px; border-radius: 50%;
+  background: linear-gradient(135deg, #4E8C5F, #2E6A40);
+  border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.35);
+  transition: transform .2s, box-shadow .2s;
+}
+#kd-chat-btn:hover { transform: scale(1.1); box-shadow: 0 6px 24px rgba(0,0,0,0.45); }
+#kd-chat-btn svg { width: 26px; height: 26px; }
+
+#kd-bubble {
+  position: fixed; bottom: 200px; right: 82px; z-index: 9999;
+  background: #fff; color: #1C1610; font-family: 'DM Sans', sans-serif;
+  font-size: 13px; font-weight: 600; padding: 8px 14px;
+  border-radius: 18px 18px 4px 18px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  white-space: nowrap; opacity: 0; pointer-events: none;
+  transition: opacity .3s;
+}
+#kd-bubble.show { opacity: 1; }
+#kd-bubble::after {
+  content: ''; position: absolute; right: -8px; bottom: 6px;
+  border: 8px solid transparent; border-left-color: #fff; border-right: 0;
+}
+
+#kd-chat-window {
+  position: fixed; bottom: 200px; right: 24px; z-index: 9999;
+  width: 340px; max-height: 500px;
+  background: #fff; border-radius: 16px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.25);
+  display: none; flex-direction: column; overflow: hidden;
+  font-family: 'DM Sans', sans-serif;
+}
+#kd-chat-window.open { display: flex; }
+
+#kd-chat-head {
+  background: linear-gradient(135deg, #4E8C5F, #2E6A40);
+  padding: 14px 16px; display: flex; align-items: center; gap: 10px;
+  flex-shrink: 0;
+}
+#kd-chat-head .kd-avatar {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; flex-shrink: 0;
+}
+#kd-chat-head .kd-info { flex: 1; }
+#kd-chat-head .kd-name { color: #fff; font-weight: 700; font-size: 14px; }
+#kd-chat-head .kd-status { color: rgba(255,255,255,0.75); font-size: 11px; }
+#kd-chat-close {
+  background: none; border: none; color: rgba(255,255,255,0.8);
+  font-size: 20px; cursor: pointer; padding: 0; line-height: 1;
+}
+#kd-chat-close:hover { color: #fff; }
+
+#kd-chat-msgs {
+  flex: 1; overflow-y: auto; padding: 14px;
+  display: flex; flex-direction: column; gap: 8px;
+  background: #F8F9FA;
+}
+.kd-msg {
+  max-width: 88%; padding: 9px 13px; border-radius: 14px;
+  font-size: 13px; line-height: 1.5; word-wrap: break-word;
+}
+.kd-msg.bot {
+  background: #fff; color: #1C1610;
+  border-radius: 4px 14px 14px 14px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  align-self: flex-start;
+}
+.kd-msg.user {
+  background: linear-gradient(135deg, #4E8C5F, #2E6A40);
+  color: #fff; border-radius: 14px 14px 4px 14px;
+  align-self: flex-end;
+}
+.kd-typing {
+  display: flex; gap: 4px; padding: 10px 14px;
+  background: #fff; border-radius: 4px 14px 14px 14px;
+  align-self: flex-start; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.kd-typing span {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: #4E8C5F; animation: kdBounce 1.2s infinite;
+}
+.kd-typing span:nth-child(2) { animation-delay: .2s; }
+.kd-typing span:nth-child(3) { animation-delay: .4s; }
+@keyframes kdBounce {
+  0%,60%,100% { transform: translateY(0); }
+  30% { transform: translateY(-6px); }
+}
+
+#kd-chat-opts {
+  padding: 8px 14px 12px; display: flex; flex-wrap: wrap; gap: 6px;
+  background: #F8F9FA; flex-shrink: 0;
+}
+.kd-opt {
+  background: #fff; border: 1.5px solid #4E8C5F; color: #2E6A40;
+  border-radius: 20px; padding: 6px 13px; font-size: 12px; font-weight: 600;
+  cursor: pointer; transition: .15s; font-family: 'DM Sans', sans-serif;
+}
+.kd-opt:hover { background: #4E8C5F; color: #fff; }
+
+#kd-chat-footer {
+  padding: 10px 12px; border-top: 1px solid #eee;
+  display: flex; gap: 8px; background: #fff; flex-shrink: 0;
+}
+#kd-chat-input {
+  flex: 1; border: 1.5px solid #ddd; border-radius: 20px;
+  padding: 8px 14px; font-size: 13px; font-family: 'DM Sans', sans-serif;
+  outline: none; transition: border-color .2s;
+}
+#kd-chat-input:focus { border-color: #4E8C5F; }
+#kd-chat-send {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: #4E8C5F; border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .2s; flex-shrink: 0;
+}
+#kd-chat-send:hover { background: #2E6A40; }
+#kd-chat-send svg { width: 16px; height: 16px; }
+
+@media(max-width: 400px) {
+  #kd-chat-window { width: calc(100vw - 16px); right: 8px; bottom: 140px; }
+}
+</style>
+
+<!-- Hoşgeldin balonu -->
+<div id="kd-bubble">👋 Merhaba! Size nasıl yardımcı olabilirim?</div>
+
+<!-- Chat butonu -->
+<button id="kd-chat-btn" onclick="kdToggleChat()" title="Bizimle konuşun">
+  <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+  </svg>
+</button>
+
+<!-- Chat penceresi -->
+<div id="kd-chat-window">
+  <div id="kd-chat-head">
+    <div class="kd-avatar">🥑</div>
+    <div class="kd-info">
+      <div class="kd-name">KetoDiyetim Asistanı</div>
+      <div class="kd-status">● Çevrimiçi · Size yardımcı olmaya hazır</div>
+    </div>
+    <button id="kd-chat-close" onclick="kdToggleChat()">×</button>
+  </div>
+
+  <div id="kd-chat-msgs"></div>
+
+  <div id="kd-chat-opts">
+    <button class="kd-opt" onclick="kdAsk('paketler')">📦 Paketler & Fiyatlar</button>
+    <button class="kd-opt" onclick="kdAsk('nasil')">❓ Nasıl Çalışır?</button>
+    <button class="kd-opt" onclick="kdAsk('keto')">🥑 Keto Nedir?</button>
+    <button class="kd-opt" onclick="kdAsk('if')">⏰ IF 16:8 Nedir?</button>
+    <button class="kd-opt" onclick="kdAsk('ucretsiz')">🎁 Ücretsiz Plan</button>
+    <button class="kd-opt" onclick="kdAsk('iletisim')">📞 İletişim</button>
+  </div>
+
+  <div id="kd-chat-footer">
+    <input id="kd-chat-input" type="text" placeholder="Mesajınızı yazın..." 
+      onkeydown="if(event.key==='Enter') kdSendMsg()">
+    <button id="kd-chat-send" onclick="kdSendMsg()">
+      <svg viewBox="0 0 24 24" fill="white"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+    </button>
+  </div>
+</div>
+
+<script>
+// ── Chatbot ──────────────────────────────────────────────────
+var kdOpen = false;
+var kdBubbleTimer;
+
+var kdAnswers = {
+  paketler: {
+    q: '📦 Paketler & Fiyatlar',
+    a: 'Üç paketimiz var:
+
+📌 <b>Başlangıç</b> — 249 ₺
+7 günlük kişisel keto planı + IF takvimi + Excel şablon
+
+📌 <b>Tam Program</b> — 799 ₺ ⭐
+30 günlük tam plan + WhatsApp destek (30 gün)
+
+📌 <b>Dönüşüm Paketi</b> — 1.999 ₺
+3 aylık sürekli güncellenen plan + sınırsız danışma
+
+Hepsi PDF + Excel alışkanlık şablonu hediyeli! 🎁'
+  },
+  nasil: {
+    q: '❓ Nasıl Çalışır?',
+    a: '4 adımda çok kolay:
+
+1️⃣ Ücretsiz planını oluştur (yukarıdaki form)
+2️⃣ Paketi seç, WhatsApp'tan sipariş ver
+3️⃣ Ödeme bilgilerini al, öde
+4️⃣ 24 saat içinde kişisel planın PDF olarak gelir ✅
+
+Hiçbir uygulama indirmene gerek yok!'
+  },
+  keto: {
+    q: '🥑 Keto Nedir?',
+    a: 'Keto (ketojenik) diyet, karbonhidratı minimuma indirip vücudu yağ yakmaya geçiren bir beslenme sistemidir.
+
+✅ Günlük karbonhidrat: <20g
+✅ Protein: %20-30
+✅ Yağ: %65-75
+
+Vücut ketoza girince şeker yerine yağ yakar — hem hızlı kilo verir hem sürekli tok hissedersin. 🔥'
+  },
+  if: {
+    q: '⏰ IF 16:8 Nedir?',
+    a: 'Aralıklı Oruç (IF) 16:8 protokolü:
+
+⏰ 16 saat oruç → 8 saat yeme penceresi
+
+Örnek:
+🕐 12:30 — İlk öğün (öğle)
+🕖 19:30 — Son öğün (akşam)
+🚫 20:30'dan sonra sadece su, sade kahve, çay
+
+IF + Keto kombinasyonu en hızlı ve kalıcı sonucu verir. Sabahları acıkmıyorsan zaten yapabilirsin! 💪'
+  },
+  ucretsiz: {
+    q: '🎁 Ücretsiz Plan',
+    a: 'Evet! 3 günlük kişisel keto planını tamamen ücretsiz oluşturabilirsin. 🎉
+
+✅ Kredi kartı gerekmez
+✅ Kayıt gerekmez
+✅ Anında hazır
+✅ Excel'e aktarabilirsin
+
+Sayfanın üstündeki "Planımı Oluştur" butonuna tıkla, bilgilerini gir, planın hazır! 🥑'
+  },
+  iletisim: {
+    q: '📞 İletişim',
+    a: 'Bize ulaşmak için:
+
+📱 <b>WhatsApp:</b> +90 542 354 86 68
+📸 <b>Instagram:</b> @ketodiyetim.tr
+🌐 <b>Web:</b> ketojenikdiyetim.com
+
+Hafta içi ve hafta sonu aktifiz. WhatsApp'tan yazabilirsin!'
+  }
+};
+
+var kdWelcomed = false;
+
+function kdToggleChat() {
+  kdOpen = !kdOpen;
+  document.getElementById('kd-chat-window').classList.toggle('open', kdOpen);
+  document.getElementById('kd-bubble').classList.remove('show');
+  clearTimeout(kdBubbleTimer);
+  if (kdOpen && !kdWelcomed) {
+    kdWelcomed = true;
+    kdBotMsg('Merhaba! 👋 Ben KetoDiyetim asistanıyım. Size keto diyet, IF protokolü ve paketlerimiz hakkında bilgi verebilirim. Ne öğrenmek istersiniz?');
+  }
+}
+
+function kdBotMsg(text) {
+  var msgs = document.getElementById('kd-chat-msgs');
+  // Typing göstergesi
+  var typing = document.createElement('div');
+  typing.className = 'kd-typing';
+  typing.innerHTML = '<span></span><span></span><span></span>';
+  msgs.appendChild(typing);
+  msgs.scrollTop = msgs.scrollHeight;
+  setTimeout(function() {
+    msgs.removeChild(typing);
+    var msg = document.createElement('div');
+    msg.className = 'kd-msg bot';
+    msg.innerHTML = text.replace(/\n/g, '<br>');
+    msgs.appendChild(msg);
+    msgs.scrollTop = msgs.scrollHeight;
+  }, 800);
+}
+
+function kdUserMsg(text) {
+  var msgs = document.getElementById('kd-chat-msgs');
+  var msg = document.createElement('div');
+  msg.className = 'kd-msg user';
+  msg.textContent = text;
+  msgs.appendChild(msg);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function kdAsk(key) {
+  var ans = kdAnswers[key];
+  if (!ans) return;
+  kdUserMsg(ans.q);
+  setTimeout(function() { kdBotMsg(ans.a); }, 200);
+}
+
+function kdSendMsg() {
+  var input = document.getElementById('kd-chat-input');
+  var text = input.value.trim();
+  if (!text) return;
+  input.value = '';
+  kdUserMsg(text);
+
+  var lower = text.toLowerCase();
+  var replied = false;
+
+  if (lower.match(/paket|fiyat|ücret|para|tl|lira/)) {
+    setTimeout(function() { kdBotMsg(kdAnswers.paketler.a); }, 400); replied = true;
+  } else if (lower.match(/nasıl|çalış|sipari|satın|ödeme/)) {
+    setTimeout(function() { kdBotMsg(kdAnswers.nasil.a); }, 400); replied = true;
+  } else if (lower.match(/keto|ketojenik|ne ?dir|nedir/)) {
+    setTimeout(function() { kdBotMsg(kdAnswers.keto.a); }, 400); replied = true;
+  } else if (lower.match(/if|oruç|intermittent|16.?8|aralıklı/)) {
+    setTimeout(function() { kdBotMsg(kdAnswers.if.a); }, 400); replied = true;
+  } else if (lower.match(/ücretsiz|bedava|deneme|ücretsiz/)) {
+    setTimeout(function() { kdBotMsg(kdAnswers.ucretsiz.a); }, 400); replied = true;
+  } else if (lower.match(/iletişim|telefon|whatsapp|numara|instagram|ulaş/)) {
+    setTimeout(function() { kdBotMsg(kdAnswers.iletisim.a); }, 400); replied = true;
+  } else if (lower.match(/merhaba|selam|hey|hi|hello/)) {
+    setTimeout(function() { kdBotMsg('Merhaba! 😊 Size nasıl yardımcı olabilirim? Aşağıdaki seçeneklerden birini seçebilir ya da sorunuzu yazabilirsiniz.'); }, 400); replied = true;
+  } else if (lower.match(/teşekkür|sağol|eyw/)) {
+    setTimeout(function() { kdBotMsg('Rica ederim! 😊 Başka sorunuz varsa buradayım. Keto yolculuğunuzda başarılar dilerim! 🥑'); }, 400); replied = true;
+  }
+
+  if (!replied) {
+    setTimeout(function() {
+      kdBotMsg('Bu konuda size en iyi WhatsApp üzerinden yardımcı olabiliriz. 💬
+
+<b>+90 542 354 86 68</b> numaramıza yazabilirsiniz. Hızlıca dönüş yapıyoruz!');
+    }, 400);
+  }
+}
+
+// 3 saniye sonra balon göster
+setTimeout(function() {
+  if (!kdOpen) {
+    document.getElementById('kd-bubble').classList.add('show');
+    kdBubbleTimer = setTimeout(function() {
+      document.getElementById('kd-bubble').classList.remove('show');
+    }, 5000);
+  }
+}, 3000);
+</script>
+<!-- ── CHATBOT SONU ────────────────────────────────────────── -->
+
 </body>
 </html>
