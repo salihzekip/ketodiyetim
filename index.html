@@ -2150,73 +2150,27 @@ var kdBubbleTimer;
 var kdAnswers = {
   paketler: {
     q: '📦 Paketler & Fiyatlar',
-    a: 'Üç paketimiz var:
-
-📌 <b>Başlangıç</b> — 249 ₺
-7 günlük kişisel keto planı + IF takvimi + Excel şablon
-
-📌 <b>Tam Program</b> — 799 ₺ ⭐
-30 günlük tam plan + WhatsApp destek (30 gün)
-
-📌 <b>Dönüşüm Paketi</b> — 1.999 ₺
-3 aylık sürekli güncellenen plan + sınırsız danışma
-
-Hepsi PDF + Excel alışkanlık şablonu hediyeli! 🎁'
+    a: '3 paketimiz var:\n\n📌 <b>Başlangıç</b> — 249 ₺\n7 günlük kişisel keto planı + IF takvimi + Excel şablon\n\n📌 <b>Tam Program</b> — 799 ₺ ⭐\n30 günlük tam plan + WhatsApp destek (30 gün)\n\n📌 <b>Dönüşüm Paketi</b> — 1.999 ₺\n3 aylık sürekli güncellenen plan + sınırsız danışma\n\nHepsi PDF + Excel alışkanlık şablonu hediyeli! 🎁'
   },
   nasil: {
     q: '❓ Nasıl Çalışır?',
-    a: '4 adımda çok kolay:
-
-1️⃣ Ücretsiz planını oluştur (yukarıdaki form)
-2️⃣ Paketi seç, WhatsApp'tan sipariş ver
-3️⃣ Ödeme bilgilerini al, öde
-4️⃣ 24 saat içinde kişisel planın PDF olarak gelir ✅
-
-Hiçbir uygulama indirmene gerek yok!'
+    a: '4 adımda çok kolay:\n\n1️⃣ Ücretsiz planını oluştur (yukarıdaki form)\n2️⃣ Paketi seç, WhatsApp\'tan sipariş ver\n3️⃣ Ödeme bilgilerini al, öde\n4️⃣ 24 saat içinde kişisel planın PDF olarak gelir ✅\n\nHiçbir uygulama indirmene gerek yok!'
   },
   keto: {
     q: '🥑 Keto Nedir?',
-    a: 'Keto (ketojenik) diyet, karbonhidratı minimuma indirip vücudu yağ yakmaya geçiren bir beslenme sistemidir.
-
-✅ Günlük karbonhidrat: <20g
-✅ Protein: %20-30
-✅ Yağ: %65-75
-
-Vücut ketoza girince şeker yerine yağ yakar — hem hızlı kilo verir hem sürekli tok hissedersin. 🔥'
+    a: 'Keto (ketojenik) diyet, karbonhidratı minimuma indirip vücudu yağ yakmaya geçiren bir beslenme sistemidir.\n\n✅ Günlük karbonhidrat: <20g\n✅ Protein: %20-30\n✅ Yağ: %65-75\n\nVücut ketoza girince şeker yerine yağ yakar — hem hızlı kilo verir hem sürekli tok hissedersin. 🔥'
   },
-  if: {
+  if_prot: {
     q: '⏰ IF 16:8 Nedir?',
-    a: 'Aralıklı Oruç (IF) 16:8 protokolü:
-
-⏰ 16 saat oruç → 8 saat yeme penceresi
-
-Örnek:
-🕐 12:30 — İlk öğün (öğle)
-🕖 19:30 — Son öğün (akşam)
-🚫 20:30'dan sonra sadece su, sade kahve, çay
-
-IF + Keto kombinasyonu en hızlı ve kalıcı sonucu verir. Sabahları acıkmıyorsan zaten yapabilirsin! 💪'
+    a: 'Aralıklı Oruç (IF) 16:8 protokolü:\n\n⏰ 16 saat oruç → 8 saat yeme penceresi\n\nÖrnek:\n🕐 12:30 — İlk öğün (öğle)\n🕖 19:30 — Son öğün (akşam)\n🚫 20:30\'dan sonra sadece su, sade kahve, çay\n\nIF + Keto kombinasyonu en hızlı ve kalıcı sonucu verir! 💪'
   },
   ucretsiz: {
     q: '🎁 Ücretsiz Plan',
-    a: 'Evet! 3 günlük kişisel keto planını tamamen ücretsiz oluşturabilirsin. 🎉
-
-✅ Kredi kartı gerekmez
-✅ Kayıt gerekmez
-✅ Anında hazır
-✅ Excel'e aktarabilirsin
-
-Sayfanın üstündeki "Planımı Oluştur" butonuna tıkla, bilgilerini gir, planın hazır! 🥑'
+    a: 'Evet! 3 günlük kişisel keto planını tamamen ücretsiz oluşturabilirsin. 🎉\n\n✅ Kredi kartı gerekmez\n✅ Kayıt gerekmez\n✅ Anında hazır\n✅ Excel\'e aktarabilirsin\n\nSayfanın üstündeki Planımı Oluştur butonuna tıkla! 🥑'
   },
   iletisim: {
     q: '📞 İletişim',
-    a: 'Bize ulaşmak için:
-
-📱 <b>WhatsApp:</b> +90 542 354 86 68
-📸 <b>Instagram:</b> @ketodiyetim.tr
-🌐 <b>Web:</b> ketojenikdiyetim.com
-
-Hafta içi ve hafta sonu aktifiz. WhatsApp'tan yazabilirsin!'
+    a: 'Bize ulaşmak için:\n\n📱 <b>WhatsApp:</b> +90 542 354 86 68\n📸 <b>Instagram:</b> @ketodiyetim.tr\n🌐 <b>Web:</b> ketojenikdiyetim.com\n\nHafta içi ve hafta sonu aktifiz!'
   }
 };
 
@@ -2297,9 +2251,7 @@ function kdSendMsg() {
 
   if (!replied) {
     setTimeout(function() {
-      kdBotMsg('Bu konuda size en iyi WhatsApp üzerinden yardımcı olabiliriz. 💬
-
-<b>+90 542 354 86 68</b> numaramıza yazabilirsiniz. Hızlıca dönüş yapıyoruz!');
+      kdBotMsg('Bu konuda size en iyi WhatsApp üzerinden yardımcı olabiliriz. 💬\n\n<b>+90 542 354 86 68</b> numaramıza yazabilirsiniz. Hızlıca dönüş yapıyoruz!');
     }, 400);
   }
 }
