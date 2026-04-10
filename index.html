@@ -206,7 +206,7 @@ section{position:relative;z-index:1;}
 .locked-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;}
 .locked-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:28px 20px;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;min-height:120px;cursor:pointer;transition:border-color .2s;}
 .locked-card:hover{border-color:rgba(45,122,74,0.25);}
-.locked-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(244,249,245,0.5),rgba(244,249,245,0.85));backdrop-filter:blur(2px);}
+.locked-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(12,9,5,0.5),rgba(12,9,5,0.8));backdrop-filter:blur(2px);}
 .locked-inner{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:7px;}
 .l-ico{font-size:1.6rem;opacity:0.55;}
 .l-gün{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--muted);}
@@ -222,7 +222,7 @@ section{position:relative;z-index:1;}
 .pricing-grid{margin-top:48px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;}
 .price-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:32px 28px;position:relative;overflow:hidden;transition:transform .2s,border-color .2s;}
 .price-card:hover{transform:translateY(-3px);border-color:rgba(45,122,74,0.25);}
-.price-card.featured{border-color:var(--gold);background:linear-gradient(145deg,#e8f5e9,#f0f8f2);}
+.price-card.featured{border-color:var(--gold);background:linear-gradient(145deg,#201A10,#1C1610);}
 .feat-badge{position:absolute;top:0;right:0;background:var(--gold);color:var(--bg);font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;padding:5px 13px;border-radius:0 14px 0 7px;}
 .pname{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:8px;}
 .pval{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:900;color:var(--gold);line-height:1;}
@@ -364,7 +364,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, transparent 40%, rgba(244,249,245,0.7));
+  background: linear-gradient(to bottom, transparent 40%, rgba(12,9,5,0.6));
 }
 .bt1 { background: linear-gradient(135deg, #1C1206, #2A1A08); }
 .bt2 { background: linear-gradient(135deg, #06101C, #081A28); }
@@ -523,10 +523,10 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
     <a href="#pricing" class="btn-g" data-i18n="hero_btn_packages">Paketleri İncele</a>
   </div>
   <div class="hero-stats">
-    <div class="hs"><div class="v">3 Gün</div><div class="l" data-i18n="stat_free">Ücretsiz</div></div>
-    <div class="hs"><div class="v">Excel</div><div class="l" data-i18n="stat_export">Export</div></div>
-    <div class="hs"><div class="v">IF 16:8</div><div class="l" data-i18n="stat_protocol">Protokol</div></div>
-    <div class="hs"><div class="v">%100</div><div class="l" data-i18n="stat_personal">Kişisel</div></div>
+    <div class="hs"><div class="v">3 Gün</div><div class="l">Ücretsiz</div></div>
+    <div class="hs"><div class="v">Excel</div><div class="l">Export</div></div>
+    <div class="hs"><div class="v">IF 16:8</div><div class="l">Protokol</div></div>
+    <div class="hs"><div class="v">%100</div><div class="l">Kişisel</div></div>
   </div>
 </section>
 
@@ -554,7 +554,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
   <!-- STEP 1: PROFILE FORM -->
   <div class="profile-form active" id="step1">
     <div class="sl">Ücretsiz 3 Günlük Plan</div>
-    <h2 class="st"><span data-i18n="form_title">Profilini oluştur, <em>planını al</em></span></h2>
+    <h2 class="st">Profilini oluştur, <em>planını al</em></h2>
     <p class="form-sub" style="margin-top:8px;">Bilgilerini girerek sana özel 3 günlük IF+Keto programını ücretsiz oluştur. Excel'e aktarabilirsin. Devam günleri için plan satın alabilirsin.</p>
 
     <div class="form-grid">
@@ -724,7 +724,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
 <!-- PRICING -->
 <section class="pricing" id="pricing">
   <div class="sl">Paketler & Fiyatlar</div>
-  <h2 class="st"><span data-i18n="pricing_title"><em>Devam günlerini</em> satın al</span></h2>
+  <h2 class="st"><em>Devam günlerini</em> satın al</h2>
 
 
 
@@ -742,7 +742,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
         <li><div class="pf-ico">✓</div>Aylık alışveriş listesi</li>
         <li><div class="pf-ico">✓</div>WhatsApp destek (7 gün)</li>
       </ul>
-      <button class="btn-buy pa" id="p1btn" onclick="openModal('Başlangıç Paketi','249 ₺/ay')" data-i18n="pkg_buy_wa">WhatsApp ile Satın Al →</button>
+      <button class="btn-buy pa" id="p1btn" onclick="openModal('Başlangıç Paketi','249 ₺/ay')">WhatsApp ile Satın Al →</button>
       <p class="psub">24 saat içinde PDF + Excel teslim</p>
     </div>
     <!-- POPULAR -->
@@ -760,7 +760,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
         <li><div class="pf-ico g">✓</div>Aylık menü güncellemesi</li>
         <li><div class="pf-ico g">✓</div>WhatsApp destek (30 gün)</li>
       </ul>
-      <button class="btn-buy pf" id="p2btn" onclick="openModal('Tam Program','799 ₺/ay')" data-i18n="pkg_buy_wa">WhatsApp ile Satın Al →</button>
+      <button class="btn-buy pf" id="p2btn" onclick="openModal('Tam Program','799 ₺/ay')">WhatsApp ile Satın Al →</button>
       <p class="psub">WhatsApp ile kişisel teslim</p>
     </div>
     <!-- PREMIUM -->
@@ -777,7 +777,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
         <li><div class="pf-ico">✓</div>Egzersiz entegrasyonu</li>
         <li><div class="pf-ico">✓</div>Kan tahlili rehberliği</li>
       </ul>
-      <button class="btn-buy pa" id="p3btn" onclick="openModal('Dönüşüm Paketi','1.999 ₺/ay')" data-i18n="pkg_buy_wa">WhatsApp ile Satın Al →</button>
+      <button class="btn-buy pa" id="p3btn" onclick="openModal('Dönüşüm Paketi','1.999 ₺/ay')">WhatsApp ile Satın Al →</button>
       <p class="psub">En kapsamlı paket · Hedefe ulaş</p>
     </div>
   </div>
@@ -799,7 +799,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
 <!-- FAQ -->
 <section class="faq">
   <div class="sl">Sıkça Sorulan Sorular</div>
-  <h2 class="st"><span data-i18n="faq_title">Aklındaki <em>sorular</em></span></h2>
+  <h2 class="st">Aklındaki <em>sorular</em></h2>
   <div class="faq-list">
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)">3 günlük planı Excel'e nasıl aktarıyorum? <span class="faq-ico">+</span></div>
@@ -828,7 +828,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
 <!-- BLOG -->
 <section class="blog" id="blog">
   <div class="sl">Blog & Rehber</div>
-  <h2 class="st"><span data-i18n="blog_title">Keto hakkında <em>her şey</em></span></h2>
+  <h2 class="st">Keto hakkında <em>her şey</em></h2>
 
   <!-- Kategori filtreleri -->
   <div class="blog-filters">
@@ -1419,7 +1419,7 @@ function showToast(msg) {
 ============================================================ */
 window.addEventListener('scroll', () => {
   document.querySelector('nav').style.background =
-    window.scrollY > 50 ? 'rgba(244,249,245,0.97)' : 'rgba(244,249,245,0.95)';
+    window.scrollY > 50 ? 'rgba(12,9,5,0.97)' : 'rgba(12,9,5,0.93)';
 });
 
 // Tek seferlik fiyatlandırma aktif
@@ -1971,528 +1971,241 @@ function closeHabitModal() {
 </script>
 
 
-<!-- ══════ KETODIYETIM I18N (ÇOK DİLLİ) ══════ -->
+<!-- ══════ ÇOK DİLLİ ÇEVİRİ SİSTEMİ v2 ══════ -->
 <script>
-/*
-  KetoDiyetim — Çok Dilli Çeviri Sistemi (i18n)
-  Desteklenen diller: TR, EN, DE, RU, AR, FR, ES, DA
-  
-  KURULUM:
-  1. Bu dosyayı sunucuya yükleyin: /js/ketodiyetim-i18n.js
-  2. </body> üstüne ekleyin: <script src="/js/ketodiyetim-i18n.js"></script>
-  3. Çevrilecek HTML elementlerine data-i18n="anahtar" attribute'u ekleyin
-  
-  Örnek: <h1 data-i18n="hero_title">Senin Damağına Özel Keto</h1>
-*/
+/* KetoDiyetim — Otomatik Çeviri Sistemi v2
+   Tüm Türkçe metinleri otomatik bulur ve değiştirir.
+   data-i18n attribute'una gerek yok. */
+(function(){
+var LANGS={
+  tr:{label:"Türkçe",flag:"\u{1F1F9}\u{1F1F7}",dir:"ltr"},
+  en:{label:"English",flag:"\u{1F1EC}\u{1F1E7}",dir:"ltr"},
+  de:{label:"Deutsch",flag:"\u{1F1E9}\u{1F1EA}",dir:"ltr"},
+  ru:{label:"\u0420\u0443\u0441\u0441\u043A\u0438\u0439",flag:"\u{1F1F7}\u{1F1FA}",dir:"ltr"},
+  ar:{label:"\u0627\u0644\u0639\u0631\u0628\u064A\u0629",flag:"\u{1F1F8}\u{1F1E6}",dir:"rtl"},
+  fr:{label:"Fran\u00e7ais",flag:"\u{1F1EB}\u{1F1F7}",dir:"ltr"},
+  es:{label:"Espa\u00f1ol",flag:"\u{1F1EA}\u{1F1F8}",dir:"ltr"},
+  da:{label:"Dansk",flag:"\u{1F1E9}\u{1F1F0}",dir:"ltr"}
+};
 
-(function () {
-  var LANGS = {
-    tr: { label: "Türkçe", flag: "🇹🇷", dir: "ltr" },
-    en: { label: "English", flag: "🇬🇧", dir: "ltr" },
-    de: { label: "Deutsch", flag: "🇩🇪", dir: "ltr" },
-    ru: { label: "Русский", flag: "🇷🇺", dir: "ltr" },
-    ar: { label: "العربية", flag: "🇸🇦", dir: "rtl" },
-    fr: { label: "Français", flag: "🇫🇷", dir: "ltr" },
-    es: { label: "Español", flag: "🇪🇸", dir: "ltr" },
-    da: { label: "Dansk", flag: "🇩🇰", dir: "ltr" }
-  };
+/* Çeviri sözlüğü: Türkçe metin → diğer diller */
+var D = {
+// NAV
+"Planımı Oluştur":{en:"Create My Plan",de:"Meinen Plan erstellen",ru:"\u0421\u043e\u0437\u0434\u0430\u0442\u044c \u043f\u043b\u0430\u043d",ar:"\u0625\u0646\u0634\u0627\u0621 \u062e\u0637\u062a\u064a",fr:"Cr\u00e9er mon plan",es:"Crear mi plan",da:"Opret min plan"},
+"Paketler":{en:"Packages",de:"Pakete",ru:"\u041f\u0430\u043a\u0435\u0442\u044b",ar:"\u0627\u0644\u0628\u0627\u0642\u0627\u062a",fr:"Forfaits",es:"Paquetes",da:"Pakker"},
+"Nasıl Çalışır":{en:"How It Works",de:"So funktioniert's",ru:"\u041a\u0430\u043a \u044d\u0442\u043e \u0440\u0430\u0431\u043e\u0442\u0430\u0435\u0442",ar:"\u0643\u064a\u0641 \u064a\u0639\u0645\u0644",fr:"Comment \u00e7a marche",es:"C\u00f3mo funciona",da:"S\u00e5dan virker det"},
+"Blog":{en:"Blog",de:"Blog",ru:"\u0411\u043b\u043e\u0433",ar:"\u0627\u0644\u0645\u062f\u0648\u0646\u0629",fr:"Blog",es:"Blog",da:"Blog"},
+"Satın Al":{en:"Buy Now",de:"Jetzt kaufen",ru:"\u041a\u0443\u043f\u0438\u0442\u044c",ar:"\u0627\u0634\u062a\u0631\u0650 \u0627\u0644\u0622\u0646",fr:"Acheter",es:"Comprar",da:"K\u00f8b nu"},
 
-  /* ═══════════════════════════════════════════════
-     ÇEVİRİ SÖZLÜĞÜ
-     ═══════════════════════════════════════════════ */
-  var T = {
+// HERO
+"Türkiye'nin Kişisel Keto Platformu":{en:"Your Personalized Keto Platform",de:"Ihre pers\u00f6nliche Keto-Plattform",ru:"\u0412\u0430\u0448\u0430 \u043f\u0435\u0440\u0441\u043e\u043d\u0430\u043b\u044c\u043d\u0430\u044f \u043a\u0435\u0442\u043e-\u043f\u043b\u0430\u0442\u0444\u043e\u0440\u043c\u0430",ar:"\u0645\u0646\u0635\u062a\u0643 \u0627\u0644\u0634\u062e\u0635\u064a\u0629 \u0644\u0646\u0638\u0627\u0645 \u0627\u0644\u0643\u064a\u062a\u0648",fr:"Votre plateforme Keto personnalis\u00e9e",es:"Tu plataforma Keto personalizada",da:"Din personlige keto-platform"},
+"Planımı Oluştur →":{en:"Create My Plan \u2192",de:"Meinen Plan erstellen \u2192",ru:"\u0421\u043e\u0437\u0434\u0430\u0442\u044c \u043f\u043b\u0430\u043d \u2192",ar:"\u2190 \u0625\u0646\u0634\u0627\u0621 \u062e\u0637\u062a\u064a",fr:"Cr\u00e9er mon plan \u2192",es:"Crear mi plan \u2192",da:"Opret min plan \u2192"},
+"Paketleri İncele":{en:"View Packages",de:"Pakete ansehen",ru:"\u0421\u043c\u043e\u0442\u0440\u0435\u0442\u044c \u043f\u0430\u043a\u0435\u0442\u044b",ar:"\u0639\u0631\u0636 \u0627\u0644\u0628\u0627\u0642\u0627\u062a",fr:"Voir les forfaits",es:"Ver paquetes",da:"Se pakker"},
 
-    // ──── NAVİGASYON ────
-    nav_plan: {
-      tr: "Planımı Oluştur", en: "Create My Plan", de: "Meinen Plan erstellen",
-      ru: "Создать план", ar: "إنشاء خطتي", fr: "Créer mon plan",
-      es: "Crear mi plan", da: "Opret min plan"
-    },
-    nav_packages: {
-      tr: "Paketler", en: "Packages", de: "Pakete",
-      ru: "Пакеты", ar: "الباقات", fr: "Forfaits",
-      es: "Paquetes", da: "Pakker"
-    },
-    nav_how: {
-      tr: "Nasıl Çalışır", en: "How It Works", de: "So funktioniert's",
-      ru: "Как это работает", ar: "كيف يعمل", fr: "Comment ça marche",
-      es: "Cómo funciona", da: "Sådan virker det"
-    },
-    nav_blog: {
-      tr: "Blog", en: "Blog", de: "Blog",
-      ru: "Блог", ar: "المدونة", fr: "Blog",
-      es: "Blog", da: "Blog"
-    },
-    nav_buy: {
-      tr: "Satın Al", en: "Buy Now", de: "Jetzt kaufen",
-      ru: "Купить", ar: "اشترِ الآن", fr: "Acheter",
-      es: "Comprar", da: "Køb nu"
-    },
+// STATS
+"3 Gün":{en:"3 Days",de:"3 Tage",ru:"3 \u0414\u043d\u044f",ar:"3 \u0623\u064a\u0627\u0645",fr:"3 Jours",es:"3 D\u00edas",da:"3 Dage"},
+"Ücretsiz":{en:"Free",de:"Kostenlos",ru:"\u0411\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u043e",ar:"\u0645\u062c\u0627\u0646\u064a",fr:"Gratuit",es:"Gratis",da:"Gratis"},
+"Export":{en:"Export",de:"Export",ru:"\u042d\u043a\u0441\u043f\u043e\u0440\u0442",ar:"\u062a\u0635\u062f\u064a\u0631",fr:"Export",es:"Exportar",da:"Eksport"},
+"IF 16:8":{en:"IF 16:8",de:"IF 16:8",ru:"IF 16:8",ar:"IF 16:8",fr:"IF 16:8",es:"IF 16:8",da:"IF 16:8"},
+"Protokol":{en:"Protocol",de:"Protokoll",ru:"\u041f\u0440\u043e\u0442\u043e\u043a\u043e\u043b",ar:"\u0628\u0631\u0648\u062a\u0648\u0643\u0648\u0644",fr:"Protocole",es:"Protocolo",da:"Protokol"},
+"%100":{en:"100%",de:"100%",ru:"100%",ar:"%100",fr:"100%",es:"100%",da:"100%"},
+"Kişisel":{en:"Personal",de:"Pers\u00f6nlich",ru:"\u041b\u0438\u0447\u043d\u044b\u0439",ar:"\u0634\u062e\u0635\u064a",fr:"Personnel",es:"Personal",da:"Personlig"},
 
-    // ──── HERO BÖLÜMÜ ────
-    hero_subtitle: {
-      tr: "Türkiye'nin Kişisel Keto Platformu",
-      en: "Your Personalized Keto Platform",
-      de: "Ihre persönliche Keto-Plattform",
-      ru: "Ваша персональная кето-платформа",
-      ar: "منصتك الشخصية لنظام الكيتو",
-      fr: "Votre plateforme Keto personnalisée",
-      es: "Tu plataforma Keto personalizada",
-      da: "Din personlige keto-platform"
-    },
-    hero_title: {
-      tr: "Senin Damağına Özel Keto",
-      en: "Keto Tailored to Your Taste",
-      de: "Keto nach Deinem Geschmack",
-      ru: "Кето по вашему вкусу",
-      ar: "كيتو مصمم لذوقك",
-      fr: "Keto adapté à vos goûts",
-      es: "Keto adaptado a tu gusto",
-      da: "Keto tilpasset din smag"
-    },
-    hero_desc: {
-      tr: "Bilgilerini gir, 3 günlük kişisel planını saniyeler içinde oluştur. Excel'e aktar. Devamını satın al.",
-      en: "Enter your info, create your personalized 3-day plan in seconds. Export to Excel. Purchase the full plan.",
-      de: "Gib deine Daten ein, erstelle deinen 3-Tage-Plan in Sekunden. Als Excel exportieren. Vollversion kaufen.",
-      ru: "Введите данные, создайте 3-дневный план за секунды. Экспорт в Excel. Купите полный план.",
-      ar: "أدخل بياناتك، وأنشئ خطتك الشخصية لمدة 3 أيام في ثوانٍ. صدّرها إلى إكسل. اشترِ الخطة الكاملة.",
-      fr: "Entrez vos infos, créez votre plan personnalisé de 3 jours en quelques secondes. Exportez en Excel.",
-      es: "Ingresa tus datos, crea tu plan personalizado de 3 días en segundos. Exporta a Excel.",
-      da: "Indtast dine oplysninger, opret din personlige 3-dages plan på sekunder. Eksportér til Excel."
-    },
-    hero_btn_plan: {
-      tr: "Planımı Oluştur →", en: "Create My Plan →", de: "Meinen Plan erstellen →",
-      ru: "Создать план →", ar: "← إنشاء خطتي", fr: "Créer mon plan →",
-      es: "Crear mi plan →", da: "Opret min plan →"
-    },
-    hero_btn_packages: {
-      tr: "Paketleri İncele", en: "View Packages", de: "Pakete ansehen",
-      ru: "Смотреть пакеты", ar: "عرض الباقات", fr: "Voir les forfaits",
-      es: "Ver paquetes", da: "Se pakker"
-    },
+// FORM
+"Profilini Gir":{en:"Enter Profile",de:"Profil eingeben",ru:"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043f\u0440\u043e\u0444\u0438\u043b\u044c",ar:"\u0623\u062f\u062e\u0644 \u0645\u0644\u0641\u0643",fr:"Entrer le profil",es:"Ingresa perfil",da:"Indtast profil"},
+"Plan Oluşturuluyor":{en:"Creating Plan",de:"Plan wird erstellt",ru:"\u0421\u043e\u0437\u0434\u0430\u043d\u0438\u0435 \u043f\u043b\u0430\u043d\u0430",ar:"\u062c\u0627\u0631\u064a \u0625\u0646\u0634\u0627\u0621 \u0627\u0644\u062e\u0637\u0629",fr:"Cr\u00e9ation du plan",es:"Creando plan",da:"Opretter plan"},
+"3 Günlük Planın Hazır":{en:"Your 3-Day Plan is Ready",de:"Dein 3-Tage-Plan ist fertig",ru:"\u0412\u0430\u0448 3-\u0434\u043d\u0435\u0432\u043d\u044b\u0439 \u043f\u043b\u0430\u043d \u0433\u043e\u0442\u043e\u0432",ar:"\u062e\u0637\u062a\u0643 \u0644\u0645\u062f\u0629 3 \u0623\u064a\u0627\u0645 \u062c\u0627\u0647\u0632\u0629",fr:"Votre plan de 3 jours est pr\u00eat",es:"Tu plan de 3 d\u00edas est\u00e1 listo",da:"Din 3-dages plan er klar"},
+"Ücretsiz 3 Günlük Plan":{en:"Free 3-Day Plan",de:"Kostenloser 3-Tage-Plan",ru:"\u0411\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u044b\u0439 3-\u0434\u043d\u0435\u0432\u043d\u044b\u0439 \u043f\u043b\u0430\u043d",ar:"\u062e\u0637\u0629 \u0645\u062c\u0627\u0646\u064a\u0629 \u0644\u0645\u062f\u0629 3 \u0623\u064a\u0627\u0645",fr:"Plan gratuit de 3 jours",es:"Plan gratuito de 3 d\u00edas",da:"Gratis 3-dages plan"},
+"Adın":{en:"Name",de:"Name",ru:"\u0418\u043c\u044f",ar:"\u0627\u0644\u0627\u0633\u0645",fr:"Pr\u00e9nom",es:"Nombre",da:"Navn"},
+"Yaş":{en:"Age",de:"Alter",ru:"\u0412\u043e\u0437\u0440\u0430\u0441\u0442",ar:"\u0627\u0644\u0639\u0645\u0631",fr:"\u00c2ge",es:"Edad",da:"Alder"},
+"Kilo (kg)":{en:"Weight (kg)",de:"Gewicht (kg)",ru:"\u0412\u0435\u0441 (\u043a\u0433)",ar:"\u0627\u0644\u0648\u0632\u0646 (\u0643\u062c\u0645)",fr:"Poids (kg)",es:"Peso (kg)",da:"V\u00e6gt (kg)"},
+"Boy (cm)":{en:"Height (cm)",de:"Gr\u00f6\u00dfe (cm)",ru:"\u0420\u043e\u0441\u0442 (\u0441\u043c)",ar:"\u0627\u0644\u0637\u0648\u0644 (\u0633\u0645)",fr:"Taille (cm)",es:"Altura (cm)",da:"H\u00f8jde (cm)"},
+"Hedef Kilo (kg)":{en:"Target Weight (kg)",de:"Zielgewicht (kg)",ru:"\u0426\u0435\u043b\u0435\u0432\u043e\u0439 \u0432\u0435\u0441 (\u043a\u0433)",ar:"\u0627\u0644\u0648\u0632\u0646 \u0627\u0644\u0645\u0633\u062a\u0647\u062f\u0641 (\u0643\u062c\u0645)",fr:"Poids cible (kg)",es:"Peso objetivo (kg)",da:"M\u00e5lv\u00e6gt (kg)"},
+"Cinsiyet":{en:"Gender",de:"Geschlecht",ru:"\u041f\u043e\u043b",ar:"\u0627\u0644\u062c\u0646\u0633",fr:"Sexe",es:"G\u00e9nero",da:"K\u00f8n"},
+"Erkek":{en:"Male",de:"M\u00e4nnlich",ru:"\u041c\u0443\u0436\u0441\u043a\u043e\u0439",ar:"\u0630\u0643\u0631",fr:"Homme",es:"Hombre",da:"Mand"},
+"Kadın":{en:"Female",de:"Weiblich",ru:"\u0416\u0435\u043d\u0441\u043a\u0438\u0439",ar:"\u0623\u0646\u062b\u0649",fr:"Femme",es:"Mujer",da:"Kvinde"},
+"Hareket Düzeni":{en:"Activity Level",de:"Aktivit\u00e4tsniveau",ru:"\u0423\u0440\u043e\u0432\u0435\u043d\u044c \u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u0438",ar:"\u0645\u0633\u062a\u0648\u0649 \u0627\u0644\u0646\u0634\u0627\u0637",fr:"Niveau d'activit\u00e9",es:"Nivel de actividad",da:"Aktivitetsniveau"},
+"Hareketsiz (masa başı iş)":{en:"Sedentary (desk job)",de:"Sitzend (B\u00fcrojob)",ru:"\u0421\u0438\u0434\u044f\u0447\u0438\u0439 (\u043e\u0444\u0438\u0441)",ar:"\u062e\u0627\u0645\u0644 (\u0639\u0645\u0644 \u0645\u0643\u062a\u0628\u064a)",fr:"S\u00e9dentaire (bureau)",es:"Sedentario (oficina)",da:"Stillesiddende (kontorjob)"},
+"Az hareketli (haftada 1-2 yürüyüş)":{en:"Lightly active (1-2 walks/week)",de:"Leicht aktiv (1-2 Spazierg\u00e4nge/Woche)",ru:"\u041c\u0430\u043b\u043e\u043f\u043e\u0434\u0432\u0438\u0436\u043d\u044b\u0439 (1-2 \u043f\u0440\u043e\u0433\u0443\u043b\u043a\u0438/\u043d\u0435\u0434.)",ar:"\u0646\u0634\u0627\u0637 \u062e\u0641\u064a\u0641 (1-2 \u0645\u0634\u064a/\u0623\u0633\u0628\u0648\u0639)",fr:"Peu actif (1-2 marches/sem.)",es:"Poco activo (1-2 caminatas/sem.)",da:"Let aktiv (1-2 g\u00e5ture/uge)"},
+"Orta aktif (haftada 3-4 egzersiz)":{en:"Moderately active (3-4 workouts/week)",de:"M\u00e4\u00dfig aktiv (3-4 Trainings/Woche)",ru:"\u0423\u043c\u0435\u0440\u0435\u043d\u043d\u043e \u0430\u043a\u0442\u0438\u0432\u043d\u044b\u0439 (3-4 \u0442\u0440\u0435\u043d./\u043d\u0435\u0434.)",ar:"\u0646\u0634\u0627\u0637 \u0645\u0639\u062a\u062f\u0644 (3-4 \u062a\u0645\u0627\u0631\u064a\u0646/\u0623\u0633\u0628\u0648\u0639)",fr:"Mod\u00e9r\u00e9ment actif (3-4 s\u00e9ances/sem.)",es:"Moderadamente activo (3-4 ejerc./sem.)",da:"Moderat aktiv (3-4 tr\u00e6ninger/uge)"},
+"Çok aktif (düzenli spor)":{en:"Very active (regular sports)",de:"Sehr aktiv (regelm\u00e4\u00dfiger Sport)",ru:"\u041e\u0447\u0435\u043d\u044c \u0430\u043a\u0442\u0438\u0432\u043d\u044b\u0439 (\u0440\u0435\u0433\u0443\u043b\u044f\u0440\u043d\u044b\u0439 \u0441\u043f\u043e\u0440\u0442)",ar:"\u0646\u0634\u0627\u0637 \u0639\u0627\u0644\u064a (\u0631\u064a\u0627\u0636\u0629 \u0645\u0646\u062a\u0638\u0645\u0629)",fr:"Tr\u00e8s actif (sport r\u00e9gulier)",es:"Muy activo (deporte regular)",da:"Meget aktiv (regelm\u00e6ssig sport)"},
+"Sevmediğin / Yemediğin Yiyecekler (tıklayarak seç)":{en:"Foods You Dislike / Don't Eat (click to select)",de:"Lebensmittel, die du nicht magst (klicke zum Ausw\u00e4hlen)",ru:"\u041f\u0440\u043e\u0434\u0443\u043a\u0442\u044b, \u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u0432\u044b \u043d\u0435 \u0435\u0434\u0438\u0442\u0435 (\u043d\u0430\u0436\u043c\u0438\u0442\u0435)",ar:"\u0627\u0644\u0623\u0637\u0639\u0645\u0629 \u0627\u0644\u062a\u064a \u0644\u0627 \u062a\u062d\u0628\u0647\u0627 (\u0627\u0646\u0642\u0631 \u0644\u0644\u0627\u062e\u062a\u064a\u0627\u0631)",fr:"Aliments que vous n'aimez pas (cliquez)",es:"Alimentos que no te gustan (clic para seleccionar)",da:"Madvarer du ikke kan lide (klik for at v\u00e6lge)"},
+"Yemek Tercihlerin (sevdiklerini seç)":{en:"Food Preferences (select your favorites)",de:"Essensvorlieben (Favoriten w\u00e4hlen)",ru:"\u041f\u0440\u0435\u0434\u043f\u043e\u0447\u0442\u0435\u043d\u0438\u044f (\u0432\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u043b\u044e\u0431\u0438\u043c\u044b\u0435)",ar:"\u062a\u0641\u0636\u064a\u0644\u0627\u062a \u0627\u0644\u0637\u0639\u0627\u0645 (\u0627\u062e\u062a\u0631 \u0627\u0644\u0645\u0641\u0636\u0644\u0629)",fr:"Pr\u00e9f\u00e9rences alimentaires (s\u00e9lectionnez)",es:"Preferencias alimentarias (selecciona)",da:"Madpr\u00e6ferencer (v\u00e6lg favoritter)"},
+"IF Protokolü Tercih":{en:"IF Protocol Preference",de:"IF-Protokoll-Auswahl",ru:"\u0412\u044b\u0431\u043e\u0440 \u043f\u0440\u043e\u0442\u043e\u043a\u043e\u043b\u0430 IF",ar:"\u062a\u0641\u0636\u064a\u0644 \u0628\u0631\u0648\u062a\u0648\u0643\u0648\u0644 \u0627\u0644\u0635\u064a\u0627\u0645",fr:"Choix du protocole IF",es:"Preferencia de protocolo IF",da:"IF-protokol valg"},
+"16:8 (12:30–20:00)":{en:"16:8 (12:30\u201320:00)",de:"16:8 (12:30\u201320:00)",ru:"16:8 (12:30\u201320:00)",ar:"16:8 (12:30\u201320:00)",fr:"16:8 (12:30\u201320:00)",es:"16:8 (12:30\u201320:00)",da:"16:8 (12:30\u201320:00)"},
+"18:6 (14:00–20:00)":{en:"18:6 (14:00\u201320:00)",de:"18:6 (14:00\u201320:00)",ru:"18:6 (14:00\u201320:00)",ar:"18:6 (14:00\u201320:00)",fr:"18:6 (14:00\u201320:00)",es:"18:6 (14:00\u201320:00)",da:"18:6 (14:00\u201320:00)"},
+"IF yok":{en:"No IF",de:"Kein IF",ru:"\u0411\u0435\u0437 IF",ar:"\u0628\u062f\u0648\u0646 \u0635\u064a\u0627\u0645",fr:"Sans IF",es:"Sin IF",da:"Ingen IF"},
+"Ek Not (isteğe bağlı)":{en:"Additional Note (optional)",de:"Zus\u00e4tzliche Notiz (optional)",ru:"\u0417\u0430\u043c\u0435\u0442\u043a\u0430 (\u043d\u0435\u043e\u0431\u044f\u0437\u0430\u0442\u0435\u043b\u044c\u043d\u043e)",ar:"\u0645\u0644\u0627\u062d\u0638\u0629 \u0625\u0636\u0627\u0641\u064a\u0629 (\u0627\u062e\u062a\u064a\u0627\u0631\u064a)",fr:"Note suppl\u00e9mentaire (facultatif)",es:"Nota adicional (opcional)",da:"Yderligere note (valgfri)"},
+"Ücretsiz · Kredi kartı gerekmez":{en:"Free \u00b7 No credit card required",de:"Kostenlos \u00b7 Keine Kreditkarte n\u00f6tig",ru:"\u0411\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u043e \u00b7 \u041a\u0430\u0440\u0442\u0430 \u043d\u0435 \u043d\u0443\u0436\u043d\u0430",ar:"\u0645\u062c\u0627\u0646\u064a \u00b7 \u0644\u0627 \u062d\u0627\u062c\u0629 \u0644\u0628\u0637\u0627\u0642\u0629",fr:"Gratuit \u00b7 Pas de carte bancaire",es:"Gratis \u00b7 Sin tarjeta de cr\u00e9dito",da:"Gratis \u00b7 Intet kreditkort p\u00e5kr\u00e6vet"},
 
-    // ──── STATS ────
-    stat_free: {
-      tr: "Ücretsiz", en: "Free", de: "Kostenlos",
-      ru: "Бесплатно", ar: "مجاني", fr: "Gratuit",
-      es: "Gratis", da: "Gratis"
-    },
-    stat_export: {
-      tr: "Export", en: "Export", de: "Export",
-      ru: "Экспорт", ar: "تصدير", fr: "Export",
-      es: "Exportar", da: "Eksport"
-    },
-    stat_protocol: {
-      tr: "Protokol", en: "Protocol", de: "Protokoll",
-      ru: "Протокол", ar: "بروتوكول", fr: "Protocole",
-      es: "Protocolo", da: "Protokol"
-    },
-    stat_personal: {
-      tr: "Kişisel", en: "Personal", de: "Persönlich",
-      ru: "Личный", ar: "شخصي", fr: "Personnel",
-      es: "Personal", da: "Personlig"
-    },
+// FOOD ITEMS
+"Peynir":{en:"Cheese",de:"K\u00e4se",ru:"\u0421\u044b\u0440",ar:"\u062c\u0628\u0646",fr:"Fromage",es:"Queso",da:"Ost"},
+"Yoğurt":{en:"Yogurt",de:"Joghurt",ru:"\u0419\u043e\u0433\u0443\u0440\u0442",ar:"\u0632\u0628\u0627\u062f\u064a",fr:"Yaourt",es:"Yogur",da:"Yoghurt"},
+"Zeytin":{en:"Olives",de:"Oliven",ru:"\u041e\u043b\u0438\u0432\u043a\u0438",ar:"\u0632\u064a\u062a\u0648\u0646",fr:"Olives",es:"Aceitunas",da:"Oliven"},
+"Balık":{en:"Fish",de:"Fisch",ru:"\u0420\u044b\u0431\u0430",ar:"\u0633\u0645\u0643",fr:"Poisson",es:"Pescado",da:"Fisk"},
+"Deniz Ürünleri":{en:"Seafood",de:"Meeresfr\u00fcchte",ru:"\u041c\u043e\u0440\u0435\u043f\u0440\u043e\u0434\u0443\u043a\u0442\u044b",ar:"\u0645\u0623\u0643\u0648\u0644\u0627\u062a \u0628\u062d\u0631\u064a\u0629",fr:"Fruits de mer",es:"Mariscos",da:"Skaldyr"},
+"Kuzu Eti":{en:"Lamb",de:"Lamm",ru:"\u0411\u0430\u0440\u0430\u043d\u0438\u043d\u0430",ar:"\u0644\u062d\u0645 \u0636\u0623\u0646",fr:"Agneau",es:"Cordero",da:"Lam"},
+"Karaciğer":{en:"Liver",de:"Leber",ru:"\u041f\u0435\u0447\u0435\u043d\u044c",ar:"\u0643\u0628\u062f",fr:"Foie",es:"H\u00edgado",da:"Lever"},
+"Mantar":{en:"Mushrooms",de:"Pilze",ru:"\u0413\u0440\u0438\u0431\u044b",ar:"\u0641\u0637\u0631",fr:"Champignons",es:"Champi\u00f1ones",da:"Svampe"},
+"Brokoli":{en:"Broccoli",de:"Brokkoli",ru:"\u0411\u0440\u043e\u043a\u043a\u043e\u043b\u0438",ar:"\u0628\u0631\u0648\u0643\u0644\u064a",fr:"Brocoli",es:"Br\u00f3coli",da:"Broccoli"},
+"Ispanak":{en:"Spinach",de:"Spinat",ru:"\u0428\u043f\u0438\u043d\u0430\u0442",ar:"\u0633\u0628\u0627\u0646\u062e",fr:"\u00c9pinards",es:"Espinacas",da:"Spinat"},
+"Avokado":{en:"Avocado",de:"Avocado",ru:"\u0410\u0432\u043e\u043a\u0430\u0434\u043e",ar:"\u0623\u0641\u0648\u0643\u0627\u062f\u0648",fr:"Avocat",es:"Aguacate",da:"Avocado"},
+"Yumurta":{en:"Eggs",de:"Eier",ru:"\u042f\u0439\u0446\u0430",ar:"\u0628\u064a\u0636",fr:"\u0152ufs",es:"Huevos",da:"\u00c6g"},
+"Dana Eti":{en:"Beef",de:"Rindfleisch",ru:"\u0413\u043e\u0432\u044f\u0434\u0438\u043d\u0430",ar:"\u0644\u062d\u0645 \u0628\u0642\u0631",fr:"B\u0153uf",es:"Res",da:"Oksek\u00f8d"},
+"Tavuk":{en:"Chicken",de:"H\u00e4hnchen",ru:"\u041a\u0443\u0440\u0438\u0446\u0430",ar:"\u062f\u062c\u0627\u062c",fr:"Poulet",es:"Pollo",da:"Kylling"},
+"Kırmızı Et":{en:"Red Meat",de:"Rotes Fleisch",ru:"\u041a\u0440\u0430\u0441\u043d\u043e\u0435 \u043c\u044f\u0441\u043e",ar:"\u0644\u062d\u0645 \u0623\u062d\u0645\u0631",fr:"Viande rouge",es:"Carne roja",da:"R\u00f8dt k\u00f8d"},
+"Köfte":{en:"Meatballs",de:"Frikadellen",ru:"\u041a\u043e\u0442\u043b\u0435\u0442\u044b",ar:"\u0643\u0641\u062a\u0629",fr:"Boulettes",es:"Alb\u00f3ndigas",da:"Frikadeller"},
+"Bakliyat":{en:"Legumes",de:"H\u00fclsenfr\u00fcchte",ru:"\u0411\u043e\u0431\u043e\u0432\u044b\u0435",ar:"\u0628\u0642\u0648\u0644\u064a\u0627\u062a",fr:"L\u00e9gumineuses",es:"Legumbres",da:"B\u00e6lgfrugter"},
+"Çorba":{en:"Soup",de:"Suppe",ru:"\u0421\u0443\u043f",ar:"\u0634\u0648\u0631\u0628\u0629",fr:"Soupe",es:"Sopa",da:"Suppe"},
+"Izgara":{en:"Grilled",de:"Gegrillt",ru:"\u0413\u0440\u0438\u043b\u044c",ar:"\u0645\u0634\u0648\u064a",fr:"Grill\u00e9",es:"A la parrilla",da:"Grillet"},
+"Fırın Yemek":{en:"Oven-baked",de:"Ofengericht",ru:"\u0417\u0430\u043f\u0435\u0447\u0451\u043d\u043d\u043e\u0435",ar:"\u0637\u0628\u062e \u0628\u0627\u0644\u0641\u0631\u0646",fr:"Au four",es:"Al horno",da:"Ovnbagt"},
+"Diğer:":{en:"Other:",de:"Andere:",ru:"\u0414\u0440\u0443\u0433\u043e\u0435:",ar:"\u0623\u062e\u0631\u0649:",fr:"Autre:",es:"Otro:",da:"Andet:"},
 
-    // ──── FORM BÖLÜMÜ ────
-    form_title: {
-      tr: "Profilini oluştur, planını al",
-      en: "Create your profile, get your plan",
-      de: "Erstelle dein Profil, erhalte deinen Plan",
-      ru: "Создайте профиль, получите план",
-      ar: "أنشئ ملفك الشخصي، واحصل على خطتك",
-      fr: "Créez votre profil, recevez votre plan",
-      es: "Crea tu perfil, obtén tu plan",
-      da: "Opret din profil, få din plan"
-    },
-    form_desc: {
-      tr: "Bilgilerini girerek sana özel 3 günlük IF+Keto programını ücretsiz oluştur. Excel'e aktarabilirsin. Devam günleri için plan satın alabilirsin.",
-      en: "Enter your details to create a free personalized 3-day IF+Keto program. Export to Excel. Purchase continuation days.",
-      de: "Gib deine Daten ein und erstelle ein kostenloses 3-Tage IF+Keto-Programm. Excel-Export möglich.",
-      ru: "Введите данные для бесплатной 3-дневной программы IF+Кето. Экспорт в Excel.",
-      ar: "أدخل بياناتك لإنشاء برنامج IF+كيتو مجاني لمدة 3 أيام. يمكنك التصدير إلى إكسل.",
-      fr: "Entrez vos données pour créer un programme IF+Keto gratuit de 3 jours. Export Excel possible.",
-      es: "Ingresa tus datos para crear un programa IF+Keto gratuito de 3 días. Exporta a Excel.",
-      da: "Indtast dine data for at oprette et gratis 3-dages IF+Keto-program. Excel-eksport mulig."
-    },
-    form_name: {
-      tr: "Adın", en: "Name", de: "Name", ru: "Имя",
-      ar: "الاسم", fr: "Prénom", es: "Nombre", da: "Navn"
-    },
-    form_age: {
-      tr: "Yaş", en: "Age", de: "Alter", ru: "Возраст",
-      ar: "العمر", fr: "Âge", es: "Edad", da: "Alder"
-    },
-    form_weight: {
-      tr: "Kilo (kg)", en: "Weight (kg)", de: "Gewicht (kg)", ru: "Вес (кг)",
-      ar: "الوزن (كجم)", fr: "Poids (kg)", es: "Peso (kg)", da: "Vægt (kg)"
-    },
-    form_height: {
-      tr: "Boy (cm)", en: "Height (cm)", de: "Größe (cm)", ru: "Рост (см)",
-      ar: "الطول (سم)", fr: "Taille (cm)", es: "Altura (cm)", da: "Højde (cm)"
-    },
-    form_target: {
-      tr: "Hedef Kilo (kg)", en: "Target Weight (kg)", de: "Zielgewicht (kg)",
-      ru: "Целевой вес (кг)", ar: "الوزن المستهدف (كجم)", fr: "Poids cible (kg)",
-      es: "Peso objetivo (kg)", da: "Målvægt (kg)"
-    },
-    form_gender: {
-      tr: "Cinsiyet", en: "Gender", de: "Geschlecht", ru: "Пол",
-      ar: "الجنس", fr: "Sexe", es: "Género", da: "Køn"
-    },
-    form_male: {
-      tr: "Erkek", en: "Male", de: "Männlich", ru: "Мужской",
-      ar: "ذكر", fr: "Homme", es: "Hombre", da: "Mand"
-    },
-    form_female: {
-      tr: "Kadın", en: "Female", de: "Weiblich", ru: "Женский",
-      ar: "أنثى", fr: "Femme", es: "Mujer", da: "Kvinde"
-    },
-    form_activity: {
-      tr: "Hareket Düzeni", en: "Activity Level", de: "Aktivitätsniveau",
-      ru: "Уровень активности", ar: "مستوى النشاط", fr: "Niveau d'activité",
-      es: "Nivel de actividad", da: "Aktivitetsniveau"
-    },
-    form_sedentary: {
-      tr: "Hareketsiz (masa başı iş)", en: "Sedentary (desk job)", de: "Sitzend (Bürojob)",
-      ru: "Сидячий (офисная работа)", ar: "خامل (عمل مكتبي)", fr: "Sédentaire (travail de bureau)",
-      es: "Sedentario (trabajo de oficina)", da: "Stillesiddende (kontorjob)"
-    },
-    form_light: {
-      tr: "Az hareketli (haftada 1-2 yürüyüş)", en: "Lightly active (1-2 walks/week)",
-      de: "Leicht aktiv (1-2 Spaziergänge/Woche)", ru: "Малоподвижный (1-2 прогулки/нед.)",
-      ar: "نشاط خفيف (1-2 مشي/أسبوع)", fr: "Peu actif (1-2 marches/semaine)",
-      es: "Poco activo (1-2 caminatas/semana)", da: "Let aktiv (1-2 gåture/uge)"
-    },
-    form_moderate: {
-      tr: "Orta aktif (haftada 3-4 egzersiz)", en: "Moderately active (3-4 workouts/week)",
-      de: "Mäßig aktiv (3-4 Trainings/Woche)", ru: "Умеренно активный (3-4 трен./нед.)",
-      ar: "نشاط معتدل (3-4 تمارين/أسبوع)", fr: "Modérément actif (3-4 séances/semaine)",
-      es: "Moderadamente activo (3-4 ejercicios/semana)", da: "Moderat aktiv (3-4 træninger/uge)"
-    },
-    form_very_active: {
-      tr: "Çok aktif (düzenli spor)", en: "Very active (regular sports)",
-      de: "Sehr aktiv (regelmäßiger Sport)", ru: "Очень активный (регулярный спорт)",
-      ar: "نشاط عالي (رياضة منتظمة)", fr: "Très actif (sport régulier)",
-      es: "Muy activo (deporte regular)", da: "Meget aktiv (regelmæssig sport)"
-    },
-    form_disliked: {
-      tr: "Sevmediğin / Yemediğin Yiyecekler", en: "Foods You Dislike / Don't Eat",
-      de: "Lebensmittel, die du nicht magst/isst", ru: "Продукты, которые вы не едите",
-      ar: "الأطعمة التي لا تحبها / لا تأكلها", fr: "Aliments que vous n'aimez pas",
-      es: "Alimentos que no te gustan / no comes", da: "Fødevarer du ikke kan lide / ikke spiser"
-    },
-    form_preferred: {
-      tr: "Yemek Tercihlerin", en: "Food Preferences", de: "Essensvorlieben",
-      ru: "Предпочтения в еде", ar: "تفضيلات الطعام", fr: "Préférences alimentaires",
-      es: "Preferencias alimentarias", da: "Madpræferencer"
-    },
-    form_if_protocol: {
-      tr: "IF Protokolü Tercih", en: "IF Protocol Preference", de: "IF-Protokoll-Auswahl",
-      ru: "Выбор протокола IF", ar: "تفضيل بروتوكول الصيام", fr: "Choix du protocole IF",
-      es: "Preferencia de protocolo IF", da: "IF-protokol valg"
-    },
-    form_if_none: {
-      tr: "IF yok", en: "No IF", de: "Kein IF", ru: "Без IF",
-      ar: "بدون صيام متقطع", fr: "Sans IF", es: "Sin IF", da: "Ingen IF"
-    },
-    form_note: {
-      tr: "Ek Not (isteğe bağlı)", en: "Additional Note (optional)", de: "Zusätzliche Notiz (optional)",
-      ru: "Дополнительная заметка (необязательно)", ar: "ملاحظة إضافية (اختياري)",
-      fr: "Note supplémentaire (facultatif)", es: "Nota adicional (opcional)",
-      da: "Yderligere note (valgfri)"
-    },
-    form_submit: {
-      tr: "🔥 Planımı Oluştur", en: "🔥 Create My Plan", de: "🔥 Meinen Plan erstellen",
-      ru: "🔥 Создать план", ar: "🔥 إنشاء خطتي", fr: "🔥 Créer mon plan",
-      es: "🔥 Crear mi plan", da: "🔥 Opret min plan"
-    },
-    form_free_note: {
-      tr: "Ücretsiz · Kredi kartı gerekmez", en: "Free · No credit card required",
-      de: "Kostenlos · Keine Kreditkarte nötig", ru: "Бесплатно · Карта не нужна",
-      ar: "مجاني · لا حاجة لبطاقة ائتمان", fr: "Gratuit · Pas de carte bancaire",
-      es: "Gratis · No requiere tarjeta", da: "Gratis · Intet kreditkort påkrævet"
-    },
+// PACKAGES
+"Paketler & Fiyatlar":{en:"Packages & Pricing",de:"Pakete & Preise",ru:"\u041f\u0430\u043a\u0435\u0442\u044b \u0438 \u0446\u0435\u043d\u044b",ar:"\u0627\u0644\u0628\u0627\u0642\u0627\u062a \u0648\u0627\u0644\u0623\u0633\u0639\u0627\u0631",fr:"Forfaits & Tarifs",es:"Paquetes y Precios",da:"Pakker & Priser"},
+"Başlangıç":{en:"Starter",de:"Starter",ru:"\u041d\u0430\u0447\u0430\u043b\u044c\u043d\u044b\u0439",ar:"\u0627\u0644\u0645\u0628\u062a\u062f\u0626",fr:"D\u00e9butant",es:"Inicial",da:"Start"},
+"7 günlük tam plan":{en:"7-day full plan",de:"7-Tage-Komplettplan",ru:"\u041f\u043e\u043b\u043d\u044b\u0439 \u043f\u043b\u0430\u043d \u043d\u0430 7 \u0434\u043d\u0435\u0439",ar:"\u062e\u0637\u0629 \u0643\u0627\u0645\u0644\u0629 7 \u0623\u064a\u0627\u0645",fr:"Plan complet 7 jours",es:"Plan completo 7 d\u00edas",da:"7-dages komplet plan"},
+"En Popüler":{en:"Most Popular",de:"Beliebteste",ru:"\u0421\u0430\u043c\u044b\u0439 \u043f\u043e\u043f\u0443\u043b\u044f\u0440\u043d\u044b\u0439",ar:"\u0627\u0644\u0623\u0643\u062b\u0631 \u0634\u0639\u0628\u064a\u0629",fr:"Le plus populaire",es:"M\u00e1s popular",da:"Mest popul\u00e6r"},
+"Tam Program":{en:"Full Program",de:"Vollprogramm",ru:"\u041f\u043e\u043b\u043d\u0430\u044f \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0430",ar:"\u0627\u0644\u0628\u0631\u043d\u0627\u0645\u062c \u0627\u0644\u0643\u0627\u0645\u0644",fr:"Programme complet",es:"Programa completo",da:"Fuldt program"},
+"30 günlük tam plan":{en:"30-day full plan",de:"30-Tage-Komplettplan",ru:"\u041f\u043e\u043b\u043d\u044b\u0439 \u043f\u043b\u0430\u043d \u043d\u0430 30 \u0434\u043d\u0435\u0439",ar:"\u062e\u0637\u0629 \u0643\u0627\u0645\u0644\u0629 30 \u064a\u0648\u0645\u0627\u064b",fr:"Plan complet 30 jours",es:"Plan completo 30 d\u00edas",da:"30-dages komplet plan"},
+"Dönüşüm Paketi":{en:"Transformation",de:"Transformation",ru:"\u0422\u0440\u0430\u043d\u0441\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f",ar:"\u0628\u0627\u0642\u0629 \u0627\u0644\u062a\u062d\u0648\u0644",fr:"Transformation",es:"Transformaci\u00f3n",da:"Forvandling"},
+"3 aylık tam dönüşüm":{en:"3-month transformation",de:"3-Monats-Transformation",ru:"3-\u043c\u0435\u0441\u044f\u0447\u043d\u0430\u044f \u0442\u0440\u0430\u043d\u0441\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f",ar:"\u062a\u062d\u0648\u0644 3 \u0623\u0634\u0647\u0631",fr:"Transformation 3 mois",es:"Transformaci\u00f3n 3 meses",da:"3-m\u00e5neders forvandling"},
+"WhatsApp ile Satın Al →":{en:"Buy via WhatsApp \u2192",de:"Per WhatsApp kaufen \u2192",ru:"\u041a\u0443\u043f\u0438\u0442\u044c \u0447\u0435\u0440\u0435\u0437 WhatsApp \u2192",ar:"\u2190 \u0627\u0634\u062a\u0631\u0650 \u0639\u0628\u0631 \u0648\u0627\u062a\u0633\u0627\u0628",fr:"Acheter via WhatsApp \u2192",es:"Comprar por WhatsApp \u2192",da:"K\u00f8b via WhatsApp \u2192"},
 
-    // ──── FOOD ITEMS ────
-    food_cheese: { tr: "Peynir", en: "Cheese", de: "Käse", ru: "Сыр", ar: "جبن", fr: "Fromage", es: "Queso", da: "Ost" },
-    food_yogurt: { tr: "Yoğurt", en: "Yogurt", de: "Joghurt", ru: "Йогурт", ar: "زبادي", fr: "Yaourt", es: "Yogur", da: "Yoghurt" },
-    food_olive: { tr: "Zeytin", en: "Olives", de: "Oliven", ru: "Оливки", ar: "زيتون", fr: "Olives", es: "Aceitunas", da: "Oliven" },
-    food_fish: { tr: "Balık", en: "Fish", de: "Fisch", ru: "Рыба", ar: "سمك", fr: "Poisson", es: "Pescado", da: "Fisk" },
-    food_seafood: { tr: "Deniz Ürünleri", en: "Seafood", de: "Meeresfrüchte", ru: "Морепродукты", ar: "مأكولات بحرية", fr: "Fruits de mer", es: "Mariscos", da: "Skaldyr" },
-    food_lamb: { tr: "Kuzu Eti", en: "Lamb", de: "Lamm", ru: "Баранина", ar: "لحم ضأن", fr: "Agneau", es: "Cordero", da: "Lam" },
-    food_liver: { tr: "Karaciğer", en: "Liver", de: "Leber", ru: "Печень", ar: "كبد", fr: "Foie", es: "Hígado", da: "Lever" },
-    food_mushroom: { tr: "Mantar", en: "Mushrooms", de: "Pilze", ru: "Грибы", ar: "فطر", fr: "Champignons", es: "Champiñones", da: "Svampe" },
-    food_broccoli: { tr: "Brokoli", en: "Broccoli", de: "Brokkoli", ru: "Брокколи", ar: "بروكلي", fr: "Brocoli", es: "Brócoli", da: "Broccoli" },
-    food_spinach: { tr: "Ispanak", en: "Spinach", de: "Spinat", ru: "Шпинат", ar: "سبانخ", fr: "Épinards", es: "Espinacas", da: "Spinat" },
-    food_avocado: { tr: "Avokado", en: "Avocado", de: "Avocado", ru: "Авокадо", ar: "أفوكادو", fr: "Avocat", es: "Aguacate", da: "Avocado" },
-    food_egg: { tr: "Yumurta", en: "Eggs", de: "Eier", ru: "Яйца", ar: "بيض", fr: "Œufs", es: "Huevos", da: "Æg" },
-    food_beef: { tr: "Dana Eti", en: "Beef", de: "Rindfleisch", ru: "Говядина", ar: "لحم بقر", fr: "Bœuf", es: "Res", da: "Oksekød" },
-    food_chicken: { tr: "Tavuk", en: "Chicken", de: "Hähnchen", ru: "Курица", ar: "دجاج", fr: "Poulet", es: "Pollo", da: "Kylling" },
-    food_red_meat: { tr: "Kırmızı Et", en: "Red Meat", de: "Rotes Fleisch", ru: "Красное мясо", ar: "لحم أحمر", fr: "Viande rouge", es: "Carne roja", da: "Rødt kød" },
-    food_meatball: { tr: "Köfte", en: "Meatballs", de: "Frikadellen", ru: "Котлеты", ar: "كفتة", fr: "Boulettes", es: "Albóndigas", da: "Frikadeller" },
-    food_legumes: { tr: "Bakliyat", en: "Legumes", de: "Hülsenfrüchte", ru: "Бобовые", ar: "بقوليات", fr: "Légumineuses", es: "Legumbres", da: "Bælgfrugter" },
-    food_soup: { tr: "Çorba", en: "Soup", de: "Suppe", ru: "Суп", ar: "شوربة", fr: "Soupe", es: "Sopa", da: "Suppe" },
-    food_grill: { tr: "Izgara", en: "Grilled", de: "Gegrillt", ru: "Гриль", ar: "مشوي", fr: "Grillé", es: "A la parrilla", da: "Grillet" },
-    food_oven: { tr: "Fırın Yemek", en: "Oven-baked", de: "Ofengericht", ru: "Запечённое", ar: "طبخ بالفرن", fr: "Au four", es: "Al horno", da: "Ovnbagt" },
+// HOW IT WORKS
+"Paketi Seç":{en:"Choose Package",de:"Paket w\u00e4hlen",ru:"\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u043f\u0430\u043a\u0435\u0442",ar:"\u0627\u062e\u062a\u0631 \u0627\u0644\u0628\u0627\u0642\u0629",fr:"Choisir le forfait",es:"Elige paquete",da:"V\u00e6lg pakke"},
+"WhatsApp'tan Yaz":{en:"Message on WhatsApp",de:"Per WhatsApp schreiben",ru:"\u041d\u0430\u043f\u0438\u0441\u0430\u0442\u044c \u0432 WhatsApp",ar:"\u0627\u0643\u062a\u0628 \u0639\u0628\u0631 \u0648\u0627\u062a\u0633\u0627\u0628",fr:"\u00c9crire sur WhatsApp",es:"Escribe por WhatsApp",da:"Skriv p\u00e5 WhatsApp"},
+"Planın Hazırlanır":{en:"Plan is Prepared",de:"Plan wird erstellt",ru:"\u041f\u043b\u0430\u043d \u0433\u043e\u0442\u043e\u0432\u0438\u0442\u0441\u044f",ar:"\u064a\u062a\u0645 \u0625\u0639\u062f\u0627\u062f \u0627\u0644\u062e\u0637\u0629",fr:"Le plan est pr\u00e9par\u00e9",es:"Se prepara el plan",da:"Planen forberedes"},
+"Takip Et":{en:"Follow Up",de:"Nachverfolgen",ru:"\u0421\u043b\u0435\u0434\u0438\u0442\u0435",ar:"\u062a\u0627\u0628\u0639 \u0627\u0644\u062a\u0642\u062f\u0645",fr:"Suivi",es:"Haz seguimiento",da:"F\u00f8lg op"},
 
-    // ──── PAKETLER ────
-    pricing_title: {
-      tr: "Devam günlerini satın al", en: "Purchase continuation days",
-      de: "Folgetage kaufen", ru: "Купить продолжение",
-      ar: "اشترِ أيام الاستمرار", fr: "Acheter les jours suivants",
-      es: "Comprar días de continuación", da: "Køb fortsættelsesdage"
-    },
-    pkg_starter: {
-      tr: "Başlangıç", en: "Starter", de: "Starter",
-      ru: "Начальный", ar: "المبتدئ", fr: "Débutant",
-      es: "Inicial", da: "Start"
-    },
-    pkg_starter_desc: {
-      tr: "7 günlük tam plan", en: "7-day full plan", de: "7-Tage-Komplettplan",
-      ru: "Полный план на 7 дней", ar: "خطة كاملة لمدة 7 أيام", fr: "Plan complet de 7 jours",
-      es: "Plan completo de 7 días", da: "7-dages komplet plan"
-    },
-    pkg_full: {
-      tr: "Tam Program", en: "Full Program", de: "Vollprogramm",
-      ru: "Полная программа", ar: "البرنامج الكامل", fr: "Programme complet",
-      es: "Programa completo", da: "Fuldt program"
-    },
-    pkg_full_desc: {
-      tr: "30 günlük tam plan", en: "30-day full plan", de: "30-Tage-Komplettplan",
-      ru: "Полный план на 30 дней", ar: "خطة كاملة لمدة 30 يوماً", fr: "Plan complet de 30 jours",
-      es: "Plan completo de 30 días", da: "30-dages komplet plan"
-    },
-    pkg_transform: {
-      tr: "Dönüşüm Paketi", en: "Transformation Package", de: "Transformationspaket",
-      ru: "Пакет трансформации", ar: "باقة التحول", fr: "Forfait transformation",
-      es: "Paquete de transformación", da: "Forvandlingspakke"
-    },
-    pkg_transform_desc: {
-      tr: "3 aylık tam dönüşüm", en: "3-month full transformation", de: "3-Monats-Transformation",
-      ru: "3-месячная трансформация", ar: "تحول كامل لمدة 3 أشهر", fr: "Transformation complète de 3 mois",
-      es: "Transformación completa de 3 meses", da: "3-måneders fuld forvandling"
-    },
-    pkg_popular: {
-      tr: "En Popüler", en: "Most Popular", de: "Beliebteste",
-      ru: "Самый популярный", ar: "الأكثر شعبية", fr: "Le plus populaire",
-      es: "Más popular", da: "Mest populær"
-    },
-    pkg_buy_wa: {
-      tr: "WhatsApp ile Satın Al →", en: "Buy via WhatsApp →", de: "Per WhatsApp kaufen →",
-      ru: "Купить через WhatsApp →", ar: "← اشترِ عبر واتساب", fr: "Acheter via WhatsApp →",
-      es: "Comprar por WhatsApp →", da: "Køb via WhatsApp →"
-    },
-    pkg_payment_note: {
-      tr: "Tüm ödemeler WhatsApp üzerinden manuel olarak gerçekleşir.",
-      en: "All payments are processed manually via WhatsApp.",
-      de: "Alle Zahlungen werden manuell über WhatsApp abgewickelt.",
-      ru: "Все платежи производятся вручную через WhatsApp.",
-      ar: "تتم جميع المدفوعات يدوياً عبر واتساب.",
-      fr: "Tous les paiements sont traités manuellement via WhatsApp.",
-      es: "Todos los pagos se procesan manualmente por WhatsApp.",
-      da: "Alle betalinger behandles manuelt via WhatsApp."
-    },
+// FAQ
+"Sıkça Sorulan Sorular":{en:"Frequently Asked Questions",de:"H\u00e4ufig gestellte Fragen",ru:"\u0427\u0430\u0441\u0442\u043e \u0437\u0430\u0434\u0430\u0432\u0430\u0435\u043c\u044b\u0435 \u0432\u043e\u043f\u0440\u043e\u0441\u044b",ar:"\u0627\u0644\u0623\u0633\u0626\u0644\u0629 \u0627\u0644\u0634\u0627\u0626\u0639\u0629",fr:"Questions fr\u00e9quentes",es:"Preguntas frecuentes",da:"Ofte stillede sp\u00f8rgsm\u00e5l"},
+"Blog & Rehber":{en:"Blog & Guide",de:"Blog & Ratgeber",ru:"\u0411\u043b\u043e\u0433 \u0438 \u0433\u0430\u0439\u0434",ar:"\u0627\u0644\u0645\u062f\u0648\u0646\u0629 \u0648\u0627\u0644\u062f\u0644\u064a\u0644",fr:"Blog & Guide",es:"Blog & Gu\u00eda",da:"Blog & Guide"},
+"Tümü":{en:"All",de:"Alle",ru:"\u0412\u0441\u0435",ar:"\u0627\u0644\u0643\u0644",fr:"Tout",es:"Todo",da:"Alle"},
 
-    // ──── NASIL ÇALIŞIR ────
-    how_title: {
-      tr: "Satın alımdan programa 4 adım",
-      en: "4 steps from purchase to program",
-      de: "4 Schritte vom Kauf zum Programm",
-      ru: "4 шага от покупки к программе",
-      ar: "4 خطوات من الشراء إلى البرنامج",
-      fr: "4 étapes de l'achat au programme",
-      es: "4 pasos de la compra al programa",
-      da: "4 trin fra køb til program"
-    },
-    how_step1: {
-      tr: "Paketi Seç", en: "Choose Package", de: "Paket wählen",
-      ru: "Выберите пакет", ar: "اختر الباقة", fr: "Choisir le forfait",
-      es: "Elige paquete", da: "Vælg pakke"
-    },
-    how_step2: {
-      tr: "WhatsApp'tan Yaz", en: "Message on WhatsApp", de: "Per WhatsApp schreiben",
-      ru: "Написать в WhatsApp", ar: "اكتب عبر واتساب", fr: "Écrire sur WhatsApp",
-      es: "Escribe por WhatsApp", da: "Skriv på WhatsApp"
-    },
-    how_step3: {
-      tr: "Planın Hazırlanır", en: "Plan is Prepared", de: "Plan wird erstellt",
-      ru: "План готовится", ar: "يتم إعداد الخطة", fr: "Le plan est préparé",
-      es: "Se prepara el plan", da: "Planen forberedes"
-    },
-    how_step4: {
-      tr: "Takip Et", en: "Follow Up", de: "Nachverfolgen",
-      ru: "Следите за прогрессом", ar: "تابع التقدم", fr: "Suivi",
-      es: "Haz seguimiento", da: "Følg op"
-    },
+// FOOTER
+"Bu site tıbbi tavsiye vermez. Başlamadan önce doktorunuza danışın.":{en:"This site does not provide medical advice. Consult your doctor before starting.",de:"Diese Seite bietet keine medizinische Beratung. Konsultieren Sie Ihren Arzt.",ru:"\u042d\u0442\u043e\u0442 \u0441\u0430\u0439\u0442 \u043d\u0435 \u0434\u0430\u0451\u0442 \u043c\u0435\u0434\u0438\u0446\u0438\u043d\u0441\u043a\u0438\u0445 \u043a\u043e\u043d\u0441\u0443\u043b\u044c\u0442\u0430\u0446\u0438\u0439. \u041f\u0440\u043e\u043a\u043e\u043d\u0441\u0443\u043b\u044c\u0442\u0438\u0440\u0443\u0439\u0442\u0435\u0441\u044c \u0441 \u0432\u0440\u0430\u0447\u043e\u043c.",ar:"\u0647\u0630\u0627 \u0627\u0644\u0645\u0648\u0642\u0639 \u0644\u0627 \u064a\u0642\u062f\u0645 \u0646\u0635\u0627\u0626\u062d \u0637\u0628\u064a\u0629. \u0627\u0633\u062a\u0634\u0631 \u0637\u0628\u064a\u0628\u0643.",fr:"Ce site ne fournit pas de conseils m\u00e9dicaux. Consultez votre m\u00e9decin.",es:"Este sitio no ofrece asesoramiento m\u00e9dico. Consulta a tu m\u00e9dico.",da:"Denne side giver ikke medicinsk r\u00e5dgivning. Konsulter din l\u00e6ge."},
 
-    // ──── SSS ────
-    faq_title: {
-      tr: "Aklındaki sorular", en: "Your questions answered",
-      de: "Deine Fragen beantwortet", ru: "Ответы на ваши вопросы",
-      ar: "إجابات على أسئلتك", fr: "Vos questions, nos réponses",
-      es: "Tus preguntas respondidas", da: "Dine spørgsmål besvaret"
-    },
+// SUBMIT BUTTON
+"\u{1F525} Planımı Oluştur":{en:"\u{1F525} Create My Plan",de:"\u{1F525} Meinen Plan erstellen",ru:"\u{1F525} \u0421\u043e\u0437\u0434\u0430\u0442\u044c \u043f\u043b\u0430\u043d",ar:"\u{1F525} \u0625\u0646\u0634\u0627\u0621 \u062e\u0637\u062a\u064a",fr:"\u{1F525} Cr\u00e9er mon plan",es:"\u{1F525} Crear mi plan",da:"\u{1F525} Opret min plan"},
+"📊 Excel'e Aktar":{en:"\u{1F4CA} Export to Excel",de:"\u{1F4CA} Als Excel exportieren",ru:"\u{1F4CA} \u042d\u043a\u0441\u043f\u043e\u0440\u0442 \u0432 Excel",ar:"\u{1F4CA} \u062a\u0635\u062f\u064a\u0631 \u0625\u0644\u0649 \u0625\u0643\u0633\u0644",fr:"\u{1F4CA} Exporter en Excel",es:"\u{1F4CA} Exportar a Excel",da:"\u{1F4CA} Eksport\u00e9r til Excel"},
+"↺ Yeniden Oluştur":{en:"\u21ba Regenerate",de:"\u21ba Neu erstellen",ru:"\u21ba \u041f\u0435\u0440\u0435\u0441\u043e\u0437\u0434\u0430\u0442\u044c",ar:"\u21ba \u0625\u0639\u0627\u062f\u0629 \u0625\u0646\u0634\u0627\u0621",fr:"\u21ba R\u00e9g\u00e9n\u00e9rer",es:"\u21ba Regenerar",da:"\u21ba Genopret"},
 
-    // ──── BLOG ────
-    blog_title: {
-      tr: "Keto hakkında her şey", en: "Everything about Keto",
-      de: "Alles über Keto", ru: "Всё о кето",
-      ar: "كل شيء عن الكيتو", fr: "Tout sur le Keto",
-      es: "Todo sobre Keto", da: "Alt om Keto"
-    },
+// S.S.S.
+"S.S.S.":{en:"FAQ",de:"FAQ",ru:"\u0427\u0417\u0412",ar:"\u0627\u0644\u0623\u0633\u0626\u0644\u0629",fr:"FAQ",es:"FAQ",da:"FAQ"},
+"WhatsApp":{en:"WhatsApp",de:"WhatsApp",ru:"WhatsApp",ar:"\u0648\u0627\u062a\u0633\u0627\u0628",fr:"WhatsApp",es:"WhatsApp",da:"WhatsApp"},
+"PROGRAM":{en:"PROGRAM",de:"PROGRAMM",ru:"\u041f\u0420\u041e\u0413\u0420\u0410\u041c\u041c\u0410",ar:"\u0627\u0644\u0628\u0631\u0646\u0627\u0645\u062c",fr:"PROGRAMME",es:"PROGRAMA",da:"PROGRAM"},
+"DESTEK":{en:"SUPPORT",de:"SUPPORT",ru:"\u041f\u041e\u0414\u0414\u0415\u0420\u0416\u041a\u0410",ar:"\u0627\u0644\u062f\u0639\u0645",fr:"SUPPORT",es:"SOPORTE",da:"SUPPORT"},
+"İLETİŞİM":{en:"CONTACT",de:"KONTAKT",ru:"\u041a\u041e\u041d\u0422\u0410\u041a\u0422\u042b",ar:"\u0627\u0644\u0627\u062a\u0635\u0627\u0644",fr:"CONTACT",es:"CONTACTO",da:"KONTAKT"}
+};
 
-    // ──── FOOTER ────
-    footer_desc: {
-      tr: "Türkiye'nin kişiselleştirilmiş keto + IF platformu. Damağına uygun, hayatına entegre.",
-      en: "Your personalized keto + IF platform. Tailored to your taste, integrated into your life.",
-      de: "Ihre personalisierte Keto + IF-Plattform. Auf Ihren Geschmack abgestimmt.",
-      ru: "Ваша персонализированная платформа кето + IF. Под ваш вкус.",
-      ar: "منصتك الشخصية للكيتو + الصيام المتقطع. مصممة حسب ذوقك.",
-      fr: "Votre plateforme personnalisée keto + IF. Adaptée à vos goûts.",
-      es: "Tu plataforma personalizada de keto + IF. Adaptada a tu gusto.",
-      da: "Din personlige keto + IF-platform. Tilpasset din smag."
-    },
-    footer_disclaimer: {
-      tr: "Bu site tıbbi tavsiye vermez. Başlamadan önce doktorunuza danışın.",
-      en: "This site does not provide medical advice. Consult your doctor before starting.",
-      de: "Diese Seite bietet keine medizinische Beratung. Konsultieren Sie Ihren Arzt.",
-      ru: "Этот сайт не предоставляет медицинских консультаций. Проконсультируйтесь с врачом.",
-      ar: "هذا الموقع لا يقدم نصائح طبية. استشر طبيبك قبل البدء.",
-      fr: "Ce site ne fournit pas de conseils médicaux. Consultez votre médecin.",
-      es: "Este sitio no ofrece asesoramiento médico. Consulta a tu médico antes de empezar.",
-      da: "Denne side giver ikke medicinsk rådgivning. Konsulter din læge inden start."
-    },
+var originals = new Map();
+var currentLang = localStorage.getItem("kd-lang") || "tr";
 
-    // ──── GENEL ────
-    other: { tr: "Diğer:", en: "Other:", de: "Andere:", ru: "Другое:", ar: "أخرى:", fr: "Autre:", es: "Otro:", da: "Andet:" },
-    excel_export: {
-      tr: "📊 Excel'e Aktar", en: "📊 Export to Excel", de: "📊 Als Excel exportieren",
-      ru: "📊 Экспорт в Excel", ar: "📊 تصدير إلى إكسل", fr: "📊 Exporter en Excel",
-      es: "📊 Exportar a Excel", da: "📊 Eksportér til Excel"
-    },
-    plan_ready: {
-      tr: "3 Günlük Kişisel Keto Planı", en: "3-Day Personal Keto Plan",
-      de: "3-Tage persönlicher Keto-Plan", ru: "3-дневный личный кето-план",
-      ar: "خطة كيتو شخصية لمدة 3 أيام", fr: "Plan Keto personnel de 3 jours",
-      es: "Plan Keto personal de 3 días", da: "3-dages personlig keto-plan"
-    }
-  };
-
-  /* ═══════════════════════════════════════════════
-     DİL DEĞİŞTİRİCİ WIDGET
-     ═══════════════════════════════════════════════ */
-  var currentLang = localStorage.getItem("kd-lang") || "tr";
-
-  function createSwitcher() {
-    var css = document.createElement("style");
-    css.textContent = "#kd-lang-wrap{position:fixed;top:16px;right:16px;z-index:99998;font-family:'Segoe UI',-apple-system,sans-serif}" +
-      "#kd-lang-btn{display:flex;align-items:center;gap:6px;background:var(--color-background-primary,#fff);border:1px solid rgba(0,0,0,.12);border-radius:24px;padding:8px 14px;cursor:pointer;font-size:13px;color:var(--color-text-primary,#333);box-shadow:0 2px 8px rgba(0,0,0,.08);transition:all .2s}" +
-      "#kd-lang-btn:hover{box-shadow:0 4px 16px rgba(0,0,0,.12)}" +
-      "#kd-lang-menu{display:none;position:absolute;top:44px;right:0;background:var(--color-background-primary,#fff);border:1px solid rgba(0,0,0,.1);border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,.15);overflow:hidden;min-width:160px}" +
-      "#kd-lang-menu.show{display:block}" +
-      ".kd-lang-opt{display:flex;align-items:center;gap:8px;padding:10px 16px;cursor:pointer;font-size:13px;color:var(--color-text-primary,#333);transition:background .15s}" +
-      ".kd-lang-opt:hover{background:rgba(0,0,0,.04)}" +
-      ".kd-lang-opt.active{background:#e8f5e9;font-weight:600}" +
-      "@media(max-width:768px){#kd-lang-wrap{top:auto;bottom:90px;right:16px}}";
-    document.head.appendChild(css);
-
-    var wrap = document.createElement("div");
-    wrap.id = "kd-lang-wrap";
-
-    var btn = document.createElement("div");
-    btn.id = "kd-lang-btn";
-    btn.innerHTML = LANGS[currentLang].flag + " " + LANGS[currentLang].label + ' <span style="font-size:10px">▼</span>';
-
-    var menu = document.createElement("div");
-    menu.id = "kd-lang-menu";
-
-    Object.keys(LANGS).forEach(function (code) {
-      var opt = document.createElement("div");
-      opt.className = "kd-lang-opt" + (code === currentLang ? " active" : "");
-      opt.setAttribute("data-lang", code);
-      opt.innerHTML = LANGS[code].flag + " " + LANGS[code].label;
-      opt.onclick = function () {
-        switchLang(code);
-        menu.classList.remove("show");
-      };
-      menu.appendChild(opt);
-    });
-
-    btn.onclick = function () { menu.classList.toggle("show"); };
-    document.addEventListener("click", function (e) {
-      if (!wrap.contains(e.target)) menu.classList.remove("show");
-    });
-
-    wrap.appendChild(btn);
-    wrap.appendChild(menu);
-    document.body.appendChild(wrap);
-  }
-
-  /* ═══════════════════════════════════════════════
-     ÇEVİRİ UYGULAMA
-     ═══════════════════════════════════════════════ */
-  function applyTranslations(lang) {
-    // data-i18n attribute'lu elementleri çevir
-    document.querySelectorAll("[data-i18n]").forEach(function (el) {
-      var key = el.getAttribute("data-i18n");
-      if (T[key] && T[key][lang]) {
-        if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
-          el.placeholder = T[key][lang];
-        } else if (el.tagName === "OPTION") {
-          el.textContent = T[key][lang];
-        } else {
-          el.textContent = T[key][lang];
-        }
+function walkText(node, lang) {
+  if (node.nodeType === 3) {
+    var txt = node.textContent.trim();
+    if (txt && D[txt]) {
+      if (!originals.has(node)) originals.set(node, node.textContent);
+      if (lang === "tr") {
+        node.textContent = originals.get(node);
+      } else if (D[txt][lang]) {
+        node.textContent = node.textContent.replace(txt, D[txt][lang]);
       }
-    });
-
-    // RTL desteği (Arapça)
-    document.documentElement.dir = LANGS[lang].dir;
-    document.documentElement.lang = lang;
-
-    // Buton güncelle
-    var btn = document.getElementById("kd-lang-btn");
-    if (btn) btn.innerHTML = LANGS[lang].flag + " " + LANGS[lang].label + ' <span style="font-size:10px">▼</span>';
-
-    // Aktif dili işaretle
-    document.querySelectorAll(".kd-lang-opt").forEach(function (opt) {
-      opt.classList.toggle("active", opt.getAttribute("data-lang") === lang);
-    });
+    }
+    return;
   }
-
-  function switchLang(lang) {
-    currentLang = lang;
-    localStorage.setItem("kd-lang", lang);
-    applyTranslations(lang);
-
-    // Chatbot dil değişikliği event'i gönder
-    window.dispatchEvent(new CustomEvent("kd-lang-change", { detail: { lang: lang } }));
+  if (node.nodeName === "SCRIPT" || node.nodeName === "STYLE") return;
+  for (var i = 0; i < node.childNodes.length; i++) {
+    walkText(node.childNodes[i], lang);
   }
+}
 
-  /* ═══════════════════════════════════════════════
-     BAŞLATMA
-     ═══════════════════════════════════════════════ */
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", function () {
-      createSwitcher();
-      if (currentLang !== "tr") applyTranslations(currentLang);
-    });
+function translatePlaceholders(lang) {
+  document.querySelectorAll("input[placeholder], textarea[placeholder]").forEach(function(el) {
+    var ph = el.getAttribute("data-orig-ph") || el.placeholder;
+    if (!el.getAttribute("data-orig-ph")) el.setAttribute("data-orig-ph", ph);
+    if (lang === "tr") { el.placeholder = ph; return; }
+    if (D[ph] && D[ph][lang]) el.placeholder = D[ph][lang];
+  });
+}
+
+function translateOptions(lang) {
+  document.querySelectorAll("select option").forEach(function(opt) {
+    var orig = opt.getAttribute("data-orig-text") || opt.textContent.trim();
+    if (!opt.getAttribute("data-orig-text")) opt.setAttribute("data-orig-text", orig);
+    if (lang === "tr") { opt.textContent = orig; return; }
+    if (D[orig] && D[orig][lang]) opt.textContent = D[orig][lang];
+  });
+}
+
+function applyLang(lang) {
+  walkText(document.body, lang);
+  translatePlaceholders(lang);
+  translateOptions(lang);
+  document.documentElement.dir = LANGS[lang].dir;
+  document.documentElement.lang = lang;
+  var b = document.getElementById("kd-lang-btn");
+  if (b) b.innerHTML = LANGS[lang].flag + " " + LANGS[lang].label + ' <span style="font-size:10px">\u25BC</span>';
+  document.querySelectorAll(".kd-lang-opt").forEach(function(o) {
+    o.classList.toggle("active", o.getAttribute("data-lang") === lang);
+  });
+}
+
+function switchLang(lang) {
+  currentLang = lang;
+  localStorage.setItem("kd-lang", lang);
+  if (lang === "tr") {
+    originals.forEach(function(orig, node) { node.textContent = orig; });
+    translatePlaceholders("tr");
+    translateOptions("tr");
+    document.documentElement.dir = "ltr";
+    document.documentElement.lang = "tr";
   } else {
-    createSwitcher();
-    if (currentLang !== "tr") applyTranslations(currentLang);
+    originals.forEach(function(orig, node) { node.textContent = orig; });
+    applyLang(lang);
   }
+  var b = document.getElementById("kd-lang-btn");
+  if (b) b.innerHTML = LANGS[lang].flag + " " + LANGS[lang].label + ' <span style="font-size:10px">\u25BC</span>';
+  document.querySelectorAll(".kd-lang-opt").forEach(function(o) {
+    o.classList.toggle("active", o.getAttribute("data-lang") === lang);
+  });
+  window.dispatchEvent(new CustomEvent("kd-lang-change", {detail:{lang:lang}}));
+}
 
-  // Global erişim
-  window.KDi18n = {
-    T: T,
-    LANGS: LANGS,
-    switchLang: switchLang,
-    getCurrentLang: function () { return currentLang; }
-  };
+/* Widget */
+function createWidget() {
+  var css = document.createElement("style");
+  css.textContent = "#kd-lang-wrap{position:fixed;top:16px;right:16px;z-index:99998;font-family:'Segoe UI',-apple-system,sans-serif}#kd-lang-btn{display:flex;align-items:center;gap:6px;background:#fff;border:1px solid rgba(0,0,0,.12);border-radius:24px;padding:8px 14px;cursor:pointer;font-size:13px;color:#333;box-shadow:0 2px 8px rgba(0,0,0,.08);transition:all .2s}#kd-lang-btn:hover{box-shadow:0 4px 16px rgba(0,0,0,.12)}#kd-lang-menu{display:none;position:absolute;top:44px;right:0;background:#fff;border:1px solid rgba(0,0,0,.1);border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,.15);overflow:hidden;min-width:160px}#kd-lang-menu.show{display:block}.kd-lang-opt{display:flex;align-items:center;gap:8px;padding:10px 16px;cursor:pointer;font-size:13px;color:#333;transition:background .15s}.kd-lang-opt:hover{background:rgba(0,0,0,.04)}.kd-lang-opt.active{background:#e8f5e9;font-weight:600}@media(max-width:768px){#kd-lang-wrap{top:auto;bottom:90px;right:16px}}";
+  document.head.appendChild(css);
+  var w = document.createElement("div"); w.id = "kd-lang-wrap";
+  var btn = document.createElement("div"); btn.id = "kd-lang-btn";
+  btn.innerHTML = LANGS[currentLang].flag + " " + LANGS[currentLang].label + ' <span style="font-size:10px">\u25BC</span>';
+  var menu = document.createElement("div"); menu.id = "kd-lang-menu";
+  Object.keys(LANGS).forEach(function(code) {
+    var o = document.createElement("div");
+    o.className = "kd-lang-opt" + (code === currentLang ? " active" : "");
+    o.setAttribute("data-lang", code);
+    o.innerHTML = LANGS[code].flag + " " + LANGS[code].label;
+    o.onclick = function() { switchLang(code); menu.classList.remove("show"); };
+    menu.appendChild(o);
+  });
+  btn.onclick = function() { menu.classList.toggle("show"); };
+  document.addEventListener("click", function(e) { if (!w.contains(e.target)) menu.classList.remove("show"); });
+  w.appendChild(btn); w.appendChild(menu); document.body.appendChild(w);
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", function() { createWidget(); if (currentLang !== "tr") applyLang(currentLang); });
+} else {
+  createWidget(); if (currentLang !== "tr") applyLang(currentLang);
+}
+window.KDi18n = { switchLang: switchLang, getCurrentLang: function() { return currentLang; } };
 })();
+
 </script>
 
-<!-- ══════ KETODIYETIM CHATBOT ══════ -->
+<!-- ══════ CHATBOT WIDGET ══════ -->
 <script>
 (function() {
   var BRAND = { green: "#1a472a", accent: "#2d7a4a", light: "#7dcea0", bg: "#f0faf4" };
@@ -2772,8 +2485,8 @@ function closeHabitModal() {
     }
   }, 3000);
 })();
-</script>
 
+</script>
 
 </body>
 </html>
