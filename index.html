@@ -8,10 +8,18 @@
 <meta property="og:title" content="KetoDiyetim — Damağına Özel Keto Programı">
 <meta property="og:description" content="Sana özel ücretsiz 3 günlük keto + IF planı oluştur. Türkiye'nin kişisel keto platformu.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.ketojenikdiyetim.com">
+<meta property="og:url" content="https://ketojenikdiyetim.com/">
+<meta property="og:image" content="https://ketojenikdiyetim.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://www.ketojenikdiyetim.com">
+<link rel="canonical" href="https://ketojenikdiyetim.com/">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="KetoDiyetim — Damağına Özel Keto Programı">
+<meta name="twitter:description" content="Sana özel ücretsiz 3 günlük keto + IF planı oluştur. Türkiye'nin kişisel keto platformu.">
+<meta name="twitter:image" content="https://ketojenikdiyetim.com/og-image.jpg">
 <title>KetoDiyetim — Damağına Özel Keto Programı</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <!-- SheetJS for Excel export -->
@@ -498,6 +506,75 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
 .blog-card.hidden { display: none; }
 
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "KetoDiyetim",
+  "url": "https://ketojenikdiyetim.com/",
+  "description": "Türkiye'nin kişiselleştirilmiş keto + aralıklı oruç platformu.",
+  "sameAs": [
+    "https://www.instagram.com/ketodiyetim.tr"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "KetoDiyetim",
+  "url": "https://ketojenikdiyetim.com/",
+  "inLanguage": "tr"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "3 günlük planı Excel'e nasıl aktarıyorum?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Planını oluşturduktan sonra sağ üstteki \"Excel'e Aktar\" butonuna tıkla. Planın, makrolarını ve öğünlerin tüm detaylarıyla birlikte .xlsx dosyası olarak bilgisayarına inecek."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Satın alma nasıl gerçekleşiyor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "\"WhatsApp ile Satın Al\" butonuna tıklayınca paket bilgilerinle otomatik bir mesaj hazırlanır. WhatsApp açılınca mesajı gönder, ödeme detaylarını (Papara / IBAN) sana iletiyoruz. Ödeme sonrası 24 saat içinde kişisel planın hazır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sevmediğim yiyecekler gerçekten çıkarılıyor mu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet. Hem ücretsiz plan oluştururken hem de satın alma formunda belirttiğin yiyecekler tamamen çıkarılıyor. Peynir, yoğurt, zeytin, balık ne söylersen programa girmiyor."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "IF protokolü zorunlu mu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır. Plan oluştururken \"IF yok\" seçeneğini seçebilirsin. Yine de IF+Keto kombinasyonu en hızlı sonucu verdiği için öneriyoruz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "3 günlük ücretsiz plan gerçekten ücretsiz mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet, tamamen ücretsiz. Kredi kartı veya ödeme bilgisi istemiyoruz. Sadece profilini gir, planını al, Excel'e aktar. Devam günleri için paket satın alabilirsin."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -1210,6 +1287,7 @@ async function generatePlan() {
   generatedPlan = buildPlan(userProfile);
   renderPlan();
   showStep(3);
+  if (window.kdTranslateNode) window.kdTranslateNode(document.getElementById('step3'));
 }
 
 /* ============================================================
@@ -1875,6 +1953,7 @@ function openBlog(idx) {
   document.getElementById('blogModal').classList.add('open');
   document.body.style.overflow = 'hidden';
   document.getElementById('blogModalInner').scrollTop = 0;
+  if (window.kdTranslateNode) window.kdTranslateNode(document.getElementById('blogModal'));
 }
 function closeBlog() {
   document.getElementById('blogModal').classList.remove('open');
@@ -1962,6 +2041,7 @@ function openHabitModal(key) {
     '<p class="hmodal-desc">' + d.desc + '</p><div class="hmodal-visual">' + d.visual + '</div><div class="hmodal-tips">' + tips + '</div>';
   document.getElementById('habitModalOverlay').classList.add('open');
   document.body.style.overflow = 'hidden';
+  if (window.kdTranslateNode) window.kdTranslateNode(document.getElementById('habitModalOverlay'));
 }
 function closeHabitModal() {
   document.getElementById('habitModalOverlay').classList.remove('open');
@@ -1991,7 +2071,6 @@ var LANGS={
 /* Çeviri sözlüğü: Türkçe metin → diğer diller */
 var D = {
 "Keto":{"en":"Keto","de":"Keto","ru":"Кето","ar":"كيتو","fr":"Kéto","es":"Keto","da":"Keto"},
-"Diyetim":{"en":"My Diet","de":"Meine Diät","ru":"Моя диета","ar":"حميتي","fr":"Mon régime","es":"Mi dieta","da":"Min diæt"},
 "Planımı Oluştur":{"en":"Create My Plan","de":"Meinen Plan erstellen","ru":"Создать план","ar":"إنشاء خطتي","fr":"Créer mon plan","es":"Crear mi plan","da":"Opret min plan"},
 "Paketler":{"en":"Packages","de":"Pakete","ru":"Пакеты","ar":"الباقات","fr":"Forfaits","es":"Paquetes","da":"Pakker"},
 "Nasıl Çalışır":{"en":"How It Works","de":"So funktioniert's","ru":"Как это работает","ar":"كيف يعمل","fr":"Comment ça marche","es":"Cómo funciona","da":"Sådan virker det"},
@@ -2180,7 +2259,34 @@ var D = {
 "KetoDiyetim":{"en":"KetoDiyetim","de":"KetoDiyetim","ru":"KetoDiyetim","ar":"KetoDiyetim","fr":"KetoDiyetim","es":"KetoDiyetim","da":"KetoDiyetim"},
 "✓ Planın Hazır":{"en":"✓ Plan Ready","de":"✓ Plan fertig","ru":"✓ План готов","ar":"✓ الخطة جاهزة","fr":"✓ Plan prêt","es":"✓ Plan listo","da":"✓ Plan klar"},
 "Şu an":{"en":"Currently","de":"Derzeit","ru":"В настоящее время","ar":"حالياً","fr":"Actuellement","es":"Actualmente","da":"I øjeblikket"},
-"yalnızca WhatsApp üzerinden":{"en":"only via WhatsApp","de":"nur über WhatsApp","ru":"только через WhatsApp","ar":"فقط عبر واتساب","fr":"uniquement via WhatsApp","es":"solo por WhatsApp","da":"kun via WhatsApp"}
+"yalnızca WhatsApp üzerinden":{"en":"only via WhatsApp","de":"nur über WhatsApp","ru":"только через WhatsApp","ar":"فقط عبر واتساب","fr":"uniquement via WhatsApp","es":"solo por WhatsApp","da":"kun via WhatsApp"},
+"Planını oluşturduktan sonra sağ üstteki \"Excel'e Aktar\" butonuna tıkla. Planın, makrolarını ve öğünlerin tüm detaylarıyla birlikte .xlsx dosyası olarak bilgisayarına inecek.":{"en":"After creating your plan, click the \"Export to Excel\" button in the top right. Your plan, along with your macros and full meal details, will download to your computer as an .xlsx file.","de":"Nachdem du deinen Plan erstellt hast, klicke oben rechts auf \"Als Excel exportieren\". Dein Plan wird mit allen Makros und Mahlzeitdetails als .xlsx-Datei auf deinen Computer heruntergeladen.","ru":"После создания плана нажмите кнопку \"Экспорт в Excel\" в правом верхнем углу. Ваш план со всеми макросами и деталями приёмов пищи скачается на компьютер в виде файла .xlsx.","ar":"بعد إنشاء خطتك، انقر على زر \"تصدير إلى إكسل\" في الأعلى يمينًا. ستُحمَّل خطتك مع الماكروز وتفاصيل الوجبات الكاملة كملف .xlsx على جهازك.","fr":"Une fois ton plan créé, clique sur le bouton \"Exporter en Excel\" en haut à droite. Ton plan, avec tes macros et le détail complet des repas, sera téléchargé sur ton ordinateur au format .xlsx.","es":"Después de crear tu plan, haz clic en el botón \"Exportar a Excel\" en la parte superior derecha. Tu plan, junto con tus macros y todos los detalles de las comidas, se descargará en tu computadora como un archivo .xlsx.","da":"Når du har oprettet din plan, skal du klikke på knappen \"Eksportér til Excel\" øverst til højre. Din plan, sammen med dine makroer og alle måltidsdetaljer, downloades til din computer som en .xlsx-fil."},
+"\"WhatsApp ile Satın Al\" butonuna tıklayınca paket bilgilerinle otomatik bir mesaj hazırlanır. WhatsApp açılınca mesajı gönder, ödeme detaylarını (Papara / IBAN) sana iletiyoruz. Ödeme sonrası 24 saat içinde kişisel planın hazır.":{"en":"When you click \"Buy via WhatsApp,\" a message is automatically prepared with your package details. Once WhatsApp opens, send the message, and we'll send you the payment details (Papara / bank transfer). Your personal plan will be ready within 24 hours after payment.","de":"Wenn du auf \"Über WhatsApp kaufen\" klickst, wird automatisch eine Nachricht mit deinen Paketdetails erstellt. Sobald WhatsApp sich öffnet, sende die Nachricht, und wir schicken dir die Zahlungsdetails (Papara / Überweisung). Nach der Zahlung ist dein persönlicher Plan innerhalb von 24 Stunden fertig.","ru":"При нажатии на кнопку \"Купить через WhatsApp\" автоматически формируется сообщение с данными о пакете. Когда откроется WhatsApp, отправьте сообщение, и мы вышлем вам реквизиты для оплаты (Papara / банковский перевод). После оплаты ваш персональный план будет готов в течение 24 часов.","ar":"عند النقر على زر \"الشراء عبر واتساب\"، تُعَدّ رسالة تلقائيًا تحتوي على تفاصيل الباقة. بمجرد فتح واتساب، أرسل الرسالة، وسنرسل لك تفاصيل الدفع (Papara / تحويل بنكي). بعد الدفع، ستكون خطتك الشخصية جاهزة خلال 24 ساعة.","fr":"En cliquant sur \"Acheter via WhatsApp\", un message est automatiquement préparé avec les détails de ton forfait. Une fois WhatsApp ouvert, envoie le message, et nous t'enverrons les détails de paiement (Papara / virement). Après paiement, ton plan personnel sera prêt sous 24 heures.","es":"Al hacer clic en \"Comprar por WhatsApp\", se prepara automáticamente un mensaje con los datos de tu paquete. Cuando se abra WhatsApp, envía el mensaje y te enviaremos los detalles de pago (Papara / transferencia bancaria). Después del pago, tu plan personal estará listo en 24 horas.","da":"Når du klikker på \"Køb via WhatsApp,\" oprettes der automatisk en besked med dine pakkeoplysninger. Når WhatsApp åbner, skal du sende beskeden, og vi sender dig betalingsoplysningerne (Papara / bankoverførsel). Efter betaling er din personlige plan klar inden for 24 timer."},
+"Evet. Hem ücretsiz plan oluştururken hem de satın alma formunda belirttiğin yiyecekler tamamen çıkarılıyor. Peynir, yoğurt, zeytin, balık ne söylersen programa girmiyor.":{"en":"Yes. The foods you specify — both when creating the free plan and in the purchase form — are completely excluded. Whatever you list, whether cheese, yogurt, olives, or fish, won't be included in the program.","de":"Ja. Die Lebensmittel, die du angibst — sowohl beim Erstellen des kostenlosen Plans als auch im Bestellformular — werden vollständig ausgeschlossen. Egal ob Käse, Joghurt, Oliven oder Fisch, was du angibst, kommt nicht ins Programm.","ru":"Да. Продукты, которые вы укажете — как при создании бесплатного плана, так и в форме заказа — полностью исключаются. Сыр, йогурт, оливки, рыба — что бы вы ни указали, в программу это не попадёт.","ar":"نعم. الأطعمة التي تحددها — سواء عند إنشاء الخطة المجانية أو في نموذج الشراء — يتم استبعادها بالكامل. جبن، زبادي، زيتون، سمك، مهما ذكرت لن يدخل في البرنامج.","fr":"Oui. Les aliments que tu indiques — que ce soit lors de la création du plan gratuit ou dans le formulaire d'achat — sont totalement exclus. Fromage, yaourt, olives, poisson : quoi que tu indiques, cela n'apparaîtra pas dans le programme.","es":"Sí. Los alimentos que indiques, tanto al crear el plan gratuito como en el formulario de compra, se excluyen por completo. Queso, yogur, aceitunas, pescado: lo que sea que menciones no entrará en el programa.","da":"Ja. De fødevarer, du angiver — både når du opretter den gratis plan og i købsformularen — udelukkes helt. Ost, yoghurt, oliven, fisk — uanset hvad du angiver, kommer det ikke med i programmet."},
+"Hayır. Plan oluştururken \"IF yok\" seçeneğini seçebilirsin. Yine de IF+Keto kombinasyonu en hızlı sonucu verdiği için öneriyoruz.":{"en":"No. You can select the \"No IF\" option when creating your plan. That said, we recommend the IF+Keto combination since it delivers the fastest results.","de":"Nein. Du kannst beim Erstellen deines Plans die Option \"Kein IF\" wählen. Wir empfehlen dennoch die Kombination aus IF und Keto, da sie die schnellsten Ergebnisse liefert.","ru":"Нет. При создании плана вы можете выбрать опцию \"Без IF\". Тем не менее мы рекомендуем сочетание IF+Кето, так как оно даёт самые быстрые результаты.","ar":"لا. يمكنك اختيار خيار \"بدون صيام متقطع\" عند إنشاء خطتك. ومع ذلك، نوصي بمزيج الصيام المتقطع مع الكيتو لأنه يعطي أسرع النتائج.","fr":"Non. Tu peux choisir l'option \"Sans IF\" lors de la création de ton plan. Nous recommandons toutefois la combinaison IF+Keto, car elle donne les résultats les plus rapides.","es":"No. Puedes seleccionar la opción \"Sin IF\" al crear tu plan. Aun así, recomendamos la combinación IF+Keto porque ofrece los resultados más rápidos.","da":"Nej. Du kan vælge muligheden \"Ingen IF\", når du opretter din plan. Vi anbefaler dog kombinationen IF+Keto, da den giver de hurtigste resultater."},
+"Evet, tamamen ücretsiz. Kredi kartı veya ödeme bilgisi istemiyoruz. Sadece profilini gir, planını al, Excel'e aktar. Devam günleri için paket satın alabilirsin.":{"en":"Yes, completely free. We don't ask for a credit card or any payment details. Just enter your profile, get your plan, and export it to Excel. You can purchase a package for continuation days.","de":"Ja, komplett kostenlos. Wir verlangen keine Kreditkarte oder Zahlungsinformationen. Gib einfach dein Profil ein, erhalte deinen Plan und exportiere ihn nach Excel. Für weitere Tage kannst du ein Paket kaufen.","ru":"Да, совершенно бесплатно. Мы не запрашиваем данные банковской карты или оплаты. Просто введите профиль, получите план и экспортируйте в Excel. Для продолжения дней вы можете купить пакет.","ar":"نعم، مجاني تمامًا. لا نطلب بطاقة ائتمان أو أي معلومات دفع. فقط أدخل ملفك الشخصي، واحصل على خطتك، وصدّرها إلى إكسل. يمكنك شراء باقة لأيام الاستمرار.","fr":"Oui, entièrement gratuit. Nous ne demandons ni carte bancaire ni informations de paiement. Entre simplement ton profil, obtiens ton plan et exporte-le en Excel. Tu peux acheter un forfait pour les jours suivants.","es":"Sí, totalmente gratis. No pedimos tarjeta de crédito ni datos de pago. Solo ingresa tu perfil, obtén tu plan y expórtalo a Excel. Puedes comprar un paquete para los días de continuación.","da":"Ja, helt gratis. Vi beder ikke om kreditkort eller betalingsoplysninger. Indtast blot din profil, få din plan, og eksportér til Excel. Du kan købe en pakke til fortsættelsesdage."},
+"Tüm hakları saklıdır.":{"en":"All rights reserved.","de":"Alle Rechte vorbehalten.","ru":"Все права защищены.","ar":"جميع الحقوق محفوظة.","fr":"Tous droits réservés.","es":"Todos los derechos reservados.","da":"Alle rettigheder forbeholdes."},
+"📞 +90 542 354 86 68 · Hafta içi 09:00–21:00":{"en":"📞 +90 542 354 86 68 · Weekdays 09:00–21:00","de":"📞 +90 542 354 86 68 · Wochentags 09:00–21:00","ru":"📞 +90 542 354 86 68 · Будни 09:00–21:00","ar":"📞 +90 542 354 86 68 · أيام الأسبوع 09:00–21:00","fr":"📞 +90 542 354 86 68 · En semaine 09:00–21:00","es":"📞 +90 542 354 86 68 · Días laborables 09:00–21:00","da":"📞 +90 542 354 86 68 · Hverdage 09:00–21:00"},
+"✓ Excel dosyası indiriliyor...":{"en":"✓ Downloading Excel file...","de":"✓ Excel-Datei wird heruntergeladen...","ru":"✓ Скачивание файла Excel...","ar":"✓ جارٍ تنزيل ملف إكسل...","fr":"✓ Téléchargement du fichier Excel...","es":"✓ Descargando archivo de Excel...","da":"✓ Downloader Excel-fil..."},
+"🧬 Temel Bilgi":{"en":"🧬 Basics","de":"🧬 Grundlagen","ru":"🧬 Основы","ar":"🧬 أساسيات","fr":"🧬 Bases","es":"🧬 Fundamentos","da":"🧬 Grundlæggende"},
+"🍽️ Beslenme":{"en":"🍽️ Nutrition","de":"🍽️ Ernährung","ru":"🍽️ Питание","ar":"🍽️ التغذية","fr":"🍽️ Alimentation","es":"🍽️ Nutrición","da":"🍽️ Ernæring"},
+"⏱️ Aralıklı Oruç":{"en":"⏱️ Intermittent Fasting","de":"⏱️ Intervallfasten","ru":"⏱️ Интервальное голодание","ar":"⏱️ الصيام المتقطع","fr":"⏱️ Jeûne intermittent","es":"⏱️ Ayuno intermitente","da":"⏱️ Intervalfaste"},
+"📅 Program":{"en":"📅 Program","de":"📅 Programm","ru":"📅 Программа","ar":"📅 البرنامج","fr":"📅 Programme","es":"📅 Programa","da":"📅 Program"},
+"🔬 Sağlık":{"en":"🔬 Health","de":"🔬 Gesundheit","ru":"🔬 Здоровье","ar":"🔬 الصحة","fr":"🔬 Santé","es":"🔬 Salud","da":"🔬 Sundhed"},
+"💡 Pratik":{"en":"💡 Practical","de":"💡 Praktisch","ru":"💡 Практика","ar":"💡 عملي","fr":"💡 Pratique","es":"💡 Práctico","da":"💡 Praktisk"},
+"Satın alımdan":{"en":"From purchase to","de":"Vom Kauf zum","ru":"От покупки до","ar":"من الشراء إلى","fr":"De l'achat au","es":"De la compra al","da":"Fra køb til"},
+"programa":{"en":"program","de":"Programm","ru":"программы","ar":"البرنامج","fr":"programme","es":"programa","da":"program"},
+"4 adım":{"en":"in 4 steps","de":"in 4 Schritten","ru":"за 4 шага","ar":"في 4 خطوات","fr":"en 4 étapes","es":"en 4 pasos","da":"i 4 trin"},
+"Kilo":{"en":"Weight","de":"Gewicht","ru":"Вес","ar":"الوزن","fr":"Poids","es":"Peso","da":"Vægt"},
+"Hedef":{"en":"Target","de":"Ziel","ru":"Цель","ar":"الهدف","fr":"Objectif","es":"Objetivo","da":"Mål"},
+"Hareket":{"en":"Activity","de":"Aktivität","ru":"Активность","ar":"النشاط","fr":"Activité","es":"Actividad","da":"Aktivitet"},
+"IF Protokol":{"en":"IF Protocol","de":"IF-Protokoll","ru":"Протокол IF","ar":"بروتوكول الصيام","fr":"Protocole IF","es":"Protocolo IF","da":"IF-protokol"},
+"Yemez":{"en":"Avoids","de":"Meidet","ru":"Не ест","ar":"لا يتناول","fr":"Évite","es":"Evita","da":"Undgår"},
+"Yok":{"en":"None","de":"Keine","ru":"Нет","ar":"لا يوجد","fr":"Aucun","es":"Ninguno","da":"Ingen"},
+"Hareketsiz":{"en":"Sedentary","de":"Sitzend","ru":"Малоподвижный","ar":"خامل","fr":"Sédentaire","es":"Sedentario","da":"Stillesiddende"},
+"Az Hareketli":{"en":"Lightly Active","de":"Leicht aktiv","ru":"Малоактивный","ar":"نشاط خفيف","fr":"Peu actif","es":"Poco activo","da":"Let aktiv"},
+"Orta Aktif":{"en":"Moderately Active","de":"Mäßig aktiv","ru":"Умеренно активный","ar":"نشاط معتدل","fr":"Modérément actif","es":"Moderadamente activo","da":"Moderat aktiv"},
+"Çok Aktif":{"en":"Very Active","de":"Sehr aktiv","ru":"Очень активный","ar":"نشاط عالٍ","fr":"Très actif","es":"Muy activo","da":"Meget aktiv"}
 };
 
 var originals = new Map();
@@ -2256,6 +2362,13 @@ function switchLang(lang) {
   });
   window.dispatchEvent(new CustomEvent("kd-lang-change", {detail:{lang:lang}}));
 }
+
+/* Dinamik olarak (modal/JS ile) sonradan DOM'a eklenen içerikleri de
+   mevcut dile çevirmek için dışa açılan yardımcılar. */
+window.kdTranslateNode = function(node) {
+  if (node && currentLang !== "tr") walkText(node, currentLang);
+};
+window.kdCurrentLang = function() { return currentLang; };
 
 /* Widget */
 function createWidget() {
