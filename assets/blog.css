@@ -21,9 +21,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .btn-p:hover{background:#3a9460;transform:translateY(-1px);}
 
 .article-wrap{max-width:720px;margin:0 auto;padding:130px 24px 80px;}
-.breadcrumb{font-size:12px;color:var(--dim);margin-bottom:24px;}
+.breadcrumb{font-size:12px;color:var(--dim);margin-bottom:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
 .breadcrumb a{color:var(--muted);text-decoration:none;}
 .breadcrumb a:hover{color:var(--cream);}
+.lang-switch a{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--accent);text-decoration:none;border:1px solid var(--border);border-radius:20px;padding:5px 12px;transition:.2s;}
+.lang-switch a:hover{background:rgba(45,122,74,0.08);color:var(--cream);}
 .art-tag{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:14px;}
 .art-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:900;color:var(--cream);line-height:1.12;letter-spacing:-0.8px;}
 .art-meta{font-size:12.5px;color:var(--dim);margin-top:16px;padding-bottom:28px;border-bottom:1px solid var(--border);margin-bottom:28px;}
