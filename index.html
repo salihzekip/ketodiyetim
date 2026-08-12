@@ -357,6 +357,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
   transition: transform .2s, border-color .2s;
   display: flex;
   flex-direction: column;
+  text-decoration: none;
+  color: inherit;
 }
 .blog-card:hover { transform: translateY(-4px); border-color: rgba(45,122,74,0.3); }
 .blog-thumb {
@@ -919,7 +921,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
   </div>
 
   <div class="blog-grid" id="blogGrid">
-    <div class="blog-card" data-cat="Temel Bilgi" onclick="openBlog(0)">
+    <a class="blog-card" data-cat="Temel Bilgi" href="/blog/ketojenik-diyet-nedir/">
       <div class="blog-thumb bt1">🥑</div>
       <div class="blog-body">
         <span class="blog-tag">Temel Bilgi</span>
@@ -927,8 +929,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
         <p class="blog-excerpt">Vücudun şeker yerine yağı yakıt olarak kullanması için ne gerekir? Keto diyetin bilimsel temeli.</p>
         <div class="blog-meta"><span>8 dk okuma</span><span class="blog-read">Oku →</span></div>
       </div>
-    </div>
-    <div class="blog-card" data-cat="Aralıklı Oruç" onclick="openBlog(1)">
+    </a>
+    <a class="blog-card" data-cat="Aralıklı Oruç" href="/blog/aralikli-oruc-if-nedir-16-8-rehberi/">
       <div class="blog-thumb bt2">⏱️</div>
       <div class="blog-body">
         <span class="blog-tag">Aralıklı Oruç</span>
@@ -936,8 +938,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
         <p class="blog-excerpt">Intermittent Fasting'in keto ile birleşimi neden bu kadar güçlü? Oruç penceresini nasıl ayarlamalısın?</p>
         <div class="blog-meta"><span>6 dk okuma</span><span class="blog-read">Oku →</span></div>
       </div>
-    </div>
-    <div class="blog-card" data-cat="Temel Bilgi" onclick="openBlog(2)">
+    </a>
+    <a class="blog-card" data-cat="Temel Bilgi" href="/blog/keto-diyetinde-dikkat-edilmesi-gerekenler/">
       <div class="blog-thumb bt3">⚠️</div>
       <div class="blog-body">
         <span class="blog-tag">Temel Bilgi</span>
@@ -945,8 +947,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
         <p class="blog-excerpt">Keto grip, elektrolit dengesi, kolesterol takibi ve ilk 2 haftada yapılan en yaygın hatalar.</p>
         <div class="blog-meta"><span>7 dk okuma</span><span class="blog-read">Oku →</span></div>
       </div>
-    </div>
-    <div class="blog-card" data-cat="Beslenme" onclick="openBlog(3)">
+    </a>
+    <a class="blog-card" data-cat="Beslenme" href="/blog/keto-diyetinde-neler-yenir-neler-yenmez/">
       <div class="blog-thumb bt4">🍽️</div>
       <div class="blog-body">
         <span class="blog-tag">Beslenme</span>
@@ -954,8 +956,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
         <p class="blog-excerpt">İzin verilen ve yasaklanan yiyeceklerin tam listesi. Markette alışveriş yaparken neye bakmalısın?</p>
         <div class="blog-meta"><span>5 dk okuma</span><span class="blog-read">Oku →</span></div>
       </div>
-    </div>
-    <div class="blog-card" data-cat="Pratik" onclick="openBlog(4)">
+    </a>
+    <a class="blog-card" data-cat="Pratik" href="/blog/keto-yaparken-egzersiz/">
       <div class="blog-thumb bt5">💪</div>
       <div class="blog-body">
         <span class="blog-tag">Pratik</span>
@@ -963,8 +965,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
         <p class="blog-excerpt">Adaptasyon döneminde performans düşer mi? Hangi egzersizler keto ile daha uyumlu?</p>
         <div class="blog-meta"><span>6 dk okuma</span><span class="blog-read">Oku →</span></div>
       </div>
-    </div>
-    <div class="blog-card" data-cat="Sağlık" onclick="openBlog(5)">
+    </a>
+    <a class="blog-card" data-cat="Sağlık" href="/blog/keto-diyeti-kan-tahlili-etkileri/">
       <div class="blog-thumb bt6">🔬</div>
       <div class="blog-body">
         <span class="blog-tag">Sağlık</span>
@@ -972,8 +974,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
         <p class="blog-excerpt">Kolesterol, trigliserit, kan şekeri — keto başladıktan sonra hangi değerlere bakmalısın?</p>
         <div class="blog-meta"><span>9 dk okuma</span><span class="blog-read">Oku →</span></div>
       </div>
-    </div>
-    <div class="blog-card" data-cat="Pratik" onclick="openBlog(6)">
+    </a>
+    <a class="blog-card" data-cat="Pratik" href="/blog/keto-plato-donemini-asma/">
       <div class="blog-thumb bt7">🧠</div>
       <div class="blog-body">
         <span class="blog-tag">Pratik</span>
@@ -981,8 +983,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
         <p class="blog-excerpt">2-3. haftada kilo durdu mu? Plato neden olur, nasıl kırılır? Uzun vadede keto'yu sürdürmenin sırrı.</p>
         <div class="blog-meta"><span>7 dk okuma</span><span class="blog-read">Oku →</span></div>
       </div>
-    </div>
-    <div class="blog-card" data-cat="Program" onclick="openBlog(7)">
+    </a>
+    <a class="blog-card" data-cat="Program" href="/blog/keto-diyeti-1-aylik-program/">
       <div class="blog-thumb bt1">📅</div>
       <div class="blog-body">
         <span class="blog-tag">Program</span>
@@ -990,8 +992,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
         <p class="blog-excerpt">Keto diyetinin ilk ayında her hafta vücudunuzda neler oluyor? Haftaya göre detaylı 1 aylık rehber.</p>
         <div class="blog-meta"><span>10 dk okuma</span><span class="blog-read">Oku →</span></div>
       </div>
-    </div>
-    <div class="blog-card" data-cat="Beslenme" onclick="openBlog(8)">
+    </a>
+    <a class="blog-card" data-cat="Beslenme" href="/blog/keto-diyetinde-neler-icilir/">
       <div class="blog-thumb bt2">🥤</div>
       <div class="blog-body">
         <span class="blog-tag">Beslenme</span>
@@ -999,8 +1001,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
         <p class="blog-excerpt">Meyve suyu, süt, kahve, çay — hangisi keto ile uyumlu? IF yaparken ne içebilirsiniz?</p>
         <div class="blog-meta"><span>6 dk okuma</span><span class="blog-read">Oku →</span></div>
       </div>
-    </div>
-    <div class="blog-card" data-cat="Beslenme" onclick="openBlog(9)">
+    </a>
+    <a class="blog-card" data-cat="Beslenme" href="/blog/keto-diyetinde-meyve-yenir-mi/">
       <div class="blog-thumb bt3">🍓</div>
       <div class="blog-body">
         <span class="blog-tag">Beslenme</span>
@@ -1008,8 +1010,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
         <p class="blog-excerpt">Avokado evet, muz hayır — ama neden? Yenebilecek ve kaçınılması gereken meyvelerin tam listesi.</p>
         <div class="blog-meta"><span>5 dk okuma</span><span class="blog-read">Oku →</span></div>
       </div>
-    </div>
-    <div class="blog-card" data-cat="Pratik" onclick="openBlog(10)">
+    </a>
+    <a class="blog-card" data-cat="Pratik" href="/blog/butce-dostu-keto/">
       <div class="blog-thumb bt4">💰</div>
       <div class="blog-body">
         <span class="blog-tag">Pratik</span>
@@ -1017,8 +1019,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
         <p class="blog-excerpt">"Keto pahalı" demeden önce bunu okuyun. Türkiye'de bütçe dostu keto yapmanın 10 pratik yolu.</p>
         <div class="blog-meta"><span>7 dk okuma</span><span class="blog-read">Oku →</span></div>
       </div>
-    </div>
-    <div class="blog-card" data-cat="Aralıklı Oruç" onclick="openBlog(11)">
+    </a>
+    <a class="blog-card" data-cat="Aralıklı Oruç" href="/blog/aralikli-oruc-kahvalti-saatleri/">
       <div class="blog-thumb bt5">⏰</div>
       <div class="blog-body">
         <span class="blog-tag">Aralıklı Oruç</span>
@@ -1026,7 +1028,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
         <p class="blog-excerpt">16:8 ve 18:6 protokollerinde ilk öğün saatleri, oruç penceresinde ne içebilirsiniz?</p>
         <div class="blog-meta"><span>6 dk okuma</span><span class="blog-read">Oku →</span></div>
       </div>
-    </div>
+    </a>
   </div>
 </section>
 
