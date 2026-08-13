@@ -67,7 +67,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
 .footer-logo{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:900;color:var(--cream);}
 .footer-logo span{color:var(--gold);}
 .footer-tagline{margin-top:10px;font-size:12px;color:var(--muted);line-height:1.7;max-width:230px;}
-.fc h4{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:13px;}
+.fc h3{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:13px;}
 .fc ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
 .fc ul a{font-size:13px;color:var(--dim);text-decoration:none;transition:color .2s;}
 .fc ul a:hover{color:var(--muted);}
