@@ -21,7 +21,10 @@
 <meta name="twitter:description" content="Sana özel ücretsiz 3 günlük keto + IF planı oluştur. Türkiye'nin kişisel keto platformu.">
 <meta name="twitter:image" content="https://ketojenikdiyetim.com/og-image.jpg">
 <title>KetoDiyetim — Damağına Özel Keto Programı</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap"></noscript>
 <!-- SheetJS for Excel export -->
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
@@ -29,7 +32,7 @@
   --bg:#f4f9f5;--bg2:#ffffff;--card:#ffffff;--border:#d4e4d8;
   --accent:#2d7a4a;--gold:#1a472a;--gold2:#2d7a4a;
   --green:#2d7a4a;--cream:#1a472a;--text:#2c3e30;
-  --muted:#6b7c6f;--dim:#9aab9f;--red:#c0392b;--purple:#7B5EA7;
+  --muted:#556457;--dim:#617260;--red:#c0392b;--purple:#7B5EA7;
 }
 html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;overflow-x:hidden;}
@@ -41,7 +44,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .nav-links{display:flex;gap:28px;list-style:none;align-items:center;}
 .nav-links a{font-size:13px;font-weight:500;color:var(--muted);text-decoration:none;transition:color .2s;}
 .nav-links a:hover{color:var(--cream);}
-.nav-cta{background:var(--accent)!important;color:var(--cream)!important;padding:8px 18px;border-radius:3px;font-weight:700!important;}
+.nav-cta{background:var(--accent)!important;color:#fff!important;padding:8px 18px;border-radius:3px;font-weight:700!important;}
 .nav-cta:hover{background:#3a9460!important;}
 
 /* HERO */
@@ -56,7 +59,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .hero-sub{margin-top:26px;font-size:16px;color:var(--muted);line-height:1.85;max-width:520px;font-weight:300;}
 .hero-sub strong{color:var(--cream);font-weight:500;}
 .hero-btns{margin-top:40px;display:flex;gap:12px;flex-wrap:wrap;}
-.btn-p{display:inline-flex;align-items:center;gap:9px;background:var(--accent);color:var(--cream);font-size:14px;font-weight:700;padding:14px 28px;border-radius:3px;text-decoration:none;border:none;cursor:pointer;transition:.2s;font-family:'DM Sans',sans-serif;}
+.btn-p{display:inline-flex;align-items:center;gap:9px;background:var(--accent);color:#fff;font-size:14px;font-weight:700;padding:14px 28px;border-radius:3px;text-decoration:none;border:none;cursor:pointer;transition:.2s;font-family:'DM Sans',sans-serif;}
 .btn-p:hover{background:#3a9460;transform:translateY(-1px);}
 .btn-g{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--muted);font-size:13px;font-weight:500;padding:14px 20px;border-radius:3px;border:1px solid var(--border);text-decoration:none;cursor:pointer;transition:.2s;font-family:'DM Sans',sans-serif;}
 .btn-g:hover{color:var(--cream);border-color:var(--dim);}
@@ -242,7 +245,7 @@ section{position:relative;z-index:1;}
 .pf-ico{width:17px;height:17px;border-radius:50%;flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;font-size:9px;background:rgba(45,122,74,0.12);border:1px solid rgba(45,122,74,0.25);color:var(--green);}
 .pf-ico.g{background:rgba(45,122,74,0.1);border-color:rgba(45,122,74,0.25);color:var(--gold);}
 .btn-buy{width:100%;padding:12px 18px;border-radius:3px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;cursor:pointer;border:none;display:flex;align-items:center;justify-content:center;gap:8px;transition:.2s;}
-.btn-buy.pa{background:var(--accent);color:var(--cream);}
+.btn-buy.pa{background:var(--accent);color:#fff;}
 .btn-buy.pa:hover{background:#3a9460;}
 .btn-buy.pf{background:var(--gold);color:var(--bg);}
 .btn-buy.pf:hover{background:var(--gold2);}
@@ -638,25 +641,25 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
 
     <div class="form-grid">
       <div class="ff">
-        <label>Adın</label>
+        <label for="f_name">Adın</label>
         <input type="text" id="f_name" placeholder="Adınız">
       </div>
       <div class="ff">
-        <label>Yaş</label>
+        <label for="f_age">Yaş</label>
         <input type="number" id="f_age" placeholder="örn. 45" min="18" max="80">
       </div>
     </div>
     <div class="form-grid-3">
       <div class="ff">
-        <label>Kilo (kg)</label>
+        <label for="f_weight">Kilo (kg)</label>
         <input type="number" id="f_weight" placeholder="örn. 90" min="40" max="200">
       </div>
       <div class="ff">
-        <label>Boy (cm)</label>
+        <label for="f_height">Boy (cm)</label>
         <input type="number" id="f_height" placeholder="örn. 170" min="140" max="220">
       </div>
       <div class="ff">
-        <label>Hedef Kilo (kg)</label>
+        <label for="f_goal">Hedef Kilo (kg)</label>
         <input type="number" id="f_goal" placeholder="örn. 75" min="40" max="200">
       </div>
     </div>
@@ -670,7 +673,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
     </div>
 
     <div class="ff">
-      <label>Hareket Düzeni</label>
+      <label for="f_activity">Hareket Düzeni</label>
       <select id="f_activity">
         <option value="sedentary">Hareketsiz (masa başı iş)</option>
         <option value="light">Az hareketli (haftada 1-2 yürüyüş)</option>
