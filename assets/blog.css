@@ -33,7 +33,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 
 .art-body p{font-size:15.5px;color:var(--muted);line-height:2;margin-bottom:18px;font-weight:300;}
 .art-body p strong{color:var(--cream);font-weight:600;}
-.art-body h4{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:var(--cream);margin:30px 0 12px;}
+.art-body h2{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:var(--cream);margin:30px 0 12px;}
 .art-body ul{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:18px;}
 .art-body ul li{display:flex;gap:10px;font-size:14.5px;color:var(--muted);line-height:1.7;}
 .art-body ul li::before{content:'→';color:var(--accent);flex-shrink:0;font-size:13px;margin-top:2px;}
