@@ -1,0 +1,27 @@
+# KetoDiyetim
+
+> KetoDiyetim (ketojenikdiyetim.com) is a Turkish personalized ketogenic diet and intermittent fasting (IF) plan generator. Users enter their age, weight, height, goal, activity level, and food preferences to receive a free 3-day personalized keto + IF meal plan, exportable to Excel, with paid packages for extended plans and ongoing coaching via WhatsApp.
+
+Primary language is Turkish (tr); English (en) and German (de) translations are available for the blog under /en/ and /de/.
+
+## Product
+- [Homepage](https://ketojenikdiyetim.com/): Plan generator, pricing packages, how it works, FAQ.
+- [About](https://ketojenikdiyetim.com/hakkimizda/): Founder's story and background on the platform.
+
+## Blog
+- [Blog index (Turkish)](https://ketojenikdiyetim.com/blog/): All articles on keto and intermittent fasting.
+- [Blog index (English)](https://ketojenikdiyetim.com/en/blog/)
+- [Blog index (German)](https://ketojenikdiyetim.com/de/blog/)
+- [What Is the Ketogenic Diet?](https://ketojenikdiyetim.com/blog/ketojenik-diyet-nedir/): Basics of ketosis and macro splits.
+- [What Is Intermittent Fasting (IF)? The 16:8 Guide](https://ketojenikdiyetim.com/blog/aralikli-oruc-if-nedir-16-8-rehberi/)
+- [A 1-Month Keto Program](https://ketojenikdiyetim.com/blog/keto-diyeti-1-aylik-program/): Week-by-week guide.
+- [What to Eat and Avoid on the Keto Diet](https://ketojenikdiyetim.com/blog/keto-diyetinde-neler-yenir-neler-yenmez/)
+- [How Does the Keto Diet Affect Your Blood Test Results?](https://ketojenikdiyetim.com/blog/keto-diyeti-kan-tahlili-etkileri/)
+
+## Policies
+- [Privacy Policy](https://ketojenikdiyetim.com/gizlilik-politikasi/)
+- [Terms of Use](https://ketojenikdiyetim.com/kullanim-kosullari/)
+
+## Notes
+- This site does not provide medical advice; users are advised to consult a doctor before starting.
+- Content is written and reviewed by the KetoDiyetim team; no AI-generated content is published without human review.
