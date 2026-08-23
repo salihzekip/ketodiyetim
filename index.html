@@ -60,9 +60,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .nav-cta:hover{background:#3a9460!important;}
 
 /* HERO */
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:130px 52px 90px;position:relative;overflow:hidden;}
+.hero{min-height:100vh;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:56px;padding:130px 52px 90px;position:relative;overflow:hidden;}
 .hero::before{content:'';position:absolute;width:700px;height:700px;top:-200px;right:-200px;border-radius:50%;background:radial-gradient(circle,rgba(45,122,74,0.08) 0%,transparent 65%);pointer-events:none;}
 .hero::after{content:'';position:absolute;width:500px;height:500px;bottom:-100px;left:-80px;border-radius:50%;background:radial-gradient(circle,rgba(125,206,160,0.1) 0%,transparent 65%);pointer-events:none;}
+.hero-visual{position:relative;z-index:1;}
+.hero-visual img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:16px;box-shadow:0 30px 60px -20px rgba(0,0,0,.35);}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:24px;}
 .eyebrow::before{content:'';width:28px;height:1px;background:var(--gold);opacity:0.6;}
 .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,6.5vw,6rem);font-weight:900;line-height:.93;letter-spacing:-2px;max-width:780px;}
@@ -344,6 +346,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
   nav{padding:0 20px;}
   .nav-links li:not(:last-child){display:none;}
   .hero,.plan-section,.pricing,.how,.faq{padding-left:20px;padding-right:20px;}
+  .hero{display:flex;flex-direction:column;justify-content:center;}
+  .hero-visual{display:none;}
   footer{padding:36px 20px 20px;}
   .footer-top{grid-template-columns:1fr 1fr;gap:24px;}
   .form-grid,.form-grid-3{grid-template-columns:1fr;}
@@ -609,6 +613,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-content">
   <div class="eyebrow" data-i18n="hero_subtitle">Türkiye'nin Kişisel Keto Platformu</div>
   <h1><span class="d">Senin</span><br><em>Damağına</em><br><span class="d">Özel</span> Keto</h1>
   <p class="hero-sub">Bilgilerini gir, <strong>3 günlük kişisel planını</strong> saniyeler içinde oluştur. Excel'e aktar. Devamını satın al.</p>
@@ -621,6 +626,10 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
     <div class="hs"><div class="v">Excel</div><div class="l">Export</div></div>
     <div class="hs"><div class="v">IF 16:8</div><div class="l">Protokol</div></div>
     <div class="hs"><div class="v">%100</div><div class="l">Kişisel</div></div>
+  </div>
+  </div>
+  <div class="hero-visual">
+    <img src="/assets/img/hero.jpg" alt="Kişiye özel hazırlanmış keto tabağı: ızgara biftek, sote yeşillik ve avokado" width="800" height="1000" fetchpriority="high">
   </div>
 </section>
 
