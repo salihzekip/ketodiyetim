@@ -12,10 +12,14 @@
   'use strict';
 
   // ---- AYAR --------------------------------------------------
-  // Lead'leri Google Sheets'e yollamak için buraya Apps Script
-  // webhook URL'ini yapıştır. Boş bırakırsan sadece GA4 çalışır.
-  var LEAD_ENDPOINT = ''; // örn: 'https://script.google.com/macros/s/AKfy.../exec'
+  // Lead'lerin gönderileceği adres. Kurulunca buraya yapıştırılır.
+  // BOŞ OLSA BİLE lead kaybolmaz: tarayıcıda saklanır ve
+  // konsoldan kdLeadler() ile alınabilir.
+  var LEAD_ENDPOINT = '';
   // ------------------------------------------------------------
+
+  // Bu ziyarete özel kimlik — aynı kişiyi iki kez kaydetmemek için
+  var OTURUM = String(Date.now()) + '-' + Math.random().toString(36).slice(2, 8);
 
   function ev(name, params) {
     if (typeof gtag === 'function') gtag('event', name, params || {});
@@ -98,8 +102,24 @@
   }
 
   function leadGonder(p, eposta) {
-    if (!LEAD_ENDPOINT) return;
     if (eposta) p.eposta = eposta;
+
+    // 1) Her hâlükârda tarayıcıda sakla — hiçbir lead kaybolmasın.
+    //    Aynı ziyaret için tek kayıt tut, e-posta gelince güncelle.
+    try {
+      var liste = JSON.parse(localStorage.getItem('kd-leadler') || '[]');
+      var son = liste.length ? liste[liste.length - 1] : null;
+      if (son && son._oturum === OTURUM) {
+        liste[liste.length - 1] = p;      // aynı ziyaret: üzerine yaz
+      } else {
+        liste.push(p);                     // yeni ziyaret: ekle
+      }
+      p._oturum = OTURUM;
+      localStorage.setItem('kd-leadler', JSON.stringify(liste.slice(-200)));
+    } catch (e) { /* kota dolu olabilir, sorun değil */ }
+
+    // 2) Endpoint kuruluysa oraya da gönder (sadece e-posta varken)
+    if (!LEAD_ENDPOINT || !eposta) return;
     try {
       fetch(LEAD_ENDPOINT, {
         method: 'POST', mode: 'no-cors',
@@ -108,6 +128,12 @@
       });
     } catch (e) { /* sessizce geç */ }
   }
+
+  // Konsoldan lead'leri okumak için: kdLeadler()
+  window.kdLeadler = function () {
+    try { return JSON.parse(localStorage.getItem('kd-leadler') || '[]'); }
+    catch (e) { return []; }
+  };
 
   /* ---------- 5) E-POSTA YAKALAMA (planın hemen altına) ---------- */
   function epostaIsteGoster(p) {
@@ -120,10 +146,11 @@
       'box-shadow:0 8px 30px rgba(0,0,0,.25)';
     box.innerHTML =
       '<div style="font-size:17px;font-weight:700;margin-bottom:6px">' +
-        'Planını e-postana da gönderelim mi?' +
+        '4–7. günlerin de hazır olsun mu?' +
       '</div>' +
       '<div style="font-size:13px;opacity:.75;margin-bottom:14px">' +
-        '4–7. günlerin ipuçlarını ve haftalık keto rehberini ücretsiz yolluyoruz.' +
+        'E-postanı bırak, devam günlerini ve haftalık keto rehberini ' +
+        'hazırlayıp sana ulaştıralım.' +
       '</div>' +
       '<div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center">' +
         '<input id="kd-lead-mail" type="email" placeholder="e-posta adresin" ' +
@@ -151,8 +178,33 @@
       }
       leadGonder(p, mail);
       ev('lead_yakalandi', { yontem: 'eposta' });
-      box.innerHTML = '<div style="padding:10px;font-weight:600">' +
-        '✓ Teşekkürler! Planın ve rehberin yolda.</div>';
+
+      // WhatsApp'a hazır mesaj: lead doğrudan sana ulaşsın
+      var msj = 'Merhaba! 3 günlük ücretsiz planımı oluşturdum, ' +
+                '4-7. günleri de istiyorum.\n\n' +
+                'Ad: ' + (p.ad || '-') + '\n' +
+                'E-posta: ' + mail + '\n' +
+                'Yaş: ' + (p.yas || '-') + ' | Kilo: ' + (p.kilo || '-') +
+                ' | Boy: ' + (p.boy || '-') + ' | Hedef: ' + (p.hedef || '-');
+      var wa = 'https://wa.me/905423548668?text=' + encodeURIComponent(msj);
+
+      box.innerHTML =
+        '<div style="font-weight:700;font-size:16px;margin-bottom:6px">' +
+          '✓ Kaydettik!' +
+        '</div>' +
+        '<div style="font-size:13px;opacity:.75;margin-bottom:14px">' +
+          'Devam günlerini hemen almak için WhatsApp\'tan yaz — ' +
+          'bilgilerin mesaja hazır eklendi.' +
+        '</div>' +
+        '<a id="kd-wa-btn" href="' + wa + '" target="_blank" rel="noopener" ' +
+          'style="display:inline-block;padding:13px 22px;border-radius:10px;' +
+          'background:#25D366;color:#fff;font-weight:700;text-decoration:none;' +
+          'font-size:14px">WhatsApp\'tan Devam Et →</a>';
+
+      var waBtn = document.getElementById('kd-wa-btn');
+      if (waBtn) waBtn.addEventListener('click', function () {
+        ev('lead_whatsappa_gitti', { yontem: 'eposta_sonrasi' });
+      });
     });
   }
 
