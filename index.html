@@ -566,7 +566,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
       "name": "Satın alma nasıl gerçekleşiyor?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "\"WhatsApp ile Satın Al\" butonuna tıklayınca paket bilgilerinle otomatik bir mesaj hazırlanır. WhatsApp açılınca mesajı gönder, ödeme detaylarını (Papara / IBAN) sana iletiyoruz. Ödeme sonrası 24 saat içinde kişisel planın hazır."
+        "text": "\"WhatsApp ile Satın Al\" butonuna tıklayınca hazır bir mesaj açılır. Mesajı gönder, ödeme detaylarını (Papara / IBAN) sana iletiyoruz. Ödeme onaylanınca e-kitap (PDF) ve takip çizelgesi (Excel) hemen gönderilir."
       }
     },
     {
@@ -574,7 +574,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
       "name": "Sevmediğim yiyecekler gerçekten çıkarılıyor mu?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Evet. Hem ücretsiz plan oluştururken hem de satın alma formunda belirttiğin yiyecekler tamamen çıkarılıyor. Peynir, yoğurt, zeytin, balık ne söylersen programa girmiyor."
+        "text": "Evet. Ücretsiz plan oluştururken belirttiğin yiyecekler tamamen çıkarılıyor. Peynir, yoğurt, zeytin, balık ne söylersen programa girmiyor. Satın alınan e-kitap ve Excel çizelgesi ise herkes için aynı, hazır içeriktir."
       }
     },
     {
@@ -816,8 +816,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
     </div>
     <div class="unlock-bar">
       <div>
-        <h4>4–7. günler + aylık plan seni bekliyor 🔓</h4>
-        <p>Devam günleri ve tam kişiselleştirilmiş plan için bir paket seç.</p>
+        <h4>Devamı e-kitapta 🔓</h4>
+        <p>18 hazır menü, makro hesaplama ve 30 günlük takip çizelgesi için Keto + IF Başlangıç Paketi'ni al.</p>
       </div>
       <a href="#pricing" class="btn-unlock">Kilidi Aç →</a>
     </div>
@@ -826,66 +826,31 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
 
 <!-- PRICING -->
 <section class="pricing" id="pricing">
-  <div class="sl">Paketler & Fiyatlar</div>
-  <h2 class="st"><em>Devam günlerini</em> satın al</h2>
+  <div class="sl">Dijital Ürün</div>
+  <h2 class="st"><em>Keto + IF</em> Başlangıç Paketi'ni al</h2>
 
-
-
-  <div class="pricing-grid">
-    <!-- STARTER -->
-    <div class="price-card">
-      <div class="pname">Başlangıç</div>
-      <div class="pval"><span class="pamt" id="p1amt">249</span> <span>₺</span></div>
-      <div class="pperiod" id="p1period">7 günlük tam plan</div>
-      <p class="pdesc">3 günlük önizlemenin devamı. Her ay yenilenen haftalık plan.</p>
-      <ul class="pfeatures">
-        <li><div class="pf-ico">✓</div>7 günlük döngüsel menü (14 öğün)</li>
-        <li><div class="pf-ico">✓</div>IF zaman çizelgesi</li>
-        <li><div class="pf-ico">✓</div>Excel dosyası dahil</li>
-        <li><div class="pf-ico">✓</div>Aylık alışveriş listesi</li>
-        <li><div class="pf-ico">✓</div>Kullanım desteği (7 gün)</li>
-      </ul>
-      <button class="btn-buy pa" id="p1btn" onclick="openModal('Başlangıç Paketi','249 ₺/ay')">WhatsApp ile Satın Al →</button>
-      <p class="psub">24 saat içinde PDF + Excel teslim</p>
-    </div>
-    <!-- POPULAR -->
+  <div class="pricing-grid" style="max-width:420px;margin-left:auto;margin-right:auto;">
+    <!-- SINGLE PACKAGE -->
     <div class="price-card featured">
-      <div class="feat-badge">En Popüler</div>
-      <div class="pname">Tam Program</div>
-      <div class="pval"><span class="pamt" id="p2amt">799</span> <span>₺</span></div>
-      <div class="pperiod" id="p2period">30 günlük tam plan</div>
-      <p class="pdesc">Kalıcı sonuç için. 4 haftalık döngüsel menü, tam kişiselleştirme.</p>
+      <div class="feat-badge">Tek Fiyat</div>
+      <div class="pname">Keto + IF Başlangıç Paketi</div>
+      <div class="pval"><span class="pamt" id="p1amt">199</span> <span>₺</span></div>
+      <div class="pperiod" id="p1period">Tek seferlik · ömür boyu erişim</div>
+      <p class="pdesc">12 sayfalık e-kitap + 5 sayfalık Excel takip çizelgesi. Ödeme sonrası hemen gönderilir.</p>
       <ul class="pfeatures">
-        <li><div class="pf-ico g">✓</div>30 günlük tam menü (60 öğün)</li>
-        <li><div class="pf-ico g">✓</div>Otomatik makro hesaplama</li>
-        <li><div class="pf-ico g">✓</div>Sevmediğin yiyecek çıkarılır</li>
-        <li><div class="pf-ico g">✓</div>Excel haftalık takip şablonu</li>
-        <li><div class="pf-ico g">✓</div>Aylık menü güncellemesi</li>
-        <li><div class="pf-ico g">✓</div>Kullanım desteği (30 gün)</li>
+        <li><div class="pf-ico g">✓</div>E-kitap (PDF, 12 sayfa): keto + IF rehberi</li>
+        <li><div class="pf-ico g">✓</div>18 hazır menü, kalori ve makro değerleriyle</li>
+        <li><div class="pf-ico g">✓</div>Excel: otomatik kalori/makro hesaplama</li>
+        <li><div class="pf-ico g">✓</div>30 günlük takip tablosu + haftalık kontrol listesi</li>
+        <li><div class="pf-ico g">✓</div>Gruplara ayrılmış alışveriş listesi</li>
+        <li><div class="pf-ico g">✓</div>Yazdırılabilir, tek seferlik ödeme</li>
       </ul>
-      <button class="btn-buy pf" id="p2btn" onclick="openModal('Tam Program','799 ₺/ay')">WhatsApp ile Satın Al →</button>
-      <p class="psub">WhatsApp ile kişisel teslim</p>
-    </div>
-    <!-- PREMIUM -->
-    <div class="price-card">
-      <div class="pname">Dönüşüm Paketi</div>
-      <div class="pval"><span class="pamt" id="p3amt">1.999</span> <span>₺</span></div>
-      <div class="pperiod" id="p3period">3 aylık tam dönüşüm</div>
-      <p class="pdesc">Hedefine ulaşana kadar yanındayız. Sürekli güncellenen tam program.</p>
-      <ul class="pfeatures">
-        <li><div class="pf-ico">✓</div>Sürekli güncellenen kişisel menü</li>
-        <li><div class="pf-ico">✓</div>Her hafta menü güncelleme</li>
-        <li><div class="pf-ico">✓</div>Aylık kilo & ölçü analizi</li>
-        <li><div class="pf-ico">✓</div>Sınırsız kullanım desteği</li>
-        <li><div class="pf-ico">✓</div>Egzersiz entegrasyonu</li>
-        <li><div class="pf-ico">✓</div>Kan değeri takip şablonu</li>
-      </ul>
-      <button class="btn-buy pa" id="p3btn" onclick="openModal('Dönüşüm Paketi','1.999 ₺/ay')">WhatsApp ile Satın Al →</button>
-      <p class="psub">En kapsamlı paket · Hedefe ulaş</p>
+      <button class="btn-buy pf" id="p1btn" onclick="buyKetoPaketi()">WhatsApp ile Satın Al →</button>
+      <p class="psub">Ödeme sonrası hemen gönderilir</p>
     </div>
   </div>
-  <p style="text-align:center;margin-top:18px;font-size:12px;color:var(--dim);">💬 Tüm ödemeler WhatsApp üzerinden manuel olarak gerçekleşir.</p>
-  <p style="text-align:center;margin-top:8px;font-size:11.5px;color:var(--dim);max-width:640px;margin-left:auto;margin-right:auto;line-height:1.7;">Satılan ürün, hazır menü şablonları ve tarif içeriğinden oluşan dijital bir dokümandır (PDF + Excel). Kişiye özel tıbbi beslenme tedavisi, diyetisyenlik veya sağlık hizmeti değildir; tanı ve tedavi amacı taşımaz. Sağlık durumunuza uygunluğu için hekiminize veya diyetisyeninize danışın.</p>
+  <p style="text-align:center;margin-top:18px;font-size:12px;color:var(--dim);">💬 Ödeme WhatsApp üzerinden manuel olarak alınır.</p>
+  <p style="text-align:center;margin-top:8px;font-size:11.5px;color:var(--dim);max-width:640px;margin-left:auto;margin-right:auto;line-height:1.7;">Satılan ürün, hazır menü şablonları ve genel bilgilendirme içeriğinden oluşan dijital bir dokümandır (PDF + Excel). Kişiye özel tıbbi beslenme tedavisi, diyetisyenlik veya sağlık hizmeti değildir; tanı ve tedavi amacı taşımaz. Sağlık durumunuza uygunluğu için hekiminize veya diyetisyeninize danışın.</p>
 </section>
 
 <!-- HOW -->
@@ -893,10 +858,10 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
   <div class="sl">Nasıl Çalışır</div>
   <h2 class="st">Satın alımdan <em>programa</em> 4 adım</h2>
   <div class="how-grid">
-    <div class="how-step"><div class="snum">01</div><h3>Paketi Seç</h3><p>Dilediğin pakete tıkla, WhatsApp mesajı otomatik hazırlanır.</p></div>
-    <div class="how-step"><div class="snum">02</div><h3>WhatsApp'tan Yaz</h3><p>Hazırlanan mesajı gönder, ödeme bilgilerini al ve öde.</p></div>
-    <div class="how-step"><div class="snum">03</div><h3>Planın Hazırlanır</h3><p>24 saat içinde sadece sana özel menü PDF + Excel olarak iletilir.</p></div>
-    <div class="how-step"><div class="snum">04</div><h3>Takip Et</h3><p>WhatsApp üzerinden sorularını sor, haftalık kontrollerini yap.</p></div>
+    <div class="how-step"><div class="snum">01</div><h3>Satın Al</h3><p>"WhatsApp ile Satın Al" butonuna tıkla, mesaj otomatik hazırlanır.</p></div>
+    <div class="how-step"><div class="snum">02</div><h3>Öde</h3><p>Ödeme bilgilerini (Papara/IBAN) al ve öde.</p></div>
+    <div class="how-step"><div class="snum">03</div><h3>Dosyaları Al</h3><p>Ödeme sonrası e-kitap (PDF) ve takip çizelgesi (Excel) hemen gönderilir.</p></div>
+    <div class="how-step"><div class="snum">04</div><h3>Takip Et</h3><p>Excel'deki günlük ve haftalık tablolarla ilerlemeni takip et.</p></div>
   </div>
 </section>
 
@@ -911,11 +876,11 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 52p
     </div>
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)">Satın alma nasıl gerçekleşiyor? <span class="faq-ico">+</span></div>
-      <div class="faq-a">"WhatsApp ile Satın Al" butonuna tıklayınca paket bilgilerinle otomatik bir mesaj hazırlanır. WhatsApp açılınca mesajı gönder, ödeme detaylarını (Papara / IBAN) sana iletiyoruz. Ödeme sonrası 24 saat içinde kişisel planın hazır.</div>
+      <div class="faq-a">"WhatsApp ile Satın Al" butonuna tıklayınca hazır bir mesaj açılır. Mesajı gönder, ödeme detaylarını (Papara / IBAN) sana iletiyoruz. Ödeme onaylanınca e-kitap (PDF) ve takip çizelgesi (Excel) hemen gönderilir.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)">Sevmediğim yiyecekler gerçekten çıkarılıyor mu? <span class="faq-ico">+</span></div>
-      <div class="faq-a">Evet. Hem ücretsiz plan oluştururken hem de satın alma formunda belirttiğin yiyecekler tamamen çıkarılıyor. Peynir, yoğurt, zeytin, balık ne söylersen programa girmiyor.</div>
+      <div class="faq-a">Evet. Ücretsiz plan oluştururken belirttiğin yiyecekler tamamen çıkarılıyor. Peynir, yoğurt, zeytin, balık ne söylersen programa girmiyor. Satın alınan e-kitap ve Excel çizelgesi ise herkes için aynı, hazır içeriktir.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)">IF protokolü zorunlu mu? <span class="faq-ico">+</span></div>
@@ -1451,6 +1416,19 @@ function resetPlan() {
 /* ============================================================
    MODAL
 ============================================================ */
+function buyKetoPaketi() {
+  var num = '905423548668';
+  var msg = 'Merhaba! 👋\n';
+  msg += 'Keto + IF Başlangıç Paketi\'ni (199₺) satın almak istiyorum.\n';
+  msg += 'Ödeme detaylarını (Papara / IBAN) iletir misiniz?';
+  var a = document.createElement('a');
+  a.href = 'https://wa.me/' + num + '?text=' + encodeURIComponent(msg);
+  a.target = '_blank';
+  a.rel = 'noopener noreferrer';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
 function openModal(pkg, price) {
   var num = '905423548668';
   var p = userProfile;
@@ -1732,8 +1710,8 @@ const blogPosts = [
       <div class="highlight">50 yaş üstü bireylerde tiroid, böbrek fonksiyonları ve D vitamini de tahlil paneline eklenmelidir.</div>
       <div class="bm-divider"></div>
       <div class="bm-cta-box">
-        <p>3 aylık dönüşüm paketimizde kan değeri takip şablonu dahildir.</p>
-        <button class="btn-p" onclick="closeBlog(); openModal('Dönüşüm Paketi','1.999 ₺/ay')">Dönüşüm Paketini Gör →</button>
+        <p>Keto + IF Başlangıç Paketi'nin Excel'inde kan değeri takip şablonu da var.</p>
+        <button class="btn-p" onclick="closeBlog(); buyKetoPaketi()">Paketi Gör →</button>
       </div>
     `
   },
@@ -1764,8 +1742,8 @@ const blogPosts = [
       <div class="highlight">"Diyete değil, yaşam biçimine geçiş yapanlarda keto 5+ yıl sürdürülebilir hale gelir."</div>
       <div class="bm-divider"></div>
       <div class="bm-cta-box">
-        <p>Haftalık güncellenen menüler ve sürekli takip için Dönüşüm Paketine göz at.</p>
-        <button class="btn-p" onclick="closeBlog(); document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">Paketlere Bak →</button>
+        <p>30 günlük takip tablosuyla platoyu görmezden gelmeyin — Keto + IF Başlangıç Paketi'nde hazır.</p>
+        <button class="btn-p" onclick="closeBlog(); document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">Paketi İncele →</button>
       </div>
     `
   }
@@ -1810,7 +1788,7 @@ const blogPosts = [
       <div class="bm-divider"></div>
       <div class="bm-cta-box">
         <p>1 aylık keto programını uzman eşliğinde, sana özel almak ister misin?</p>
-        <button class="btn-p" onclick="closeBlog(); document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">Tam Program'ı İncele →</button>
+        <button class="btn-p" onclick="closeBlog(); document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">Paketi İncele →</button>
       </div>
     `
   },
@@ -2190,6 +2168,20 @@ var D = {
 "Paketler & Fiyatlar":{"en":"Packages & Pricing","de":"Pakete & Preise","ru":"Пакеты и цены","ar":"الباقات والأسعار","fr":"Forfaits & Tarifs","es":"Paquetes y Precios","da":"Pakker & Priser"},
 "Devam günlerini":{"en":"Purchase continuation","de":"Folgetage","ru":"Купить продолжение","ar":"اشترِ الاستمرار","fr":"Jours suivants","es":"Días de continuación","da":"Fortsættelsesdage"},
 "satın al":{"en":"days","de":"kaufen","ru":"дней","ar":"أيام","fr":"à acheter","es":"comprar","da":"køb"},
+"Dijital Ürün":{"en":"Digital Product","de":"Digitales Produkt"},
+"Başlangıç Paketi'ni al":{"en":"Starter Package","de":"Starterpaket kaufen"},
+"Keto + IF Başlangıç Paketi":{"en":"Keto + IF Starter Package","de":"Keto + IF Starterpaket"},
+"Tek seferlik · ömür boyu erişim":{"en":"One-time · lifetime access","de":"Einmalig · lebenslanger Zugriff"},
+"12 sayfalık e-kitap + 5 sayfalık Excel takip çizelgesi. Ödeme sonrası hemen gönderilir.":{"en":"A 12-page e-book + a 5-sheet Excel tracker. Sent right after payment.","de":"Ein 12-seitiges E-Book + eine 5-teilige Excel-Tabelle. Wird direkt nach der Zahlung verschickt."},
+"Ödeme sonrası hemen gönderilir":{"en":"Sent right after payment","de":"Wird nach der Zahlung sofort verschickt"},
+"Ödeme WhatsApp üzerinden manuel olarak alınır.":{"en":"Payment is collected manually via WhatsApp.","de":"Die Zahlung wird manuell über WhatsApp abgewickelt."},
+"Satın Al":{"en":"Buy","de":"Kaufen"},
+"Öde":{"en":"Pay","de":"Bezahlen"},
+"Dosyaları Al":{"en":"Get the Files","de":"Dateien erhalten"},
+"\"WhatsApp ile Satın Al\" butonuna tıkla, mesaj otomatik hazırlanır.":{"en":"Tap \"Buy via WhatsApp\" — the message is prepared automatically.","de":"Tippe auf \"Über WhatsApp kaufen\" — die Nachricht wird automatisch erstellt."},
+"Ödeme bilgilerini (Papara/IBAN) al ve öde.":{"en":"Get the payment details (Papara/bank transfer) and pay.","de":"Erhalte die Zahlungsdetails (Papara/Überweisung) und bezahle."},
+"Ödeme sonrası e-kitap (PDF) ve takip çizelgesi (Excel) hemen gönderilir.":{"en":"After payment, the e-book (PDF) and tracking sheet (Excel) are sent right away.","de":"Nach der Zahlung werden das E-Book (PDF) und die Tabelle (Excel) sofort verschickt."},
+"Excel'deki günlük ve haftalık tablolarla ilerlemeni takip et.":{"en":"Track your progress with the daily and weekly tables in the Excel file.","de":"Verfolge deinen Fortschritt mit den täglichen und wöchentlichen Tabellen in der Excel-Datei."},
 "Başlangıç":{"en":"Starter","de":"Starter","ru":"Начальный","ar":"المبتدئ","fr":"Débutant","es":"Inicial","da":"Start"},
 "7 günlük tam plan":{"en":"7-day full plan","de":"7-Tage-Komplettplan","ru":"Полный план на 7 дней","ar":"خطة كاملة 7 أيام","fr":"Plan complet 7 jours","es":"Plan completo 7 días","da":"7-dages komplet plan"},
 "3 günlük önizlemenin devamı. Her ay yenilenen haftalık plan.":{"en":"Continuation of the 3-day preview. Weekly plan renewed monthly.","de":"Fortsetzung der 3-Tage-Vorschau. Wöchentlicher Plan, monatlich erneuert.","ru":"Продолжение 3-дневного предпросмотра. Еженедельный план, обновляемый ежемесячно.","ar":"استمرار المعاينة لـ 3 أيام. خطة أسبوعية تتجدد شهرياً.","fr":"Suite de l'aperçu de 3 jours. Plan hebdomadaire renouvelé mensuellement.","es":"Continuación de la vista previa de 3 días. Plan semanal renovado mensualmente.","da":"Fortsættelse af 3-dages forhåndsvisning. Ugentlig plan fornyet månedligt."},
@@ -2293,8 +2285,8 @@ var D = {
 "Şu an":{"en":"Currently","de":"Derzeit","ru":"В настоящее время","ar":"حالياً","fr":"Actuellement","es":"Actualmente","da":"I øjeblikket"},
 "yalnızca WhatsApp üzerinden":{"en":"only via WhatsApp","de":"nur über WhatsApp","ru":"только через WhatsApp","ar":"فقط عبر واتساب","fr":"uniquement via WhatsApp","es":"solo por WhatsApp","da":"kun via WhatsApp"},
 "Planını oluşturduktan sonra sağ üstteki \"Excel'e Aktar\" butonuna tıkla. Planın, makrolarını ve öğünlerin tüm detaylarıyla birlikte .xlsx dosyası olarak bilgisayarına inecek.":{"en":"After creating your plan, click the \"Export to Excel\" button in the top right. Your plan, along with your macros and full meal details, will download to your computer as an .xlsx file.","de":"Nachdem du deinen Plan erstellt hast, klicke oben rechts auf \"Als Excel exportieren\". Dein Plan wird mit allen Makros und Mahlzeitdetails als .xlsx-Datei auf deinen Computer heruntergeladen.","ru":"После создания плана нажмите кнопку \"Экспорт в Excel\" в правом верхнем углу. Ваш план со всеми макросами и деталями приёмов пищи скачается на компьютер в виде файла .xlsx.","ar":"بعد إنشاء خطتك، انقر على زر \"تصدير إلى إكسل\" في الأعلى يمينًا. ستُحمَّل خطتك مع الماكروز وتفاصيل الوجبات الكاملة كملف .xlsx على جهازك.","fr":"Une fois ton plan créé, clique sur le bouton \"Exporter en Excel\" en haut à droite. Ton plan, avec tes macros et le détail complet des repas, sera téléchargé sur ton ordinateur au format .xlsx.","es":"Después de crear tu plan, haz clic en el botón \"Exportar a Excel\" en la parte superior derecha. Tu plan, junto con tus macros y todos los detalles de las comidas, se descargará en tu computadora como un archivo .xlsx.","da":"Når du har oprettet din plan, skal du klikke på knappen \"Eksportér til Excel\" øverst til højre. Din plan, sammen med dine makroer og alle måltidsdetaljer, downloades til din computer som en .xlsx-fil."},
-"\"WhatsApp ile Satın Al\" butonuna tıklayınca paket bilgilerinle otomatik bir mesaj hazırlanır. WhatsApp açılınca mesajı gönder, ödeme detaylarını (Papara / IBAN) sana iletiyoruz. Ödeme sonrası 24 saat içinde kişisel planın hazır.":{"en":"When you click \"Buy via WhatsApp,\" a message is automatically prepared with your package details. Once WhatsApp opens, send the message, and we'll send you the payment details (Papara / bank transfer). Your personal plan will be ready within 24 hours after payment.","de":"Wenn du auf \"Über WhatsApp kaufen\" klickst, wird automatisch eine Nachricht mit deinen Paketdetails erstellt. Sobald WhatsApp sich öffnet, sende die Nachricht, und wir schicken dir die Zahlungsdetails (Papara / Überweisung). Nach der Zahlung ist dein persönlicher Plan innerhalb von 24 Stunden fertig.","ru":"При нажатии на кнопку \"Купить через WhatsApp\" автоматически формируется сообщение с данными о пакете. Когда откроется WhatsApp, отправьте сообщение, и мы вышлем вам реквизиты для оплаты (Papara / банковский перевод). После оплаты ваш персональный план будет готов в течение 24 часов.","ar":"عند النقر على زر \"الشراء عبر واتساب\"، تُعَدّ رسالة تلقائيًا تحتوي على تفاصيل الباقة. بمجرد فتح واتساب، أرسل الرسالة، وسنرسل لك تفاصيل الدفع (Papara / تحويل بنكي). بعد الدفع، ستكون خطتك الشخصية جاهزة خلال 24 ساعة.","fr":"En cliquant sur \"Acheter via WhatsApp\", un message est automatiquement préparé avec les détails de ton forfait. Une fois WhatsApp ouvert, envoie le message, et nous t'enverrons les détails de paiement (Papara / virement). Après paiement, ton plan personnel sera prêt sous 24 heures.","es":"Al hacer clic en \"Comprar por WhatsApp\", se prepara automáticamente un mensaje con los datos de tu paquete. Cuando se abra WhatsApp, envía el mensaje y te enviaremos los detalles de pago (Papara / transferencia bancaria). Después del pago, tu plan personal estará listo en 24 horas.","da":"Når du klikker på \"Køb via WhatsApp,\" oprettes der automatisk en besked med dine pakkeoplysninger. Når WhatsApp åbner, skal du sende beskeden, og vi sender dig betalingsoplysningerne (Papara / bankoverførsel). Efter betaling er din personlige plan klar inden for 24 timer."},
-"Evet. Hem ücretsiz plan oluştururken hem de satın alma formunda belirttiğin yiyecekler tamamen çıkarılıyor. Peynir, yoğurt, zeytin, balık ne söylersen programa girmiyor.":{"en":"Yes. The foods you specify — both when creating the free plan and in the purchase form — are completely excluded. Whatever you list, whether cheese, yogurt, olives, or fish, won't be included in the program.","de":"Ja. Die Lebensmittel, die du angibst — sowohl beim Erstellen des kostenlosen Plans als auch im Bestellformular — werden vollständig ausgeschlossen. Egal ob Käse, Joghurt, Oliven oder Fisch, was du angibst, kommt nicht ins Programm.","ru":"Да. Продукты, которые вы укажете — как при создании бесплатного плана, так и в форме заказа — полностью исключаются. Сыр, йогурт, оливки, рыба — что бы вы ни указали, в программу это не попадёт.","ar":"نعم. الأطعمة التي تحددها — سواء عند إنشاء الخطة المجانية أو في نموذج الشراء — يتم استبعادها بالكامل. جبن، زبادي، زيتون، سمك، مهما ذكرت لن يدخل في البرنامج.","fr":"Oui. Les aliments que tu indiques — que ce soit lors de la création du plan gratuit ou dans le formulaire d'achat — sont totalement exclus. Fromage, yaourt, olives, poisson : quoi que tu indiques, cela n'apparaîtra pas dans le programme.","es":"Sí. Los alimentos que indiques, tanto al crear el plan gratuito como en el formulario de compra, se excluyen por completo. Queso, yogur, aceitunas, pescado: lo que sea que menciones no entrará en el programa.","da":"Ja. De fødevarer, du angiver — både når du opretter den gratis plan og i købsformularen — udelukkes helt. Ost, yoghurt, oliven, fisk — uanset hvad du angiver, kommer det ikke med i programmet."},
+"\"WhatsApp ile Satın Al\" butonuna tıklayınca hazır bir mesaj açılır. Mesajı gönder, ödeme detaylarını (Papara / IBAN) sana iletiyoruz. Ödeme onaylanınca e-kitap (PDF) ve takip çizelgesi (Excel) hemen gönderilir.":{"en":"When you click \"Buy via WhatsApp,\" a ready-made message opens. Send it, and we'll reply with the payment details (Papara / bank transfer). Once payment is confirmed, the e-book (PDF) and tracking sheet (Excel) are sent right away.","de":"Wenn du auf \"Über WhatsApp kaufen\" klickst, öffnet sich eine fertige Nachricht. Sende sie, und wir schicken dir die Zahlungsdetails (Papara / Überweisung). Nach Zahlungsbestätigung werden das E-Book (PDF) und die Tabelle (Excel) sofort verschickt."},
+"Evet. Ücretsiz plan oluştururken belirttiğin yiyecekler tamamen çıkarılıyor. Peynir, yoğurt, zeytin, balık ne söylersen programa girmiyor. Satın alınan e-kitap ve Excel çizelgesi ise herkes için aynı, hazır içeriktir.":{"en":"Yes. The foods you specify when creating the free plan are completely excluded — cheese, yogurt, olives, fish, whatever you list won't be included. The paid e-book and Excel tracker, on the other hand, are the same ready-made content for everyone.","de":"Ja. Die Lebensmittel, die du beim Erstellen des kostenlosen Plans angibst, werden vollständig ausgeschlossen — egal ob Käse, Joghurt, Oliven oder Fisch. Das gekaufte E-Book und die Excel-Tabelle sind dagegen für alle der gleiche, fertige Inhalt."},
 "Hayır. Plan oluştururken \"IF yok\" seçeneğini seçebilirsin. Yine de IF+Keto kombinasyonu en hızlı sonucu verdiği için öneriyoruz.":{"en":"No. You can select the \"No IF\" option when creating your plan. That said, we recommend the IF+Keto combination since it delivers the fastest results.","de":"Nein. Du kannst beim Erstellen deines Plans die Option \"Kein IF\" wählen. Wir empfehlen dennoch die Kombination aus IF und Keto, da sie die schnellsten Ergebnisse liefert.","ru":"Нет. При создании плана вы можете выбрать опцию \"Без IF\". Тем не менее мы рекомендуем сочетание IF+Кето, так как оно даёт самые быстрые результаты.","ar":"لا. يمكنك اختيار خيار \"بدون صيام متقطع\" عند إنشاء خطتك. ومع ذلك، نوصي بمزيج الصيام المتقطع مع الكيتو لأنه يعطي أسرع النتائج.","fr":"Non. Tu peux choisir l'option \"Sans IF\" lors de la création de ton plan. Nous recommandons toutefois la combinaison IF+Keto, car elle donne les résultats les plus rapides.","es":"No. Puedes seleccionar la opción \"Sin IF\" al crear tu plan. Aun así, recomendamos la combinación IF+Keto porque ofrece los resultados más rápidos.","da":"Nej. Du kan vælge muligheden \"Ingen IF\", når du opretter din plan. Vi anbefaler dog kombinationen IF+Keto, da den giver de hurtigste resultater."},
 "Evet, tamamen ücretsiz. Kredi kartı veya ödeme bilgisi istemiyoruz. Sadece profilini gir, planını al, Excel'e aktar. Devam günleri için paket satın alabilirsin.":{"en":"Yes, completely free. We don't ask for a credit card or any payment details. Just enter your profile, get your plan, and export it to Excel. You can purchase a package for continuation days.","de":"Ja, komplett kostenlos. Wir verlangen keine Kreditkarte oder Zahlungsinformationen. Gib einfach dein Profil ein, erhalte deinen Plan und exportiere ihn nach Excel. Für weitere Tage kannst du ein Paket kaufen.","ru":"Да, совершенно бесплатно. Мы не запрашиваем данные банковской карты или оплаты. Просто введите профиль, получите план и экспортируйте в Excel. Для продолжения дней вы можете купить пакет.","ar":"نعم، مجاني تمامًا. لا نطلب بطاقة ائتمان أو أي معلومات دفع. فقط أدخل ملفك الشخصي، واحصل على خطتك، وصدّرها إلى إكسل. يمكنك شراء باقة لأيام الاستمرار.","fr":"Oui, entièrement gratuit. Nous ne demandons ni carte bancaire ni informations de paiement. Entre simplement ton profil, obtiens ton plan et exporte-le en Excel. Tu peux acheter un forfait pour les jours suivants.","es":"Sí, totalmente gratis. No pedimos tarjeta de crédito ni datos de pago. Solo ingresa tu perfil, obtén tu plan y expórtalo a Excel. Puedes comprar un paquete para los días de continuación.","da":"Ja, helt gratis. Vi beder ikke om kreditkort eller betalingsoplysninger. Indtast blot din profil, få din plan, og eksportér til Excel. Du kan købe en pakke til fortsættelsesdage."},
 "Tüm hakları saklıdır.":{"en":"All rights reserved.","de":"Alle Rechte vorbehalten.","ru":"Все права защищены.","ar":"جميع الحقوق محفوظة.","fr":"Tous droits réservés.","es":"Todos los derechos reservados.","da":"Alle rettigheder forbeholdes."},
@@ -2474,7 +2466,7 @@ window.KDi18n = { switchLang: switchLang, getCurrentLang: function() { return cu
       ]
     },
     paketler: {
-      text: "\u{1F4E6} 3 paketimiz mevcut:\n\n\u{1F7E2} Ba\u015flang\u0131\u00e7 \u2014 249\u20BA\n7 g\u00fcnl\u00fck plan, 14 \u00f6\u011f\u00fcn, Excel dahil\n\n\u{1F7E1} Tam Program \u2014 799\u20BA (En pop\u00fcler!)\n30 g\u00fcnl\u00fck plan, 60 \u00f6\u011f\u00fcn, ki\u015fisel analiz\n\n\u{1F534} D\u00f6n\u00fc\u015f\u00fcm Paketi \u2014 1.999\u20BA\n3 ayl\u0131k tam d\u00f6n\u00fc\u015f\u00fcm, s\u0131n\u0131rs\u0131z dan\u0131\u015fma\n\nDetayl\u0131 bilgi i\u00e7in a\u015fa\u011f\u0131ya t\u0131klay\u0131n!",
+      text: "\u{1F4E6} Tek paketimiz var:\n\n\u{1F7E2} Keto + IF Ba\u015flang\u0131\u00e7 Paketi \u2014 199\u20BA (tek seferlik)\nE-kitap (PDF, 12 sayfa) + Excel takip \u00e7izelgesi (5 sayfa), 18 haz\u0131r men\u00fc, otomatik makro hesaplama\n\nDetayl\u0131 bilgi i\u00e7in a\u015fa\u011f\u0131ya t\u0131klay\u0131n!",
       f: [
         { id: "go_pricing", label: "\u{1F4B0} Paketleri sayfada g\u00f6r \u2192" },
         { id: "go_wa", label: "\u{1F4AC} WhatsApp'tan sipari\u015f \u2192" },
@@ -2482,7 +2474,7 @@ window.KDi18n = { switchLang: switchLang, getCurrentLang: function() { return cu
       ]
     },
     nasil: {
-      text: "Sat\u0131n alma 4 ad\u0131mda:\n\n1\uFE0F\u20E3 Paketi se\u00e7\n2\uFE0F\u20E3 WhatsApp'tan mesaj g\u00f6nder\n3\uFE0F\u20E3 \u00d6deme yap (Papara/IBAN)\n4\uFE0F\u20E3 24 saat i\u00e7inde plan\u0131n haz\u0131r!",
+      text: "Sat\u0131n alma 4 ad\u0131mda:\n\n1\uFE0F\u20E3 \"WhatsApp ile Sat\u0131n Al\" butonuna t\u0131kla\n2\uFE0F\u20E3 \u00d6deme bilgilerini al (Papara/IBAN)\n3\uFE0F\u20E3 \u00d6deme yap\n4\uFE0F\u20E3 E-kitap (PDF) + Excel hemen g\u00f6nderilir!",
       f: [
         { id: "go_plan", label: "\u{1F4CB} \u00dccretsiz plan\u0131 dene \u2192" },
         { id: "go_wa", label: "\u{1F4AC} WhatsApp'a yaz \u2192" }
