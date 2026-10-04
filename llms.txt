@@ -19,6 +19,7 @@ Primary language is Turkish (tr); English (en) and German (de) translations are 
 - [How Does the Keto Diet Affect Your Blood Test Results?](https://ketojenikdiyetim.com/blog/keto-diyeti-kan-tahlili-etkileri/)
 - [What Is Keto Breath?](https://ketojenikdiyetim.com/blog/keto-nefesi-nedir/): Why the metallic/acetone breath smell happens, how long it lasts, and how it differs from diabetic ketoacidosis (DKA).
 - [Is Keto Good for Fatty Liver?](https://ketojenikdiyetim.com/blog/keto-diyeti-karaciger-yaglanmasi/): A 2026 Cell Metabolism trial (42 people, matched 10% weight loss) found keto cut liver fat by 67% vs 45% on Mediterranean and low-fat diets; limitations and who needs medical supervision.
+- [How Does Keto Affect Thyroid Health?](https://ketojenikdiyetim.com/blog/keto-diyeti-ve-tiroid-sagligi/): Carbohydrate restriction and T3 (a classic 1976 study), plus a 2025 MRI study on Hashimoto's where a low-carb diet reduced inflammation markers and antibody levels.
 
 ## Policies
 - [Privacy Policy](https://ketojenikdiyetim.com/gizlilik-politikasi/)
