@@ -20,6 +20,7 @@ Primary language is Turkish (tr); English (en) and German (de) translations are 
 - [What Is Keto Breath?](https://ketojenikdiyetim.com/blog/keto-nefesi-nedir/): Why the metallic/acetone breath smell happens, how long it lasts, and how it differs from diabetic ketoacidosis (DKA).
 - [Is Keto Good for Fatty Liver?](https://ketojenikdiyetim.com/blog/keto-diyeti-karaciger-yaglanmasi/): A 2026 Cell Metabolism trial (42 people, matched 10% weight loss) found keto cut liver fat by 67% vs 45% on Mediterranean and low-fat diets; limitations and who needs medical supervision.
 - [How Does Keto Affect Thyroid Health?](https://ketojenikdiyetim.com/blog/keto-diyeti-ve-tiroid-sagligi/): Carbohydrate restriction and T3 (a classic 1976 study), plus a 2025 MRI study on Hashimoto's where a low-carb diet reduced inflammation markers and antibody levels.
+- [Gallstone Risk on Keto](https://ketojenikdiyetim.com/blog/keto-diyetinde-safra-kesesi-tasi-riski/): A 1995 trial (1,004 people, 520 kcal/day) found ursodiol cut gallstone formation from 28% to 3%; a 2013 Swedish cohort found 3x the gallstone risk on very-low-calorie vs low-calorie diets; no trial has directly tested a standard ketogenic diet.
 
 ## Policies
 - [Privacy Policy](https://ketojenikdiyetim.com/gizlilik-politikasi/)
